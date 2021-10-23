@@ -2,7 +2,7 @@
 <html lang="en">
     <head>        
         <!-- META SECTION -->
-        <title>Atlant - Responsive Bootstrap Admin Template</title>            
+        <title><?= $title . " | ".$appName; ?></title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,12 +17,13 @@
     <body>
         
         <?= $this->renderSection('content');?>
+
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
         <!-- END PRELOADS -->                  
         
-    <!-- START SCRIPTS -->
+        <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
         <script type="text/javascript" src="theme/js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="theme/js/plugins/jquery/jquery-ui.min.js"></script>

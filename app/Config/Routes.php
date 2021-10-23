@@ -37,6 +37,9 @@ $routes->post('/operator/auth', 'Operator::auth');
 $routes->post('/operator/register', 'Operator::register');
 $routes->get('/home', 'Home::index');
 $routes->get('/logout', 'Operator::logout');
+$routes->get('/penyiar', 'Penyiar::index');
+$routes->get('/acara', 'Acara::index');
+$routes->get('/endorsement', 'Endorsement::index');
 
 /*
  * --------------------------------------------------------------------
