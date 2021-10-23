@@ -6,6 +6,11 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $data = [
+            'title' => "Home", 
+            'appName' => "UMSU FM",
+            'breadcrumb' => ['Home','Dashboard']
+        ];
+        return view('pages/home',$data);
     }
 }
