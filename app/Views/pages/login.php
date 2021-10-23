@@ -7,15 +7,21 @@
         <div class="login-logo"></div>
         <div class="login-body">
             <div class="login-title"><strong>Welcome</strong>, Please login</div>
-            <form action="index.html" class="form-horizontal" method="post">
+            <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Maaf!</strong> <?php echo session()->getFlashdata('error'); ?>
+                </div> 
+            <?php endif; ?>
+            <form action="/operator/auth" class="form-horizontal" method="post">
             <div class="form-group">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" placeholder="Username"/>
+                    <input type="text" class="form-control" placeholder="Username" name="username"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input type="password" class="form-control" placeholder="Password"/>
+                    <input type="password" class="form-control" placeholder="Password" name="password"/>
                 </div>
             </div>
             <div class="form-group">
