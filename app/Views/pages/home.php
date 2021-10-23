@@ -9,63 +9,7 @@
     <!-- PAGE CONTENT -->
     <div class="page-content">
         
-        <!-- START X-NAVIGATION VERTICAL -->
-        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
-            <!-- TOGGLE NAVIGATION -->
-            <li class="xn-icon-button">
-                <a href="index.html#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
-            </li>
-            <!-- END TOGGLE NAVIGATION -->
-            <!-- SIGN OUT -->
-            <li class="xn-icon-button pull-right">
-                <a href="index.html#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
-            </li> 
-            <!-- END SIGN OUT -->
-            <!-- MESSAGES -->
-            <li class="xn-icon-button pull-right">
-                <a href="index.html#"><span class="fa fa-comments"></span></a>
-                <div class="informer informer-danger">4</div>
-                <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
-                        <div class="pull-right">
-                            <span class="label label-danger">4 new</span>
-                        </div>
-                    </div>
-                    <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
-                        <a href="index.html#" class="list-group-item">
-                            <div class="list-group-status status-online"></div>
-                            <img src="theme/assets/images/users/user2.jpg" class="pull-left" alt="John Doe"/>
-                            <span class="contacts-title">John Doe</span>
-                            <p>Praesent placerat tellus id augue condimentum</p>
-                        </a>
-                        <a href="index.html#" class="list-group-item">
-                            <div class="list-group-status status-away"></div>
-                            <img src="theme/assets/images/users/user.jpg" class="pull-left" alt="Dmitry Ivaniuk"/>
-                            <span class="contacts-title">Dmitry Ivaniuk</span>
-                            <p>Donec risus sapien, sagittis et magna quis</p>
-                        </a>
-                        <a href="index.html#" class="list-group-item">
-                            <div class="list-group-status status-away"></div>
-                            <img src="theme/assets/images/users/user3.jpg" class="pull-left" alt="Nadia Ali"/>
-                            <span class="contacts-title">Nadia Ali</span>
-                            <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
-                        </a>
-                        <a href="index.html#" class="list-group-item">
-                            <div class="list-group-status status-offline"></div>
-                            <img src="theme/assets/images/users/user6.jpg" class="pull-left" alt="Darth Vader"/>
-                            <span class="contacts-title">Darth Vader</span>
-                            <p>I want my money back!</p>
-                        </a>
-                    </div>     
-                    <div class="panel-footer text-center">
-                        <a href="pages-messages.html">Show all messages</a>
-                    </div>                            
-                </div>                        
-            </li>
-            <!-- END MESSAGES -->
-        </ul>
-        <!-- END X-NAVIGATION VERTICAL -->                     
+    <?= $this->include('layout/templateHead');?>
 
         <!-- START BREADCRUMB -->
         <ul class="breadcrumb">
@@ -76,7 +20,6 @@
         
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
-            
             <!-- START WIDGETS -->                    
             <div class="row">
                 <div class="col-md-3">
@@ -85,23 +28,23 @@
                     <div class="widget widget-default widget-carousel">
                         <div class="owl-carousel" id="owl-example">
                             <div>                                    
-                                <div class="widget-title">Total Visitors</div>                                                                        
-                                <div class="widget-subtitle">27/08/2014 15:23</div>
-                                <div class="widget-int">3,548</div>
+                                <div class="widget-title">Acara Aktif</div>                                                                        
+                                <div class="widget-subtitle">Jumlah per Minggu</div>
+                                <div class="widget-int"><?= $jumlah_acara_aktif;?></div>
                             </div>
                             <div>                                    
-                                <div class="widget-title">Returned</div>
-                                <div class="widget-subtitle">Visitors</div>
-                                <div class="widget-int">1,695</div>
+                                <div class="widget-title">Acara Segera</div>
+                                <div class="widget-subtitle">Jumlah per Minggu</div>
+                                <div class="widget-int"><?= $jumlah_acara_segera;?></div>
                             </div>
                             <div>                                    
-                                <div class="widget-title">New</div>
-                                <div class="widget-subtitle">Visitors</div>
-                                <div class="widget-int">1,977</div>
+                                <div class="widget-title">Acara Non aktif</div>
+                                <div class="widget-subtitle">Jumlah per Minggu</div>
+                                <div class="widget-int"><?= $jumlah_acara_arsip;?></div>
                             </div>
                         </div>                            
                         <div class="widget-controls">                                
-                            <a href="index.html#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                            <a href="#!" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
                         </div>                             
                     </div>         
                     <!-- END WIDGET SLIDER -->
@@ -110,17 +53,17 @@
                 <div class="col-md-3">
                     
                     <!-- START WIDGET MESSAGES -->
-                    <div class="widget widget-default widget-item-icon" onclick="location.href='pages-messages.html';">
+                    <div class="widget widget-default widget-item-icon" onclick="location.href='#!';">
                         <div class="widget-item-left">
-                            <span class="fa fa-envelope"></span>
+                            <span class="fa fa-users"></span>
                         </div>                             
                         <div class="widget-data">
-                            <div class="widget-int num-count">48</div>
-                            <div class="widget-title">New messages</div>
-                            <div class="widget-subtitle">In your mailbox</div>
+                            <div class="widget-int num-count"><?= $jumlah_penyiar;?></div>
+                            <div class="widget-title">Penyiar</div>
+                            <div class="widget-subtitle">di UMSU FM</div>
                         </div>      
                         <div class="widget-controls">                                
-                            <a href="index.html#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                            <a href="#!" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
                         </div>
                     </div>                            
                     <!-- END WIDGET MESSAGES -->
@@ -129,17 +72,17 @@
                 <div class="col-md-3">
                     
                     <!-- START WIDGET REGISTRED -->
-                    <div class="widget widget-default widget-item-icon" onclick="location.href='pages-address-book.html';">
+                    <div class="widget widget-default widget-item-icon" onclick="location.href='#!';">
                         <div class="widget-item-left">
-                            <span class="fa fa-user"></span>
+                            <span class="fa fa-inbox"></span>
                         </div>
                         <div class="widget-data">
-                            <div class="widget-int num-count">375</div>
-                            <div class="widget-title">Registred users</div>
-                            <div class="widget-subtitle">On your website</div>
+                            <div class="widget-int num-count"><?= $jumlah_endors;?></div>
+                            <div class="widget-title">Endorsement</div>
+                            <div class="widget-subtitle">di UMSU FM</div>
                         </div>
                         <div class="widget-controls">                                
-                            <a href="index.html#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                            <a href="#!" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
                         </div>                            
                     </div>                            
                     <!-- END WIDGET REGISTRED -->
@@ -152,17 +95,17 @@
                         <div class="widget-big-int plugin-clock">00:00</div>                            
                         <div class="widget-subtitle plugin-date">Loading...</div>
                         <div class="widget-controls">                                
-                            <a href="index.html#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="left" title="Remove Widget"><span class="fa fa-times"></span></a>
+                            <a href="#!" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="left" title="Remove Widget"><span class="fa fa-times"></span></a>
                         </div>                            
                         <div class="widget-buttons widget-c3">
                             <div class="col">
-                                <a href="index.html#"><span class="fa fa-clock-o"></span></a>
+                                <a href="#!"><span class="fa fa-clock-o"></span></a>
                             </div>
                             <div class="col">
-                                <a href="index.html#"><span class="fa fa-bell"></span></a>
+                                <a href="#!"><span class="fa fa-bell"></span></a>
                             </div>
                             <div class="col">
-                                <a href="index.html#"><span class="fa fa-calendar"></span></a>
+                                <a href="#!"><span class="fa fa-calendar"></span></a>
                             </div>
                         </div>                            
                     </div>                        
@@ -182,12 +125,12 @@
                                 <span>Activity of projects by members</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <li><a href="index.html#" class="panel-refresh" data-toggle="tooltip" data-placement="top" title="Refresh"><span class="fa fa-refresh"></span></a></li>
+                                <li><a href="#!" class="panel-refresh" data-toggle="tooltip" data-placement="top" title="Refresh"><span class="fa fa-refresh"></span></a></li>
                                 <li class="dropdown">
-                                    <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>                                        
+                                    <a href="#!" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>                                        
                                     <ul class="dropdown-menu">
-                                        <li><a href="index.html#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
-                                        <li><a href="index.html#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                                        <li><a href="#!" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                                        <li><a href="#!" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
                                     </ul>                                        
                                 </li>                                        
                             </ul>
