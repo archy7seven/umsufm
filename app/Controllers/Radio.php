@@ -6,6 +6,10 @@ class Radio extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $data = [
+            'title' => "Login", 
+            'appName' => "UMSU FM"
+        ];
+        return view('pages/login',$data);
     }
 }
