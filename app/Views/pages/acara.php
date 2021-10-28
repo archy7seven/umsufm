@@ -26,18 +26,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
-                                <h3>Projects</h3>
-                                <span>Activity of projects by members</span>
+                                <h3>Acara</h3>
+                                <span>Berikut data acara UMSU FM</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <li><a href="index.html#" class="panel-refresh" data-toggle="tooltip" data-placement="top" title="Refresh"><span class="fa fa-refresh"></span></a></li>
-                                <li class="dropdown">
-                                    <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>                                        
-                                    <ul class="dropdown-menu">
-                                        <li><a href="index.html#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
-                                        <li><a href="index.html#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
-                                    </ul>                                        
-                                </li>                                        
+                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAcara">Tambah Data</button>
+                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusAcara">Hapus Data</button>                                        
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -46,66 +40,26 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th width="50%">Project</th>
-                                            <th width="20%">Status</th>
-                                            <th width="30%">Activity</th>
+                                            <th width=2%>
+                                                <center>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="selectAll">
+                                                        <label for="selectAll"></label>
+                                                    </span>
+                                                </center>
+                                            </th>
+                                            <th width="5%">ID Acara</th>
+                                            <th width="10%">Flayer Acara</th>
+                                            <th width="15%">Nama Acara</th>
+                                            <th width="15%">Nama Penyiar</th>
+                                            <th width="15%">Jadwal Acara</th>
+                                            <th width="15%">Waktu Acara</th>
+                                            <th width="10%">Status Acara</th>
+                                            <th width="15%"><center>Action</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><strong>Atlant</strong></td>
-                                            <td><span class="label label-danger">Developing</span></td>
-                                            <td>
-                                                <div class="progress progress-small progress-striped active">
-                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">85%</div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Gemini</strong></td>
-                                            <td><span class="label label-warning">Updating</span></td>
-                                            <td>
-                                                <div class="progress progress-small progress-striped active">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">40%</div>
-                                                </div>
-                                            </td>
-                                        </tr>                                                
-                                        <tr>
-                                            <td><strong>Taurus</strong></td>
-                                            <td><span class="label label-warning">Updating</span></td>
-                                            <td>
-                                                <div class="progress progress-small progress-striped active">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 72%;">72%</div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Leo</strong></td>
-                                            <td><span class="label label-success">Support</span></td>
-                                            <td>
-                                                <div class="progress progress-small progress-striped active">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Virgo</strong></td>
-                                            <td><span class="label label-success">Support</span></td>
-                                            <td>
-                                                <div class="progress progress-small progress-striped active">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
-                                                </div>
-                                            </td>
-                                        </tr>                                                
-                                        <tr>
-                                            <td><strong>Aquarius</strong></td>
-                                            <td><span class="label label-success">Support</span></td>
-                                            <td>
-                                                <div class="progress progress-small progress-striped active">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
