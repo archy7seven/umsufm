@@ -28,6 +28,7 @@
         <script type="text/javascript" src="theme/js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="theme/js/plugins/jquery/jquery-ui.min.js"></script>
         <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap.min.js"></script>        
+        <script type='text/javascript' src='theme/js/plugins/popper/popper.min.js'></script>             
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->        
@@ -41,7 +42,7 @@
         <script type="text/javascript" src="theme/js/plugins/rickshaw/rickshaw.min.js"></script>
         <script type='text/javascript' src='theme/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
         <script type='text/javascript' src='theme/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>                
-        <script type='text/javascript' src='theme/js/plugins/bootstrap/bootstrap-datepicker.js'></script>                
+        <script type='text/javascript' src='theme/js/plugins/bootstrap/bootstrap-datepicker.js'></script>  
         <script type="text/javascript" src="theme/js/plugins/owl/owl.carousel.min.js"></script>                         
         <!-- END THIS PAGE PLUGINS-->        
 
