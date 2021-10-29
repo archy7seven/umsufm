@@ -46,7 +46,8 @@
         <script type="text/javascript" src="theme/js/plugins/owl/owl.carousel.min.js"></script>
         <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-file-input.js"></script>     
         <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-select.js"></script> 
-        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>                   
+        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-datepicker.js"></script>                   
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->

@@ -35,7 +35,6 @@
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
-                            
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
                                     <thead>
@@ -74,6 +73,7 @@
                                             <td style="text-align:center">
                                                 <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAcara"><span class="fa fa-edit"></span></button>
                                                 <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusAcara"><span class="fa fa-trash-o"></span></button>
+                                                <button Type="button" class="btn btn-default" ><span class="fa fa-eye"></span></button>
                                             </td>
                                         </tr>
                                         <!-- START MODAL DELETE ACARA -->
@@ -95,6 +95,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- END MODAL DELETE ACARA -->
                                     </tbody>
                                 </table>
                             </div>
