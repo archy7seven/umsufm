@@ -30,8 +30,8 @@
                                 <span>Berikut Data Penyiar UMSU FM</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPenyiar">Tambah Data</button>
-                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>                                     
+                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPenyiar">Tambah Data</button>    
+                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedPenyiar">Delete Data</button>                               
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -39,173 +39,92 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th width=5%>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="selectAll">
-                                                        <label for="selectAll"></label>
-                                                    </span>
-                                                </center>
+                                            <th width=5% style="text-align:center">
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="selectAll">
+                                                    <label for="selectAll"></label>
+                                                </span>
                                             </th>
+                                            <th width="5%" style="text-align:center">No</th>
                                             <th width="75%">Nama Penyiar</th>
-                                            <th width="20%"><center>Action</center></th>
+                                            <th width="15%" style="text-align:center">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody style=>
+                                    <tbody>
+                                        <?php 
+                                        $no=1;
+                                        foreach ($penyiar as $row) : ?>
                                         <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                        <label for="checkbox1"></label>
-                                                    </span>
-                                                </center>
+                                            <td style="text-align:center">
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="checkbox1" name="penyiar[]" value="1">
+                                                    <label for="checkbox1"></label>
+                                                </span>
                                             </td>
-                                            <td>Wan Khafi</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
+                                            <td style="text-align:center"><?= $no++;?></td>
+                                            <td><?= $row->penyiarNama;?></td>
+                                            <td style="text-align:center">
+                                                <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar<?= $row->penyiarId;?>"><span class="fa fa-edit"></span></button>
+                                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar<?= $row->penyiarId;?>"><span class="fa fa-trash-o"></span></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox2" name="options[]" value="1">
-                                                        <label for="checkbox2"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Bess</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox3" name="options[]" value="1">
-                                                        <label for="checkbox3"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Putri</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox4" name="options[]" value="1">
-                                                        <label for="checkbox4"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Rara</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                                        <label for="checkbox5"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Dian
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox6" name="options[]" value="1">
-                                                        <label for="checkbox6"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Rara dan Putri</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox7" name="options[]" value="1">
-                                                        <label for="checkbox7"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Rara dan Dian</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox8" name="options[]" value="1">
-                                                        <label for="checkbox8"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Play Record</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox9" name="options[]" value="1">
-                                                        <label for="checkbox9"></label>
-                                                    </span>
-                                                </center>
-                                            </td>
-                                            <td>Operator</td>
-                                            <td>
-                                                 <center>
-                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
-                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar">Hapus Data</button>
-                                                </center>
-                                            </td>
-                                        </tr>
-                                        
+                                        <!-- START MODAL DELETE PENYIAR -->
+                                        <div class="modal fade" id="hapusPenyiar<?= $row->penyiarId;?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
+                                                        <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Apakah kamu yakin ingin menghapus data penyiar <strong><?= $row->penyiarNama;?></strong>?</p>
+                                                        <p class="text-warning"><small>This action cannot be undone</small></p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <a href="penyiar/delete/<?= $row->penyiarId;?>" type="simpan" class="btn btn-danger">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END MODAL DELETE PENYIAR -->
+                                        <!-- START MODAL EDIT PENYIAR -->
+                                        <div class="modal fade" id="editPenyiar<?= $row->penyiarId;?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Penyiar</h3>
+                                                    </div>
+                                                    <form action="/penyiar/<?= $row->penyiarId;?>/edit" method="post">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label>Nama Penyiar</label>
+                                                                <input type="text" name="penyiar" class="form-control" value="<?= $row->penyiarNama;?>" required>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input value="1" class="form-check-input" type="radio" name="isHuman" id="flexRadioDefault1" <?php if ($row->penyiarStatus == 1) echo "checked"; ?> />
+                                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                                    Satu orang
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input value="0" class="form-check-input" type="radio" name="isHuman" id="flexRadioDefault2" <?php if ($row->penyiarStatus == 0) echo "checked"; ?> />
+                                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                                    Lebih dari satu orang
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END MODAL EDIT PENYIAR -->
+                                        <?php endforeach ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -260,64 +179,6 @@
 </div>
 <!-- END MODAL TAMBAH PENYIAR -->
 
-<!-- START MODAL DELETE PENYIAR -->
-<div class="modal fade" id="hapusPenyiar" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
-                <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
-            </div>
-            <div class="modal-body">
-                <p>Apakah kamu yakin ingin menghapus data penyiar?</p>
-                <p class="text-warning"><small>This action cannot be undone</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL DELETE PENYIAR -->
-
-<!-- START MODAL EDIT PENYIAR -->
-<div class="modal fade" id="editPenyiar" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Penyiar</h3>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label>Nama Penyiar</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Satu orang
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Lebih dari satu orang
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL EDIT PENYIAR -->
-
 <!-- MESSAGE BOX-->
 <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
     <div class="mb-container">
@@ -338,6 +199,28 @@
 </div>
 <!-- END MESSAGE BOX-->
 
+
+<!-- START MODAL DELETE PENYIAR -->
+<div class="modal fade" id="deleteSelectedPenyiar" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
+                <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
+            </div>
+            <div class="modal-body">
+                <p>Apakah kamu yakin ingin menghapus data penyiar?</p>
+                <p class="text-warning"><small>This action cannot be undone</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="#!" type="simpan" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL DELETE PENYIAR -->
+
 <!-- START TIME -->
 var input = $('#manual-operations-input').pickatime({
 autoclose: true,
@@ -350,4 +233,12 @@ e.stopPropagation();
 input.pickatime('show').pickatime('toggleView', 'minutes');
 });
 <!-- END TIME -->
+
+
+function deleteRows(){
+	isTable = document.getElementById('dataTbl');
+	nBoxes = document.getElementsByName('delBox');
+	for (i=nBoxes.length-1; i>=0; i--)
+		{if (nBoxes[i].checked == true){isTable.deleteRow(i+1)}}
+}
 <?= $this->endSection();?>
