@@ -30,17 +30,17 @@
                             <div>                                    
                                 <div class="widget-title">Acara Aktif</div>                                                                        
                                 <div class="widget-subtitle">Jumlah per Minggu</div>
-                                <div class="widget-int"><?= $jumlah_acara_aktif;?></div>
+                                <div class="widget-int"><?= $jumlah_acara_aktif->countAllResults();?></div>
                             </div>
                             <div>                                    
                                 <div class="widget-title">Acara Segera</div>
                                 <div class="widget-subtitle">Jumlah per Minggu</div>
-                                <div class="widget-int"><?= $jumlah_acara_segera;?></div>
+                                <div class="widget-int"><?= $jumlah_acara_segera->countAllResults();?></div>
                             </div>
                             <div>                                    
                                 <div class="widget-title">Acara Non aktif</div>
                                 <div class="widget-subtitle">Jumlah per Minggu</div>
-                                <div class="widget-int"><?= $jumlah_acara_arsip;?></div>
+                                <div class="widget-int"><?= $jumlah_acara_arsip->countAllResults();?></div>
                             </div>
                         </div>                            
                         <div class="widget-controls">                                
@@ -58,7 +58,7 @@
                             <span class="fa fa-users"></span>
                         </div>                             
                         <div class="widget-data">
-                            <div class="widget-int num-count"><?= $jumlah_penyiar;?></div>
+                            <div class="widget-int num-count"><?= $jumlah_penyiar->countAllResults();?></div>
                             <div class="widget-title">Penyiar</div>
                             <div class="widget-subtitle">di UMSU FM</div>
                         </div>      
@@ -77,7 +77,7 @@
                             <span class="fa fa-inbox"></span>
                         </div>
                         <div class="widget-data">
-                            <div class="widget-int num-count"><?= $jumlah_endors;?></div>
+                            <div class="widget-int num-count"><?= $jumlah_endors->countAllResults();?></div>
                             <div class="widget-title">Endorsement</div>
                             <div class="widget-subtitle">di UMSU FM</div>
                         </div>
