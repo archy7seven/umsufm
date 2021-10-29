@@ -38,6 +38,8 @@ $routes->post('/operator/register', 'Operator::register');
 $routes->get('/home', 'Home::index');
 $routes->get('/logout', 'Operator::logout');
 $routes->get('/penyiar', 'Penyiar::index');
+$routes->delete('/penyiar/(:num)', 'Penyiar::delete/$1');
+$routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');
 $routes->get('/acara', 'Acara::index');
 $routes->get('/endorsement', 'Endorsement::index');
 
