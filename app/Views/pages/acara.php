@@ -120,7 +120,7 @@
                     <div class="form-check">
                     <label for="pilihPenyiar">Nama Penyiar</label>
                         <select class="form-control" id="pilihPenyiar">
-                            <option>------||------</option>
+                            <option></option>
                             <option>Wan Khafi</option>
                             <option>Bess</option>
                             <option>Rara</option>
@@ -189,12 +189,6 @@
 </div>
 <!-- END MODAL TAMBAH ACARA -->
 
-<script type="text/javascript">
-var input = $('#manual-operations-input').pickatime({
-autoclose: true,
-'default': 'now'
-});
-</script>
 <!-- START MODAL DELETE PENYIAR -->
 <div class="modal fade" id="hapusAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">

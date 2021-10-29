@@ -221,24 +221,4 @@
 </div>
 <!-- END MODAL DELETE PENYIAR -->
 
-<!-- START TIME -->
-var input = $('#manual-operations-input').pickatime({
-autoclose: true,
-'default': 'now'
-});
-
-// Manually toggle to the minutes view
-$('#check-minutes').click(function(e){
-e.stopPropagation();
-input.pickatime('show').pickatime('toggleView', 'minutes');
-});
-<!-- END TIME -->
-
-
-function deleteRows(){
-	isTable = document.getElementById('dataTbl');
-	nBoxes = document.getElementsByName('delBox');
-	for (i=nBoxes.length-1; i>=0; i--)
-		{if (nBoxes[i].checked == true){isTable.deleteRow(i+1)}}
-}
 <?= $this->endSection();?>
