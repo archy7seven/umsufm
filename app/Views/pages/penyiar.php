@@ -39,7 +39,7 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th width=2%>
+                                            <th width=5%>
                                                 <center>
                                                     <span class="custom-checkbox">
                                                         <input type="checkbox" id="selectAll">
@@ -47,12 +47,11 @@
                                                     </span>
                                                 </center>
                                             </th>
-                                            <th width="8%">ID Penyiar</th>
                                             <th width="75%">Nama Penyiar</th>
-                                            <th width="15%"><center>Action</center></th>
+                                            <th width="20%"><center>Action</center></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody style=>
                                         <tr>
                                             <td>
                                                 <center>
@@ -62,7 +61,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>1</td>
                                             <td>Wan Khafi</td>
                                             <td>
                                                  <center>
@@ -80,7 +78,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>2</td>
                                             <td>Bess</td>
                                             <td>
                                                  <center>
@@ -98,7 +95,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>3</td>
                                             <td>Putri</td>
                                             <td>
                                                  <center>
@@ -116,7 +112,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>4</td>
                                             <td>Rara</td>
                                             <td>
                                                  <center>
@@ -134,8 +129,7 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>5</td>
-                                            <td>Dian/td>
+                                            <td>Dian
                                             <td>
                                                  <center>
                                                     <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar">Edit Data</button>
@@ -152,7 +146,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>6</td>
                                             <td>Rara dan Putri</td>
                                             <td>
                                                  <center>
@@ -170,7 +163,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>7</td>
                                             <td>Rara dan Dian</td>
                                             <td>
                                                  <center>
@@ -188,7 +180,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>88</td>
                                             <td>Play Record</td>
                                             <td>
                                                  <center>
@@ -206,7 +197,6 @@
                                                     </span>
                                                 </center>
                                             </td>
-                                            <td>99</td>
                                             <td>Operator</td>
                                             <td>
                                                  <center>
@@ -247,18 +237,18 @@
                         <label>Nama Penyiar</label>
                         <input type="text" class="form-control" required>
                     </div>
-                    <span class="form-check">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Satu orang
                         </label>
-                    </span>
-                    <span class="form-check">
+                    </div>
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Lebih dari satu orang
                         </label>
-                    </span>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -275,7 +265,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
                 <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
             </div>
             <div class="modal-body">
@@ -305,18 +295,18 @@
                         <label>Nama Penyiar</label>
                         <input type="text" class="form-control" required>
                     </div>
-                    <span class="form-check">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Satu orang
                         </label>
-                    </span>
-                    <span class="form-check">
+                    </div>
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Lebih dari satu orang
                         </label>
-                    </span>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -347,4 +337,17 @@
     </div>
 </div>
 <!-- END MESSAGE BOX-->
+
+<!-- START TIME -->
+var input = $('#manual-operations-input').pickatime({
+autoclose: true,
+'default': 'now'
+});
+
+// Manually toggle to the minutes view
+$('#check-minutes').click(function(e){
+e.stopPropagation();
+input.pickatime('show').pickatime('toggleView', 'minutes');
+});
+<!-- END TIME -->
 <?= $this->endSection();?>
