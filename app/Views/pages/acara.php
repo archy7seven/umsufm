@@ -39,7 +39,7 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th width=4% style="text-align:center">
+                                            <th  style="text-align:center">
                                                 <span class="custom-checkbox">
                                                     <input type="checkbox" id="selectAll">
                                                     <label for="selectAll"></label>
