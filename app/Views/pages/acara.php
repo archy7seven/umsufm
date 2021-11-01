@@ -39,11 +39,7 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-<<<<<<< HEAD
-                                            <th  style="text-align:center">
-=======
                                             <th style="text-align:center">
->>>>>>> 51f26df23290c02c68a9dc065c41d3ba4f3528d4
                                                 <span class="custom-checkbox">
                                                     <input type="checkbox" id="selectAll">
                                                     <label for="selectAll"></label>
@@ -151,7 +147,7 @@
                         <label class="col-md-3 control-label">Nama Penyiar</label>
                         <div class="col-md-9">
                             <select class="form-control select">
-                                <option></option>
+                                <option value="88">Please Select One</option>
                                 <option>Wan Khafi</option>
                                 <option>Bess Nugraha</option>
                                 <option>Putri</option>
@@ -209,7 +205,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
+                        <label class="col-md-3 control-label">Status Acara</label>
                         <div class="col-md-3">
                             <label class="check"><input type="radio" class="iradio" name="radio" /> Tayang</label>
                         </div>
@@ -218,9 +214,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
+                        <label class="col-md-3 control-label">Arsip Acara</label>
                         <div class="col-md-9">
-                            <label class="check"><input type="checkbox" class="icheckbox" /> Arsip Acara</label>
+                            <label class="check"><input type="checkbox" class="icheckbox" /></label>
                         </div>
                     </div>
                 </form>
@@ -235,7 +231,7 @@
 <!-- END MODAL TAMBAH ACARA -->
 
 <!-- START MODAL EDIT ACARA -->
-<div class="modal fade" id="editAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+<div class="modal fade" id="editAcara" tabindex="-1" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -260,7 +256,7 @@
                         <label class="col-md-3 control-label">Nama Penyiar</label>
                         <div class="col-md-9">
                             <select class="form-control select">
-                                <option></option>
+                                <option value="88">Please Select One</option>
                                 <option>Wan Khafi</option>
                                 <option>Bess Nugraha</option>
                                 <option>Putri</option>
@@ -318,7 +314,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
+                        <label class="col-md-3 control-label">Status Acara</label>
                         <div class="col-md-3">
                             <label class="check"><input type="radio" class="iradio" name="radio" /> Tayang</label>
                         </div>
@@ -327,9 +323,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
+                        <label class="col-md-3 control-label">Arsip Acara</label>
                         <div class="col-md-9">
-                            <label class="check"><input type="checkbox" class="icheckbox" /> Arsip Acara</label>
+                            <label class="check"><input type="checkbox" class="icheckbox" /></label>
                         </div>
                     </div>
                 </form>

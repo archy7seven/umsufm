@@ -39,7 +39,7 @@
             <a href="/endorsement"><span class="fa fa-inbox"></span> <span class="xn-text">Endorsement</span></a>                        
         </li>  
         <li>
-            <a href="#!"><span class="fa fa-cogs"></span> <span class="xn-text">Setting</span></a>                        
+            <a href="/setting"><span class="fa fa-cogs"></span> <span class="xn-text">Setting</span></a>                        
         </li>  
         
     </ul>

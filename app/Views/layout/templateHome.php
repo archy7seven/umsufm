@@ -52,10 +52,8 @@
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="theme/js/settings.js"></script>
-        
         <script type="text/javascript" src="theme/js/plugins.js"></script>        
         <script type="text/javascript" src="theme/js/actions.js"></script>
-        
         <script type="text/javascript" src="theme/js/demo_dashboard.js"></script>
         <!-- END TEMPLATE -->
         <!-- END TIME -->
