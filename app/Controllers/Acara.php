@@ -16,7 +16,6 @@ class Acara extends BaseController
     }
     public function index()
     {
-
         $data = [
             'title' => "Acara",
             'appName' => "UMSU FM",

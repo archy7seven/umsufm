@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class SettingModel extends Model
 {
-    protected $table = 'condig';
+    protected $table = 'config';
     protected $primaryKey = 'configId';
-    protected $allowedFields = ['configNama,configValue'];
+    protected $allowedFields = ['configNama', 'configValue'];
     protected $returnType = 'object';
 }

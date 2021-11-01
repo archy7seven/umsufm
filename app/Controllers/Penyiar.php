@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Models\PenyiarModel;
 
 
-
-
 class Penyiar extends BaseController
 {
     protected $penyiarModel;
