@@ -156,10 +156,10 @@
                                                                             <div class="col-sm-9">
                                                                                 <div class="btn-group" data-toggle="buttons">
                                                                                     <label class="btn btn-default <?= $row->acaraStatus == 1 ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="status" value="Senin" <?= $row->acaraStatus == 1 ? "checked" : ""; ?> /> Tayang
+                                                                                        <input type="radio" name="status" value="1" <?= $row->acaraStatus == 1 ? "checked" : ""; ?> /> Tayang
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == 0 ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="status" value="Selasa" checked <?= $row->acaraStatus == 0 ? "checked" : ""; ?> /> Segera
+                                                                                        <input type="radio" name="status" value="0" <?= $row->acaraStatus == 0 ? "checked" : ""; ?> /> Segera
                                                                                     </label>
                                                                                 </div>
                                                                             </div>
@@ -312,11 +312,15 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
-                        <div class="col-md-3">
-                            <label class="check"><input type="radio" class="iradio" name="radio" /> Tayang</label>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="check"><input type="radio" class="iradio" name="radio" /> Segera Tayang</label>
+                        <div class="col-sm-9">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default">
+                                    <input type="radio" name="status" value="1" /> Tayang
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="status" value="0" /> Segera
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
