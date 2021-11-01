@@ -311,13 +311,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-<<<<<<< HEAD
-                        <label class="col-md-3 control-label">Status Acara</label>
-                        <div class="col-md-9">
-                            <label class="check"><input type="radio" class="iradio" name="radio" /> Tayang</label>
-                            <label class="check"><input type="radio" class="iradio" name="radio" /> Segera Tayang</label>
-                        </div> 
-=======
                         <label class="col-md-3 control-label"></label>
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
@@ -329,7 +322,6 @@
                                 </label>
                             </div>
                         </div>
->>>>>>> 63baaf37e4c5484307733c6e155c1ca77c2a11e4
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
