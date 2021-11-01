@@ -73,7 +73,7 @@
                                                 <td><?= $row->acaraJamMulai; ?></td>
                                                 <td><?= $row->acaraJamAkhir; ?></td>
                                                 <td><?= $row->acaraStatus == 1 ? "Tayang" : "Segera Tayang"; ?></td>
-                                                <td><?= $row->acaraArsip == 1 ? "Tidak Diarsip" : "Disrsip"; ?>
+                                                <td><?= $row->acaraArsip == 1 ? "Tidak Diarsip" : "Diarsip"; ?>
                                                     <!-- START MODAL EDIT ACARA -->
                                                     <div class="modal fade" id="editAcara<?= $row->acaraId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
@@ -87,7 +87,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Flayer Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
+                                                                                <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
@@ -152,7 +152,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label class="col-md-3 control-label"></label>
+                                                                            <label class="col-md-3 control-label">Status Acara</label>
                                                                             <div class="col-sm-9">
                                                                                 <div class="btn-group" data-toggle="buttons">
                                                                                     <label class="btn btn-default <?= $row->acaraStatus == 1 ? "active" : ""; ?>">
@@ -165,9 +165,9 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label class="col-md-3 control-label"></label>
+                                                                            <label class="col-md-3 control-label">Arsip Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <label class="check"><input type="checkbox" class="icheckbox" <?= $row->acaraArsip == 1 ? "" : "checked"; ?> /> Arsip Acara</label>
+                                                                                <label class="check"><input type="checkbox" class="icheckbox" <?= $row->acaraArsip == 1 ? "" : "checked"; ?> /></label>
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -246,7 +246,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer Acara</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..."/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -311,7 +311,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
+                        <label class="col-md-3 control-label">Status Acara</label>
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">

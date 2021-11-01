@@ -52,6 +52,7 @@
     <script type="text/javascript" src="theme/js/plugins/dropzone/dropzone.min.js"></script>
     <script type='text/javascript' src='theme/js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="theme/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="theme/js/plugins/fileinput/fileinput.min.js"></script>
     <script>
         $(function(){
                 $("#file-simple").fileinput({
