@@ -115,7 +115,7 @@
                                                                                         <input type="radio" name="hari" value="Senin" <?= $row->acaraHari == "Senin" ? "checked" : ""; ?> /> Sen
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Selasa" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Selasa" checked <?= $row->acaraHari == "Selasa" ? "checked" : ""; ?> /> Sel
+                                                                                        <input type="radio" name="hari" value="Selasa" <?= $row->acaraHari == "Selasa" ? "checked" : ""; ?> /> Sel
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Rabu" ? "active" : ""; ?>">
                                                                                         <input type="radio" name="hari" value="Rabu" <?= $row->acaraHari == "Rabu" ? "checked" : ""; ?> /> Rab
@@ -267,32 +267,34 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="row">
-                            <label class="col-md-3 control-label">Jadwal Acara</label>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Senin</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Selasa</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Rabu</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Kamis</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Jum'at</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Sabtu</label>
+                        <label class="col-md-3 control-label">Jadwal Acara</label>
+                        <div class="col-sm-9">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default">
+                                    <input type="radio" name="hari" value="Senin" /> Sen
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="hari" value="Selasa" /> Sel
+                                </label>
+                                <label class="btn btn-default ">
+                                    <input type="radio" name="hari" value="Rabu" /> Rab
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="hari" value="Kamis" /> Kam
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="hari" value="Jumat" /> Jum
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="hari" value="Sabtu" /> Sab
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="hari" value="Minggu" /> Min
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" id="myModalWithDatePicker">
+                    <div class="form-group">
                         <label class="col-md-3 control-label">Jam Mulai</label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
