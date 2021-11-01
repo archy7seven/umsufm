@@ -158,7 +158,7 @@
                                                                                     <label class="btn btn-default <?= $row->acaraStatus == 1 ? "active" : ""; ?>">
                                                                                         <input type="radio" name="status" value="1" <?= $row->acaraStatus == 1 ? "checked" : ""; ?> /> Tayang
                                                                                     </label>
-                                                                                    <label class="btn btn-default <?= $row->acaraHari == 0 ? "active" : ""; ?>">
+                                                                                    <label class="btn btn-default <?= $row->acaraStatus == 0 ? "active" : ""; ?>">
                                                                                         <input type="radio" name="status" value="0" <?= $row->acaraStatus == 0 ? "checked" : ""; ?> /> Segera
                                                                                     </label>
                                                                                 </div>
