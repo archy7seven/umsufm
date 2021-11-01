@@ -260,21 +260,9 @@
                         <div class="col-md-9">
                             <select class="form-control select">
                                 <option value="88">Please Select One</option>
-<<<<<<< HEAD
-                                <option>Wan Khafi</option>
-                                <option>Bess Nugraha</option>
-                                <option>Putri</option>
-                                <option>Rara</option>
-                                <option>Dian</option>
-                                <option>Rara dan Putri</option>
-                                <option>Rara dan Dian</option>
-                                <option>Play Record</option>
-                                <option>Operator</option>
-=======
                                 <?php foreach ($penyiar->findAll() as $row) : ?>
                                     <option value="<?= $row->penyiarId; ?>"><?= $row->penyiarNama; ?></option>
                                 <?php endforeach; ?>
->>>>>>> 0fc686a01cafe4ac4c82c04b87c319412a5065d5
                             </select>
                         </div>
                     </div>
@@ -344,118 +332,6 @@
 </div>
 <!-- END MODAL TAMBAH ACARA -->
 
-<<<<<<< HEAD
-<!-- START MODAL EDIT ACARA -->
-<div class="modal fade" id="editAcara" tabindex="-1" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Acara</h3>
-            </div>
-            <div class="modal-body">
-                <form role="form" class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Flayer Acara</label>
-                        <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Nama Acara</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" required />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Nama Penyiar</label>
-                        <div class="col-md-9">
-                            <select class="form-control select">
-                                <option value="88">Please Select One</option>
-                                <option>Wan Khafi</option>
-                                <option>Bess Nugraha</option>
-                                <option>Putri</option>
-                                <option>Rara</option>
-                                <option>Dian</option>
-                                <option>Rara dan Putri</option>
-                                <option>Rara dan Dian</option>
-                                <option>Play Record</option>
-                                <option>Operator</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <label class="col-md-3 control-label">Jadwal Acara</label>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Senin</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Selasa</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Rabu</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Kamis</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Jum'at</label>
-                            </div>
-                            <div class="col-md-2 offset-1">
-                                <label class="check"><input type="radio" class="iradio" name="iradio" /> Sabtu</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Jam Mulai</label>
-                        <div class="col-md-9">
-                            <div class="input-group bootstrap-timepicker">
-                                <input type="text" class="form-control timepicker24" />
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Jam Akhir</label>
-                        <div class="col-md-9">
-                            <div class="input-group bootstrap-timepicker">
-                                <input type="text" class="form-control timepicker24" />
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Status Acara</label>
-                        <div class="col-md-3">
-                            <label class="check"><input type="radio" class="iradio" name="radio" /> Tayang</label>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="check"><input type="radio" class="iradio" name="radio" /> Segera Tayang</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Arsip Acara</label>
-                        <div class="col-md-9">
-                            <label class="check"><input type="checkbox" class="icheckbox" /></label>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL EDIT ACARA -->
-=======
-
->>>>>>> 0fc686a01cafe4ac4c82c04b87c319412a5065d5
 
 <!-- START MODAL DELETE SELECTED ACARA -->
 <div class="modal fade" id="deleteSelectedAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
