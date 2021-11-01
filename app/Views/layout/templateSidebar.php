@@ -8,11 +8,11 @@
         </li>
         <li class="xn-profile">
             <a href="#!" class="profile-mini">
-                <img src="theme/assets/images/users/no-image.jpg" alt="John Doe"/>
+                <img src="theme/assets/images/users/no-image.jpg" alt="John Doe" />
             </a>
             <div class="profile">
                 <div class="profile-image">
-                    <img src="theme/assets/images/users/no-image.jpg" alt="John Doe"/>
+                    <img src="theme/assets/images/users/no-image.jpg" alt="John Doe" />
                 </div>
                 <div class="profile-data">
                     <div class="profile-data-name"><?= session()->get('name'); ?></div>
@@ -22,26 +22,26 @@
                     <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
                     <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                 </div>
-            </div>                                                                        
+            </div>
         </li>
         <li class="xn-title">Main Menu</li>
         <li>
-            <a href="/home"><span class="fa fa-globe"></span> <span class="xn-text">Dashboard</span></a>                        
-        </li>                    
+            <a href="/home"><span class="fa fa-globe"></span> <span class="xn-text">Dashboard</span></a>
+        </li>
         <li class="xn-title">Control Panel</li>
         <li>
-            <a href="/penyiar"><span class="fa fa-users"></span> <span class="xn-text">Penyiar</span></a>                        
+            <a href="/penyiar"><span class="fa fa-users"></span> <span class="xn-text">Penyiar</span></a>
         </li>
         <li>
-            <a href="/acara"><span class="fa fa-desktop"></span> <span class="xn-text">Acara</span></a>                        
-        </li> 
+            <a href="/acara"><span class="fa fa-desktop"></span> <span class="xn-text">Acara</span></a>
+        </li>
         <li>
-            <a href="/endorsement"><span class="fa fa-inbox"></span> <span class="xn-text">Endorsement</span></a>                        
-        </li>  
+            <a href="/endorsement"><span class="fa fa-inbox"></span> <span class="xn-text">Endorsement</span></a>
+        </li>
         <li>
-            <a href="#!"><span class="fa fa-cogs"></span> <span class="xn-text">Setting</span></a>                        
-        </li>  
-        
+            <a href="/setting"><span class="fa fa-cogs"></span> <span class="xn-text">Setting</span></a>
+        </li>
+
     </ul>
     <!-- END X-NAVIGATION -->
 </div>

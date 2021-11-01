@@ -65,8 +65,8 @@
                                                 </td>
                                                 <td style="text-align:center"><?= $no++; ?></td>
                                                 <td><?= $row->endorsementNama; ?></td>
-                                                <td><?= gmdate("Y-m-d h:i:s", $row->endorsementTanggalAwal); ?></td>
-                                                <td><?= gmdate("Y-m-d h:i:s", $row->endorsementTanggalAkhir); ?></td>
+                                                <td><?= gmdate("d-m-Y h:i:s", $row->endorsementTanggalAwal); ?></td>
+                                                <td><?= gmdate("d-m-Y h:i:s", $row->endorsementTanggalAkhir); ?></td>
                                                 <td><?= $row->endorsementDeskripsi; ?></td>
                                                 <td style="text-align:center">
                                                     <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEndorsement"><span class="fa fa-edit"></span></button>

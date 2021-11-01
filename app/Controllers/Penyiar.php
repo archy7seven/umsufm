@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\PenyiarModel;
 
 
@@ -8,23 +9,22 @@ use App\Models\PenyiarModel;
 
 class Penyiar extends BaseController
 {
-
     protected $penyiarModel;
     public function __construct()
     {
         $this->penyiarModel = new PenyiarModel();
     }
-    
-    
+
+
     public function index()
     {
         $data = [
-            'title' => "Penyiar", 
+            'title' => "Penyiar",
             'appName' => "UMSU FM",
-            'breadcrumb' => ['Home','Penyiar'],
-            'penyiar'=> $this->penyiarModel->findAll(),
+            'breadcrumb' => ['Home', 'Penyiar'],
+            'penyiar' => $this->penyiarModel->findAll(),
         ];
-        return view('pages/penyiar',$data);
+        return view('pages/penyiar', $data);
     }
 
     public function delete($id)
@@ -40,7 +40,7 @@ class Penyiar extends BaseController
             "penyiarNama" => $this->request->getPost('penyiar'),
             "penyiarStatus" => $this->request->getPost('isHuman')
         );
-        
+
         $penyiar = $this->penyiarModel->where('penyiarId', $id);
         $validation =  \Config\Services::validation();
         $validation->setRules([
@@ -48,8 +48,8 @@ class Penyiar extends BaseController
             'isHuman' => 'required'
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
-        
-        if($isDataValid && $penyiar->countAllResults()>0){
+
+        if ($isDataValid && $penyiar->countAllResults() > 0) {
             $this->penyiarModel->update($id, $data);
         }
         return redirect()->to('penyiar');
