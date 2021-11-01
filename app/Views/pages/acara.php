@@ -132,8 +132,8 @@
             <div class="modal-body">
                 <form role="form" class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Flayer Acara</label>
-                        <div class="col-md-9">
+                        <label class="col-md-4 control-label">Flayer Acara</label>
+                        <div class="col-md-8">
                             <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
                         </div>
                     </div>
@@ -206,12 +206,10 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Status Acara</label>
-                        <div class="col-md-3">
+                        <div class="col-md-9">
                             <label class="check"><input type="radio" class="iradio" name="radio" /> Tayang</label>
-                        </div>
-                        <div class="col-md-3">
                             <label class="check"><input type="radio" class="iradio" name="radio" /> Segera Tayang</label>
-                        </div>
+                        </div> 
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
