@@ -28,7 +28,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" value="Some text value..."/>
+                                <input type="text" class="form-control" value="<?= $setting->findAll()[0]->configValue; ?>" />
                             </div>
                         </div>
                         <div class="panel-footer">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" value="Some text value..."/>
+                                <input type="text" class="form-control" value="<?= $setting->findAll()[2]->configValue; ?>" />
                             </div>
                         </div>
                         <div class="panel-footer">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" value="Some text value..."/>
+                                <input type="text" class="form-control" value="<?= $setting->findAll()[3]->configValue; ?>" />
                             </div>
                         </div>
                         <div class="panel-footer">
