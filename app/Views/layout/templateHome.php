@@ -43,7 +43,11 @@
         <script type='text/javascript' src='theme/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
         <script type='text/javascript' src='theme/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>                
         <script type='text/javascript' src='theme/js/plugins/bootstrap/bootstrap-datepicker.js'></script>  
-        <script type="text/javascript" src="theme/js/plugins/owl/owl.carousel.min.js"></script>                         
+        <script type="text/javascript" src="theme/js/plugins/owl/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-file-input.js"></script>     
+        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-select.js"></script> 
+        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+        <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-datepicker.js"></script>                   
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->
@@ -54,18 +58,6 @@
         
         <script type="text/javascript" src="theme/js/demo_dashboard.js"></script>
         <!-- END TEMPLATE -->
-
-        <!-- START TIME -->
-                var input = $('#manual-operations-input').pickatime({
-        autoclose: true,
-        'default': 'now'
-        });
-
-        // Manually toggle to the minutes view
-        $('#check-minutes').click(function(e){
-        e.stopPropagation();
-        input.pickatime('show').pickatime('toggleView', 'minutes');
-        });
         <!-- END TIME -->
     <!-- END SCRIPTS -->         
     </body>
