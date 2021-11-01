@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Submit</button>
+                            <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Submit</button>
+                            <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
@@ -84,8 +84,7 @@
                             </form>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-default">Back</button>
-                            <button class="btn btn-primary pull-right">Submit</button>
+                            <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
@@ -96,12 +95,14 @@
                             <h3 class="panel-title">Logo Ruang Dengar</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
-                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                            <p>Click or drag some file below</p>
+                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
+                                <div class="dz-default dz-message">
+                                </div>
+                            </form>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-default">Back</button>
-                            <button class="btn btn-primary pull-right">Submit</button>
+                            <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
@@ -112,12 +113,14 @@
                             <h3 class="panel-title">Logo Homescreen</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
-                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                            <p>Click or drag some file below</p>
+                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
+                                <div class="dz-default dz-message">
+                                </div>
+                            </form>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-default">Back</button>
-                            <button class="btn btn-primary pull-right">Submit</button>
+                            <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
@@ -128,11 +131,13 @@
                             <h3 class="panel-title">Flayer Default Siaran</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
-                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                            <p>Click or drag some file below</p>
+                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
+                                <div class="dz-default dz-message">
+                                </div>
+                            </form>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-default">Back</button>
                             <button class="btn btn-primary pull-right">Submit</button>
                         </div>
                     </div>
