@@ -1,23 +1,23 @@
-<?= $this->extend('layout/templateHome');?>
+<?= $this->extend('layout/templateHome'); ?>
 
-<?= $this->section('content');?>
+<?= $this->section('content'); ?>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
-    
-    <?= $this->include('layout/templateSidebar');?>
-    
+
+    <?= $this->include('layout/templateSidebar'); ?>
+
     <!-- PAGE CONTENT -->
     <div class="page-content">
-        
-        <?= $this->include('layout/templateHead');?>                    
+
+        <?= $this->include('layout/templateHead'); ?>
 
         <!-- START BREADCRUMB -->
         <ul class="breadcrumb">
-            <li><a href="/home"><?= $breadcrumb[0]; ?></a></li>                    
+            <li><a href="/home"><?= $breadcrumb[0]; ?></a></li>
             <li class="active"><?= $breadcrumb[1]; ?></li>
         </ul>
-        <!-- END BREADCRUMB -->                       
-        
+        <!-- END BREADCRUMB -->
+
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
             <div class="row">
@@ -31,7 +31,7 @@
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
                                 <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahEndorsement">Tambah Data</button>
-                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedEndorsement">Hapus Data</button>                                        
+                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedEndorsement">Hapus Data</button>
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -39,45 +39,50 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th width=5% style="text-align:center">
+                                            <th style="text-align:center">
                                                 <span class="custom-checkbox">
                                                     <input type="checkbox" id="selectAll">
                                                     <label for="selectAll"></label>
                                                 </span>
                                             </th>
-                                            <th width="5%" style="text-align:center">No</th>
-                                            <th width="20%">Nama Endorsement</th>
-                                            <th width="10%">Tanggal Awal</th>
-                                            <th width="10%">Tanggal Akhir</th>
-                                            <th width="35%">Deskripsi</th>  
-                                            <th width="15%" style="text-align:center">Action</th>
+                                            <th style="text-align:center">No</th>
+                                            <th>Nama Endorsement</th>
+                                            <th>Tanggal Awal</th>
+                                            <th>Tanggal Akhir</th>
+                                            <th width="45%">Deskripsi</th>
+                                            <th style="text-align:center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td style="text-align:center">
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                    <label for="checkbox1"></label>
-                                                </span>
-                                            </td>
-                                            <td style="text-align:center">1</td>
-                                            <td>Sample Endorsement</td>
-                                            <td>07-07-2021</td>
-                                            <td>07-12-2021</td>
-                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur debitis nisi repudiandae sint voluptate, perferendis delectus aliquam ea, distinctio laborum repellat nobis quaerat eos dolores odit tenetur ratione, ipsa dolor!</td>
-                                            <td style="text-align:center">
-                                                <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEndorsement"><span class="fa fa-edit"></span></button>
-                                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusEndorsement"><span class="fa fa-trash-o"></span></button>
-                                                <button Type="button" class="btn btn-default"><span class="fa fa-eye"></span></button>
-                                            </td>
-                                        </tr>
+                                        <?php $no = 1;
+                                        foreach ($endorse->findAll() as $row) : ?>
+                                            <tr>
+                                                <td style="text-align:center">
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                        <label for="checkbox1"></label>
+                                                    </span>
+                                                </td>
+                                                <td style="text-align:center"><?= $no++; ?></td>
+                                                <td><?= $row->endorsementNama; ?></td>
+                                                <td><?= gmdate("Y-m-d h:i:s", $row->endorsementTanggalAwal); ?></td>
+                                                <td><?= gmdate("Y-m-d h:i:s", $row->endorsementTanggalAkhir); ?></td>
+                                                <td><?= $row->endorsementDeskripsi; ?></td>
+                                                <td style="text-align:center">
+                                                    <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEndorsement"><span class="fa fa-edit"></span></button>
+                                                    <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusEndorsement"><span class="fa fa-trash-o"></span></button>
+                                                    <button Type="button" class="btn btn-default"><span class="fa fa-eye"></span></button>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                         <!-- START MODAL DELETE ENDORSEMENT -->
                                         <div class="modal fade" id="hapusEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
+                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close">
+                                                            <div aria-hidden="true">&times;</div>
+                                                        </button>
                                                         <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Endorsement</h3>
                                                     </div>
                                                     <div class="modal-body">
@@ -95,17 +100,17 @@
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!-- END PROJECTS BLOCK -->
-                    
+
                 </div>
             </div>
-            
+
         </div>
-        <!-- END PAGE CONTENT WRAPPER -->                                
-    </div>            
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
     <!-- END PAGE CONTENT -->
 </div>
 <!-- END PAGE CONTAINER -->
@@ -115,7 +120,9 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
+                <button type=button class="close" data-dismiss="modal" aria-label="Close">
+                    <div aria-hidden="true">&times;</div>
+                </button>
                 <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Endorsement</h3>
             </div>
             <div class="modal-body">
@@ -144,20 +151,20 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse"/>    
+                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" require/>
+                            <input type="text" class="form-control" placeholder="Fill this field please" require />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tanggal Awal</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021"/>
+                                <input type="text" class="form-control" value="17-08-2021" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -166,7 +173,7 @@
                         <label class="col-md-3 control-label">Tanggal Akhir</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021"/>
+                                <input type="text" class="form-control" value="17-08-2021" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -176,7 +183,7 @@
                         <div class="col-md-9">
                             <textarea class="form-control" require></textarea>
                         </div>
-                    </div>  
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -201,20 +208,20 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse"/>    
+                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" require/>
+                            <input type="text" class="form-control" placeholder="Fill this field please" require />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tanggal Awal</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021"/>
+                                <input type="text" class="form-control" value="17-08-2021" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -223,7 +230,7 @@
                         <label class="col-md-3 control-label">Tanggal Akhir</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021"/>
+                                <input type="text" class="form-control" value="17-08-2021" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -233,7 +240,7 @@
                         <div class="col-md-9">
                             <textarea class="form-control" require></textarea>
                         </div>
-                    </div>  
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -251,7 +258,7 @@
         <div class="mb-middle">
             <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
             <div class="mb-content">
-                <p>Are you sure you want to log out?</p>                    
+                <p>Are you sure you want to log out?</p>
                 <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
             </div>
             <div class="mb-footer">
@@ -264,4 +271,4 @@
     </div>
 </div>
 <!-- END MESSAGE BOX-->
-<?= $this->endSection();?>
+<?= $this->endSection(); ?>
