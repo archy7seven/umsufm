@@ -21,14 +21,120 @@
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
             <div class="row">
-                <div class="col-md-12">
-                    <!-- START PROJECTS BLOCK -->
+                <div class="col-md-4">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stream Address</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- END PROJECTS BLOCK -->
+                <div class="col-md-4">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Live Chat Address</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-md-4">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Whatsapp Address</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Logo Aplikasi</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Logo Ruang Dengar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Logo Homescreen</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="panel panel-colorful">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Flayer Default Siaran</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Fusce imperdiet neque at lectus faucibus, eu dapibus nibh imperdiet. Cras porttitor magna ut justo iaculis feugiat. Aliquam semper in dolor nec mattis.</p>
+                            <p>Duis varius arcu in quam laoreet scelerisque. Aenean porta mi et massa congue, sit amet eleifend dui dignissim. Ut venenatis, tortor ac egestas fringilla, nisi mauris rhoncus nibh, facilisis lacinia mi ligula a est.</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
