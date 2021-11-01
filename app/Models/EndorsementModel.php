@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class EndorsementModel extends Model
 {
-    protected $table = 'endorsment';
+    protected $table = 'endorsement';
     protected $primaryKey = 'endorsmentId';
-    protected $allowedFields = ['endorsmentFlayer, endorsmentNama, endorsmentHari, endorsmentTanggalAwal, endorsmentTanggalAkhir, endorsmentdeskripsi'];
+    protected $allowedFields = ['endorsementFlayer, endorsementNama, endorsementHari, endorsementTanggalAwal, endorsementTanggalAkhir, endorsementdeskripsi'];
     protected $returnType = 'object';
-}   
+}
