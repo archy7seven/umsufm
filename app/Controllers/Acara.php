@@ -25,4 +25,9 @@ class Acara extends BaseController
         ];
         return view('pages/acara', $data);
     }
+
+    public function add()
+    {
+        dd($this->request->getPost());
+    }
 }
