@@ -102,7 +102,7 @@
                                                                                 <select class="form-control select">
                                                                                     <option value="88">Please Select One</option>
                                                                                     <?php foreach ($penyiar->findAll() as $mc) : ?>
-                                                                                        <option value="<?= $mc->penyiarId; ?>" <?= $mc->penyiarId == 99 ? "selected" : ""; ?>><?= $mc->penyiarNama; ?></option>
+                                                                                        <option value="<?= $mc->penyiarId; ?>" <?= $mc->penyiarId == $row->acaraPenyiar ? "selected" : ""; ?>><?= $mc->penyiarNama; ?></option>
                                                                                     <?php endforeach; ?>
                                                                                 </select>
                                                                             </div>
