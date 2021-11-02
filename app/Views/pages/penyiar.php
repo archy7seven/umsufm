@@ -54,51 +54,6 @@
                                         <?php
                                         $no = 1;
                                         foreach ($penyiar as $row) : ?>
-<<<<<<< HEAD
-                                        <tr>
-                                            <td style="text-align:center">
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="checkbox1" name="penyiar[]" value="1">
-                                                    <label for="checkbox1"></label>
-                                                </span>
-                                            </td>
-                                            <td style="text-align:center"><?= $no++;?></td>
-                                            <td><?= $row->penyiarNama;?></td>
-                                            <td style="text-align:center">
-                                                <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar<?= $row->penyiarId;?>"><span class="fa fa-edit"></span></button>
-                                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar<?= $row->penyiarId;?>"><span class="fa fa-trash-o"></span></button>
-                                            </td>
-                                        </tr>
-                                        <!-- START MODAL DELETE PENYIAR -->
-                                        <div class="modal fade" id="hapusPenyiar<?= $row->penyiarId;?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><div aria-hidden="true">&times;</div></button>
-                                                        <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Apakah kamu yakin ingin menghapus data penyiar <strong><?= $row->penyiarNama;?></strong>?</p>
-                                                        <p class="text-warning"><small>This action cannot be undone</small></p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <a href="penyiar/delete/<?= $row->penyiarId;?>" type="submit" class="btn btn-danger">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- END MODAL DELETE PENYIAR -->
-                                        <!-- START MODAL EDIT PENYIAR -->
-                                        <div class="modal fade" id="editPenyiar<?= $row->penyiarId;?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Penyiar</h3>
-                                                    </div>
-                                                    <form action="/penyiar/<?= $row->penyiarId;?>/edit" method="post">
-=======
                                             <tr>
                                                 <td style="text-align:center">
                                                     <span class="custom-checkbox">
@@ -123,7 +78,6 @@
                                                             </button>
                                                             <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
                                                         </div>
->>>>>>> 35f638c15e1810f38afb7d1cd2cbd847ad286824
                                                         <div class="modal-body">
                                                             <p>Apakah kamu yakin ingin menghapus data penyiar <strong><?= $row->penyiarNama; ?></strong>?</p>
                                                             <p class="text-warning"><small>This action cannot be undone</small></p>
@@ -217,14 +171,6 @@
                             Lebih dari satu orang
                         </label>
                     </div>
-<<<<<<< HEAD
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Save</button>
-            </div>
-=======
 
                 </div>
                 <div class="modal-footer">
@@ -232,7 +178,6 @@
                     <button type="submit" class="btn btn-success">Save</button>
                 </div>
             </form>
->>>>>>> 35f638c15e1810f38afb7d1cd2cbd847ad286824
         </div>
     </div>
 </div>

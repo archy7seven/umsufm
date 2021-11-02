@@ -328,14 +328,6 @@
                             <label class="check"><input type="checkbox" class="icheckbox" /></label>
                         </div>
                     </div>
-<<<<<<< HEAD
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Save</button>
-            </div>
-=======
 
                 </div>
                 <div class="modal-footer">
@@ -343,7 +335,6 @@
                     <button type="submit" class="btn btn-success">Save</button>
                 </div>
             </form>
->>>>>>> 35f638c15e1810f38afb7d1cd2cbd847ad286824
         </div>
     </div>
 </div>
