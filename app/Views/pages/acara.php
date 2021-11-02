@@ -87,13 +87,13 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Flayer Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                                                                                <input type="file" name="acaraFlayer" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="text" class="form-control" value="<?= $row->acaraNama; ?>" required />
+                                                                                <input type="text" class="form-control" value="<?= $row->acaraNama; ?>" name="acaraNama" required />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
@@ -139,7 +139,7 @@
                                                                             <label class="col-md-3 control-label">Jam Mulai</label>
                                                                             <div class="col-md-9">
                                                                                 <div class="input-group bootstrap-timepicker">
-                                                                                    <input type="time" class="form-control" value=<?= $row->acaraJamMulai; ?> />
+                                                                                    <input type="time" class="form-control" name="acaraJamMulai" value=<?= $row->acaraJamMulai; ?> />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -147,7 +147,7 @@
                                                                             <label class="col-md-3 control-label">Jam Akhir</label>
                                                                             <div class="col-md-9">
                                                                                 <div class="input-group bootstrap-timepicker">
-                                                                                    <input type="time" class="form-control" value=<?= $row->acaraJamAkhir; ?> />
+                                                                                    <input type="time" class="form-control" name="acaraJamAkhir" value=<?= $row->acaraJamAkhir; ?> />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -167,7 +167,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
                                                                             <label class="switch col-md-9">
-                                                                                <input type="checkbox" checked value="0"/>
+                                                                                <input type="checkbox" checked value="1" name="acaraArsip"/>
                                                                                 <span></span>
                                                                             </label>
                                                                         </div>
@@ -246,17 +246,13 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer Acara</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayerAcara" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Acara</label>
                         <div class="col-md-9">
-<<<<<<< HEAD
-                            <input type="text" class="form-control" required />
-=======
-                            <input type="text" class="form-control" name="acaraNama" placeholder="Fill this field please" />
->>>>>>> bed7dd831c085e5131befb973d1de3418ea38761
+                            <input type="text" class="form-control" name="acaraNama" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -329,16 +325,10 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
-<<<<<<< HEAD
                         <label class="switch col-md-9">
-                            <input type="checkbox" checked value="0"/>
+                            <input type="checkbox" checked value="1" name="AcaraArsip" />
                             <span></span>
                         </label>
-=======
-                        <div class="col-md-9">
-                            <label class="check"><input type="checkbox" class="icheckbox" name="acaraArsip" /></label>
-                        </div>
->>>>>>> bed7dd831c085e5131befb973d1de3418ea38761
                     </div>
 
                 </div>
