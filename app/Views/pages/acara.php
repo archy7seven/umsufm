@@ -222,7 +222,6 @@
 
                 </div>
             </div>
-
         </div>
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
@@ -237,22 +236,22 @@
 <div class="modal fade" id="tambahAcara" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Acara</h3>
-            </div>
-            <div class="modal-body">
-                <form role="form" class="form-horizontal">
+            <form role="form" action="" method="post" class="form-horizontal">
+                <div class="modal-header">
+                    <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Acara</h3>
+                </div>
+                <div class="modal-body">
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer Acara</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..."/>
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Acara</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please"/>
+                            <input type="text" class="form-control" placeholder="Fill this field please" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -329,12 +328,22 @@
                             <label class="check"><input type="checkbox" class="icheckbox" /></label>
                         </div>
                     </div>
+<<<<<<< HEAD
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-success">Save</button>
             </div>
+=======
+
+                </div>
+                <div class="modal-footer">
+                    <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+>>>>>>> 35f638c15e1810f38afb7d1cd2cbd847ad286824
         </div>
     </div>
 </div>
