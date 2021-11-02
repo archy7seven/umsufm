@@ -90,8 +90,8 @@
                                                         <p class="text-warning"><small>This action cannot be undone</small></p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="simpan" class="btn btn-danger">Delete</button>
+                                                        <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -130,8 +130,8 @@
                 <p class="text-warning"><small>This action cannot be undone</small></p>
             </div>
             <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-danger">Delete</button>
+                <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
@@ -187,8 +187,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
+                <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
@@ -244,8 +244,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
+                <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>

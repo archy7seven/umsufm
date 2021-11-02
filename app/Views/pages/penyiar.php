@@ -82,7 +82,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <a href="penyiar/delete/<?= $row->penyiarId;?>" type="simpan" class="btn btn-danger">Delete</a>
+                                                        <a href="penyiar/delete/<?= $row->penyiarId;?>" type="submit" class="btn btn-danger">Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,7 +172,7 @@
             </div>
             <div class="modal-footer">
                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
@@ -214,7 +214,7 @@
             </div>
             <div class="modal-footer">
                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="#!" type="simpan" class="btn btn-danger">Delete</a>
+                <a href="#!" type="submit" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
