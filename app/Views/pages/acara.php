@@ -236,7 +236,7 @@
 <div class="modal fade" id="tambahAcara" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="" method="post" class="form-horizontal">
+            <form role="form" action="/acara/add" method="POST" class="form-horizontal">
                 <div class="modal-header">
                     <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Acara</h3>
@@ -251,13 +251,13 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Acara</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" />
+                            <input type="text" class="form-control" name="acaraNama" placeholder="Fill this field please" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Penyiar</label>
                         <div class="col-md-9">
-                            <select class="form-control select">
+                            <select class="form-control select" name="acaraPenyiar">
                                 <option value="88">Please Select One</option>
                                 <?php foreach ($penyiar->findAll() as $row) : ?>
                                     <option value="<?= $row->penyiarId; ?>"><?= $row->penyiarNama; ?></option>
@@ -270,25 +270,25 @@
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Senin" /> Sen
+                                    <input type="radio" name="acaraHari" value="Senin" /> Sen
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Selasa" /> Sel
+                                    <input type="radio" name="acaraHari" value="Selasa" /> Sel
                                 </label>
                                 <label class="btn btn-default ">
-                                    <input type="radio" name="hari" value="Rabu" /> Rab
+                                    <input type="radio" name="acaraHari" value="Rabu" /> Rab
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Kamis" /> Kam
+                                    <input type="radio" name="acaraHari" value="Kamis" /> Kam
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Jumat" /> Jum
+                                    <input type="radio" name="acaraHari" value="Jumat" /> Jum
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Sabtu" /> Sab
+                                    <input type="radio" name="acaraHari" value="Sabtu" /> Sab
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Minggu" /> Min
+                                    <input type="radio" name="acaraHari" value="Minggu" /> Min
                                 </label>
                             </div>
                         </div>
@@ -297,7 +297,7 @@
                         <label class="col-md-3 control-label">Jam Mulai</label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
-                                <input type="time" class="form-control" value="" />
+                                <input type="time" class="form-control" value="" name="acaraJamMulai" />
                             </div>
                         </div>
                     </div>
@@ -305,7 +305,7 @@
                         <label class="col-md-3 control-label">Jam Akhir </label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
-                                <input type="time" class="form-control" value="" />
+                                <input type="time" class="form-control" value="" name="acaraJamAkhir" />
                             </div>
                         </div>
                     </div>
@@ -314,10 +314,10 @@
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="status" value="1" /> Tayang
+                                    <input type="radio" name="acaraStatus" value="1" /> Tayang
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="status" value="0" /> Segera
+                                    <input type="radio" name="acaraStatus" value="0" /> Segera
                                 </label>
                             </div>
                         </div>
@@ -325,7 +325,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
                         <div class="col-md-9">
-                            <label class="check"><input type="checkbox" class="icheckbox" /></label>
+                            <label class="check"><input type="checkbox" class="icheckbox" name="acaraArsip" /></label>
                         </div>
                     </div>
 
