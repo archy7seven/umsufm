@@ -6,17 +6,20 @@ use App\Models\SettingModel;
 
 class Setting extends BaseController
 {
-
+    protected $settingModel;
+    public function __construct()
+    {
+        $this->settingModel = new SettingModel();
+    }
 
     public function index()
     {
-        $settingModel = new SettingModel();
         // dd($settingModel);
         $data = [
             'title' => "Setting",
             'appName' => "UMSU FM",
             'breadcrumb' => ['Home', 'Setting'],
-            'setting' => $settingModel
+            'setting' => $this->settingModel
         ];
         return view('pages/setting', $data);
     }
