@@ -1,27 +1,37 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\PenyiarModel;
 use App\Models\AcaraModel;
 use App\Models\EndorsementModel;
+use App\Models\SettingModel;
 
 class Home extends BaseController
 {
+    protected $settingModel;
+    protected $penyiarModel;
+    protected $acaraModel;
+    protected $endorsementModel;
+    public function __construct()
+    {
+        $this->settingModel = new SettingModel();
+        $this->penyiarModel = new PenyiarModel();
+        $this->acaraModel = new AcaraModel();
+        $this->endorsementModel = new EndorsementModel();
+    }
+
     public function index()
     {
-        $penyiarModel = new PenyiarModel();
-        $acaraModel = new AcaraModel();
-        $endorsementModel = new EndorsementModel();
         $data = [
-            'title' => "Home", 
+            'title' => "Home",
             'appName' => "UMSU FM",
-            'breadcrumb' => ['Home','Dashboard'],
-            'jumlah_penyiar'=> $penyiarModel->where(['penyiarStatus'=>1]),
-            'jumlah_acara_aktif'=> $acaraModel->where(['acaraStatus'=>1,'acaraArsip'=>1]),
-            'jumlah_acara_segera'=> $acaraModel->where(['acaraStatus'=>0,'acaraArsip'=>1]),
-            'jumlah_acara_arsip'=> $acaraModel->where('acaraArsip',0),
-            'jumlah_endors'=> $endorsementModel->where('endorsmentNama',null),
+            'breadcrumb' => ['Home', 'Dashboard'],
+            'jumlah_penyiar' => $this->penyiarModel,
+            'acara' => $this->acaraModel,
+            'jumlah_endors' => $this->endorsementModel,
+            'setting' => $this->settingModel
         ];
-        return view('pages/home',$data);
+        return view('pages/home', $data);
     }
 }
