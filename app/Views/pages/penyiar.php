@@ -102,7 +102,7 @@
                                                             <div class="modal-body">
                                                                 <div class="form-group">
                                                                     <label>Nama Penyiar</label>
-                                                                    <input type="text" name="penyiar" class="form-control" value="<?= $row->penyiarNama; ?>" required>
+                                                                    <input type="text" name="penyiar" class="form-control" placeholder="Fill this field please" value="<?= $row->penyiarNama; ?>" required>
                                                                 </div>
                                                                 <div class="form-check">
                                                                     <input value="1" class="form-check-input" type="radio" name="isHuman" id="flexRadioDefault1" <?php if ($row->penyiarStatus == 1) echo "checked"; ?> />

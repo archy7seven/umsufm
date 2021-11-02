@@ -93,7 +93,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="text" class="form-control" placeholder="Fill this field please" value="<?= $row->acaraNama; ?>" />
+                                                                                <input type="text" class="form-control" value="<?= $row->acaraNama; ?>" required />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
@@ -166,9 +166,10 @@
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
-                                                                            <div class="col-md-9">
-                                                                                <label class="check"><input type="checkbox" class="icheckbox" <?= $row->acaraArsip == 1 ? "" : "checked"; ?> /></label>
-                                                                            </div>
+                                                                            <label class="switch col-md-9">
+                                                                                <input type="checkbox" checked value="0"/>
+                                                                                <span></span>
+                                                                            </label>
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -251,7 +252,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Acara</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" />
+                            <input type="text" class="form-control" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -324,9 +325,10 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
-                        <div class="col-md-9">
-                            <label class="check"><input type="checkbox" class="icheckbox" /></label>
-                        </div>
+                        <label class="switch col-md-9">
+                            <input type="checkbox" checked value="0"/>
+                            <span></span>
+                        </label>
                     </div>
 
                 </div>
