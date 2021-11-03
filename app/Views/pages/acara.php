@@ -87,7 +87,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Flayer Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                                                                                <input type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
@@ -166,11 +166,13 @@
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
-                                                                            <label class="switch col-md-9">
-                                                                                <input type="checkbox" checked value="0" />
-                                                                                <span></span>
-                                                                            </label>
-                                                                        </div>
+                                                                            <div class="col-md-9">
+                                                                                <label class="switch">
+                                                                                    <input type="checkbox" checked value="0" />
+                                                                                    <span></span>
+                                                                                </label>
+                                                                            </div>
+                                                                            </div>
                                                                     </form>
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -259,7 +261,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Penyiar</label>
                         <div class="col-md-9">
-                            <select class="form-control select" name="acaraPenyiar">
+                            <select class="form-control select">
                                 <option value="88">Please Select One</option>
                                 <?php foreach ($penyiar->findAll() as $row) : ?>
                                     <option value="<?= $row->penyiarId; ?>"><?= $row->penyiarNama; ?></option>
@@ -272,25 +274,25 @@
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraHari" value="Senin" /> Sen
+                                    <input type="radio" name="hari" value="Senin" /> Sen
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraHari" value="Selasa" /> Sel
+                                    <input type="radio" name="hari" value="Selasa" /> Sel
                                 </label>
                                 <label class="btn btn-default ">
-                                    <input type="radio" name="acaraHari" value="Rabu" /> Rab
+                                    <input type="radio" name="hari" value="Rabu" /> Rab
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraHari" value="Kamis" /> Kam
+                                    <input type="radio" name="hari" value="Kamis" /> Kam
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraHari" value="Jumat" /> Jum
+                                    <input type="radio" name="hari" value="Jumat" /> Jum
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraHari" value="Sabtu" /> Sab
+                                    <input type="radio" name="hari" value="Sabtu" /> Sab
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraHari" value="Minggu" /> Min
+                                    <input type="radio" name="hari" value="Minggu" /> Min
                                 </label>
                             </div>
                         </div>
@@ -299,7 +301,7 @@
                         <label class="col-md-3 control-label">Jam Mulai</label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
-                                <input type="time" class="form-control" value="" name="acaraJamMulai" />
+                                <input type="time" class="form-control" value="" />
                             </div>
                         </div>
                     </div>
@@ -307,7 +309,7 @@
                         <label class="col-md-3 control-label">Jam Akhir </label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
-                                <input type="time" class="form-control" value="" name="acaraJamAkhir" />
+                                <input type="time" class="form-control" value="" />
                             </div>
                         </div>
                     </div>
@@ -316,22 +318,23 @@
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraStatus" value="1" /> Tayang
+                                    <input type="radio" name="status" value="1" /> Tayang
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="acaraStatus" value="0" /> Segera
+                                    <input type="radio" name="status" value="0" /> Segera
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
-                        <label class="switch col-md-9">
-                            <input type="checkbox" name="acaraArsip" />
-                            <span></span>
-                        </label>
+                        <div class="col-md-9">
+                            <label class="switch">
+                                <input type="checkbox" checked name="acaraArsip" />
+                                <span></span>
+                            </label>
+                        </div>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>

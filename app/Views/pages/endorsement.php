@@ -157,7 +157,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" required />
+                            <input type="text" class="form-control"  required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -181,7 +181,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Deskripsi</label>
                         <div class="col-md-9">
-                            <textarea class="form-control" require></textarea>
+                            <textarea class="form-control" required></textarea>
                         </div>
                     </div>
                 </form>
@@ -214,7 +214,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" required />
+                            <input type="text" class="form-control"  required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -238,7 +238,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Deskripsi</label>
                         <div class="col-md-9">
-                            <textarea class="form-control" require></textarea>
+                            <textarea class="form-control" required></textarea>
                         </div>
                     </div>
                 </form>
