@@ -16,7 +16,6 @@ class Acara extends BaseController
     }
     public function index()
     {
-
         $data = [
             'title' => "Acara",
             'appName' => "UMSU FM",
@@ -25,5 +24,34 @@ class Acara extends BaseController
             'penyiar' => $this->penyiarModel,
         ];
         return view('pages/acara', $data);
+    }
+
+    public function delete($id)
+    {
+        $this->acaraModel->delete($id);
+        return redirect()->to('acara');
+    }
+
+    public function add()
+    {
+        $fileFlayer = $this->request->getFile('flayer');
+        $namaFile = $fileFlayer->getRandomName();
+        $fileFlayer->move('uploads', $namaFile);
+
+
+        $data = array(
+            'acaraFlayer' => base_url('uploads/' . $namaFile),
+            'acaraNama' => $this->request->getPost('acaraNama'),
+            'acaraPenyiar' => $this->request->getPost('acaraPenyiar'),
+            'acaraHari' => $this->request->getPost('acaraHari'),
+            'acaraJamMulai' => $this->request->getPost('acaraJamMulai'),
+            'acaraJamAkhir' => $this->request->getPost('acaraJamAkhir'),
+            'acaraStatus' => $this->request->getPost('acaraStatus'),
+            'acaraArsip' => $this->request->getPost('acaraArsip') == null ? 1 : 0
+        );
+        // dd($data);
+        if ($this->acaraModel->insert($data)) {
+            return redirect()->to('acara');
+        }
     }
 }

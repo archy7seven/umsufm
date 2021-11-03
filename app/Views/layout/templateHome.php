@@ -49,6 +49,20 @@
     <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="theme/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="theme/js/plugins/dropzone/dropzone.min.js"></script>
+    <script type='text/javascript' src='theme/js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="theme/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="theme/js/plugins/fileinput/fileinput.min.js"></script>
+    <script>
+        $(function(){
+                $("#file-simple").fileinput({
+                        showUpload: false,
+                        showCaption: false,
+                        browseClass: "btn btn-danger",
+                        fileType: "any"
+                });
+            })            
+    </script>
 
     <!-- END THIS PAGE PLUGINS-->
 

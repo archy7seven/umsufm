@@ -91,7 +91,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="simpan" class="btn btn-danger">Delete</button>
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +131,7 @@
             </div>
             <div class="modal-footer">
                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
@@ -151,13 +151,13 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" require />
+                            <input type="text" class="form-control" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -188,7 +188,7 @@
             </div>
             <div class="modal-footer">
                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
@@ -208,13 +208,13 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-default" name="filename3" id="filename3" data-filename-placement="inside" title="Browse" />
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="Fill this field please" require />
+                            <input type="text" class="form-control" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -245,7 +245,7 @@
             </div>
             <div class="modal-footer">
                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="simpan" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>

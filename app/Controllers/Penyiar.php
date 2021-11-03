@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Models\PenyiarModel;
 
 
-
-
 class Penyiar extends BaseController
 {
     protected $penyiarModel;
@@ -31,6 +29,17 @@ class Penyiar extends BaseController
     {
         $this->penyiarModel->delete($id);
         return redirect()->to('penyiar');
+    }
+
+    public function add()
+    {
+        $data = array(
+            'penyiarNama' => $this->request->getPost('penyairNama'),
+            'penyiarStatus' => $this->request->getPost('isHuman')
+        );
+        if ($this->penyiarModel->insert($data)) {
+            return redirect()->to('penyiar');
+        }
     }
 
     public function edit($id)
