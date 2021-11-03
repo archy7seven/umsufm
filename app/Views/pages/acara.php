@@ -328,12 +328,10 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
-                        <div class="col-md-9">
-                            <label class="switch">
-                                <input type="checkbox" checked name="acaraArsip" />
-                                <span></span>
-                            </label>
-                        </div>
+                        <label class="switch col-md-9">
+                            <input type="checkbox" name="acaraArsip" />
+                            <span></span>
+                        </label>
                     </div>
 
                 </div>
