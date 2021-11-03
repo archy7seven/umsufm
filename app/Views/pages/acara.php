@@ -236,7 +236,6 @@
 
 
 <!-- START MODAL TAMBAH ACARA -->
-<!-- <div class="modal fade" id="tambahAcara" role="dialog" tabindex="-1" aria-labelledby="defModalHead" aria-hidden="true"> -->
 <div class="modal fade" id="tambahAcara" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
