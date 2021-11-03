@@ -328,12 +328,13 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
-                        <label class="switch col-md-9">
-                            <input type="checkbox" name="acaraArsip" />
-                            <span></span>
-                        </label>
+                        <div class="col-md-9">
+                            <label class="switch">
+                                <input type="checkbox" checked name="acaraArsip" />
+                                <span></span>
+                            </label>
+                        </div>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
