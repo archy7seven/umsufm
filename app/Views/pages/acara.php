@@ -335,7 +335,6 @@
                             </label>
                         </div>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
