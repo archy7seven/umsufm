@@ -164,7 +164,7 @@
                         <label class="col-md-3 control-label">Tanggal Awal</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021" name="endorsementTanggalAwal"/>
+                                <input type="text" class="form-control" value="17-08-2021" name="endorsementTanggalAwal" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -214,7 +214,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="endorsementNama"  required />
+                            <input type="text" class="form-control" name="endorsementNama" required />
                         </div>
                     </div>
                     <div class="form-group">
@@ -252,23 +252,5 @@
 </div>
 <!-- END MODAL EDIT DATA ENDORSEMENT -->
 
-<!-- MESSAGE BOX-->
-<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-    <div class="mb-container">
-        <div class="mb-middle">
-            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-            <div class="mb-content">
-                <p>Are you sure you want to log out?</p>
-                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
-            </div>
-            <div class="mb-footer">
-                <div class="pull-right">
-                    <a href="operator/logout" class="btn btn-success btn-lg">Yes</a>
-                    <button class="btn btn-default btn-lg mb-control-close">No</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MESSAGE BOX-->
+
 <?= $this->endSection(); ?>
