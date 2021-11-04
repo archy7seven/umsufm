@@ -233,7 +233,7 @@
                             </form>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Submit</button>
+                            <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>

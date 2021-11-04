@@ -87,7 +87,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Flayer Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                                                                                <input type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
@@ -166,11 +166,13 @@
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
-                                                                            <label class="switch col-md-9">
-                                                                                <input type="checkbox" checked value="0" />
-                                                                                <span></span>
-                                                                            </label>
-                                                                        </div>
+                                                                            <div class="col-md-9">
+                                                                                <label class="switch">
+                                                                                    <input type="checkbox" checked value="0" />
+                                                                                    <span></span>
+                                                                                </label>
+                                                                            </div>
+                                                                            </div>
                                                                     </form>
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -234,7 +236,6 @@
 
 
 <!-- START MODAL TAMBAH ACARA -->
-<!-- <div class="modal fade" id="tambahAcara" role="dialog" tabindex="-1" aria-labelledby="defModalHead" aria-hidden="true"> -->
 <div class="modal fade" id="tambahAcara" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -326,12 +327,13 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Arsip Acara</label>
-                        <label class="switch col-md-9">
-                            <input type="checkbox" name="acaraArsip" />
-                            <span></span>
-                        </label>
+                        <div class="col-md-9">
+                            <label class="switch">
+                                <input type="checkbox" checked name="acaraArsip" />
+                                <span></span>
+                            </label>
+                        </div>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>

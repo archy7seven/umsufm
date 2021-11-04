@@ -151,20 +151,20 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" required />
+                            <input type="text" class="form-control" name="endorsementNama" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tanggal Awal</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021" />
+                                <input type="text" class="form-control" value="17-08-2021" name="endorsementTanggalAwal"/>
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
                         <label class="col-md-3 control-label">Tanggal Akhir</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021" />
+                                <input type="text" class="form-control" value="17-08-2021" name="endorsementTanggalAkhir" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Deskripsi</label>
                         <div class="col-md-9">
-                            <textarea class="form-control" require></textarea>
+                            <textarea class="form-control" name="endorsementDeskripsi" required></textarea>
                         </div>
                     </div>
                 </form>
@@ -208,20 +208,20 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                            <input type="file" accept="image/*" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" required />
+                            <input type="text" class="form-control" name="endorsementNama"  required />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tanggal Awal</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021" />
+                                <input type="text" class="form-control" name="endorsementTanggalAwal" value="17-08-2021" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                         <label class="col-md-3 control-label">Tanggal Akhir</label>
                         <div class="col-md-9">
                             <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                <input type="text" class="form-control" value="17-08-2021" />
+                                <input type="text" class="form-control" name="endorsementTanggalAkhir" value="17-08-2021" />
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
@@ -238,7 +238,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Deskripsi</label>
                         <div class="col-md-9">
-                            <textarea class="form-control" require></textarea>
+                            <textarea class="form-control" name="endorsementDeskripsi" required></textarea>
                         </div>
                     </div>
                 </form>

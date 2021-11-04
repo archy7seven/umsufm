@@ -18,10 +18,6 @@
                     <div class="profile-data-name"><?= session()->get('name'); ?></div>
                     <div class="profile-data-title"><?= session()->get('username'); ?></div>
                 </div>
-                <div class="profile-controls">
-                    <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
-                    <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
-                </div>
             </div>
         </li>
         <li class="xn-title">Main Menu</li>
