@@ -4365,11 +4365,11 @@ td.dataTables_empty {
 }
 
 .login-container .login-box .login-logo {
-    background: url(../img/logo.png) top center no-repeat;
-    width: 100%;
-    height: 50px;
+    background: url(../img/logoUmsufm2.png) top center no-repeat;
+    width: 400px;
+    height: 147px;
     float: left;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .login-container .login-box .login-body {
@@ -7772,7 +7772,9 @@ li.ext_zip {
         background-size: 50px 50px;
     }
     .login-container .login-box .login-logo {
-        background-image: url("../img/logo@2x.png");
-        background-size: 220px 50px;
+        background-image: url("../img/logoumsufm2.png");
+        width: 400px;
+        height: 147px;
+        /* background-size: 400px 147px; */
     }
 }
