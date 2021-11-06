@@ -172,7 +172,7 @@
                                                                                     <span></span>
                                                                                 </label>
                                                                             </div>
-                                                                            </div>
+                                                                        </div>
                                                                     </form>
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -236,7 +236,6 @@
 
 
 <!-- START MODAL TAMBAH ACARA -->
-<!-- <div class="modal fade" id="tambahAcara" role="dialog" tabindex="-1" aria-labelledby="defModalHead" aria-hidden="true"> -->
 <div class="modal fade" id="tambahAcara" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -261,7 +260,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Penyiar</label>
                         <div class="col-md-9">
-                            <select class="form-control select">
+                            <select class="form-control select" name="acaraPenyiar">
                                 <option value="88">Please Select One</option>
                                 <?php foreach ($penyiar->findAll() as $row) : ?>
                                     <option value="<?= $row->penyiarId; ?>"><?= $row->penyiarNama; ?></option>
@@ -274,25 +273,25 @@
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Senin" /> Sen
+                                    <input type="radio" name="acaraHari" value="Senin" /> Sen
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Selasa" /> Sel
+                                    <input type="radio" name="acaraHari" value="Selasa" /> Sel
                                 </label>
                                 <label class="btn btn-default ">
-                                    <input type="radio" name="hari" value="Rabu" /> Rab
+                                    <input type="radio" name="acaraHari" value="Rabu" /> Rab
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Kamis" /> Kam
+                                    <input type="radio" name="acaraHari" value="Kamis" /> Kam
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Jumat" /> Jum
+                                    <input type="radio" name="acaraHari" value="Jumat" /> Jum
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Sabtu" /> Sab
+                                    <input type="radio" name="acaraHari" value="Sabtu" /> Sab
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="hari" value="Minggu" /> Min
+                                    <input type="radio" name="acaraHari" value="Minggu" /> Min
                                 </label>
                             </div>
                         </div>
@@ -301,7 +300,7 @@
                         <label class="col-md-3 control-label">Jam Mulai</label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
-                                <input type="time" class="form-control" value="" />
+                                <input type="time" class="form-control" value="" name="acaraJamMulai" />
                             </div>
                         </div>
                     </div>
@@ -309,7 +308,7 @@
                         <label class="col-md-3 control-label">Jam Akhir </label>
                         <div class="col-md-9">
                             <div class="input-group bootstrap-timepicker">
-                                <input type="time" class="form-control" value="" />
+                                <input type="time" class="form-control" value="" name="acaraJamAkhir" />
                             </div>
                         </div>
                     </div>
@@ -318,10 +317,10 @@
                         <div class="col-sm-9">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="status" value="1" /> Tayang
+                                    <input type="radio" name="acaraStatus" value="1" /> Tayang
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="status" value="0" /> Segera
+                                    <input type="radio" name="acaraStatus" value="0" /> Segera
                                 </label>
                             </div>
                         </div>
@@ -370,24 +369,5 @@
 </div>
 <!-- END MODAL DELETE SELECTED ACARA -->
 
-<!-- MESSAGE BOX-->
-<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-    <div class="mb-container">
-        <div class="mb-middle">
-            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-            <div class="mb-content">
-                <p>Are you sure you want to log out?</p>
-                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
-            </div>
-            <div class="mb-footer">
-                <div class="pull-right">
-                    <a href="operator/logout" class="btn btn-success btn-lg">Yes</a>
-                    <button class="btn btn-default btn-lg mb-control-close">No</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- END MESSAGE BOX-->
 <?= $this->endSection(); ?>

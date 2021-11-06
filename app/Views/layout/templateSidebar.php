@@ -8,19 +8,15 @@
         </li>
         <li class="xn-profile">
             <a href="#!" class="profile-mini">
-                <img src="theme/assets/images/users/no-image.jpg" alt="John Doe" />
+                <img src="<?= base_url('theme/assets/images/users/no-image.jpg'); ?>" alt="John Doe" />
             </a>
             <div class="profile">
                 <div class="profile-image">
-                    <img src="theme/assets/images/users/no-image.jpg" alt="John Doe" />
+                    <img src="<?= base_url('theme/assets/images/users/no-image.jpg'); ?>" alt="John Doe" />
                 </div>
                 <div class="profile-data">
                     <div class="profile-data-name"><?= session()->get('name'); ?></div>
                     <div class="profile-data-title"><?= session()->get('username'); ?></div>
-                </div>
-                <div class="profile-controls">
-                    <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
-                    <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                 </div>
             </div>
         </li>

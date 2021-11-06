@@ -49,7 +49,7 @@ class Acara extends BaseController
             'acaraStatus' => $this->request->getPost('acaraStatus'),
             'acaraArsip' => $this->request->getPost('acaraArsip') == null ? 1 : 0
         );
-        // dd($data);
+
         if ($this->acaraModel->insert($data)) {
             return redirect()->to('acara');
         }
