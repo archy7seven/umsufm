@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\OperatorModel;
 
-class Radio extends BaseController
+class Login extends BaseController
 {
     public function index()
     {
@@ -43,6 +43,6 @@ class Radio extends BaseController
     function logout()
     {
         session()->destroy();
-        return redirect()->to('/radio');
+        return redirect()->to('/login');
     }
 }
