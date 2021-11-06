@@ -31,12 +31,12 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Radio::index');
-$routes->get('radio', 'Radio::index');
+$routes->get('/', 'Home::index');
+$routes->get('/radio', 'Radio::index');
 $routes->post('/operator/auth', 'Operator::auth');
 $routes->post('/operator/register', 'Operator::register');
 $routes->get('/home', 'Home::index');
-$routes->get('/logout', 'Operator::logout');
+$routes->get('/logout', 'Radio::logout');
 $routes->get('/penyiar', 'Penyiar::index');
 $routes->delete('/penyiar/(:num)', 'Penyiar::delete/$1');
 $routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');

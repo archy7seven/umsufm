@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
+        'hostname' => '222.124.3.203:8308',
+        'username' => 'client_mradiofm',
+        'password' => 'wKz0AEqhNHUPKlfi',
+        'database' => 'client_mradiofm',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
