@@ -13,8 +13,7 @@
                     <strong>Maaf!</strong> <?php echo session()->getFlashdata('error'); ?>
                 </div>
             <?php endif; ?>
-            <form action="/radio/auth" class="form-horizontal" method="post">
-                <?= csrf_field(); ?>
+            <form action="/login/auth" class="form-horizontal" method="post">
                 <div class="form-group">
                     <div class="col-md-12">
                         <input type="text" class="form-control" placeholder="Username" name="username" />

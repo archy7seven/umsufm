@@ -6,7 +6,6 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
-use App\Filters\UsersAuthFilter;
 
 class Filters extends BaseConfig
 {
@@ -20,7 +19,9 @@ class Filters extends BaseConfig
         'csrf'     => CSRF::class,
         'toolbar'  => DebugToolbar::class,
         'honeypot' => Honeypot::class,
-        'usersAuth' => UsersAuthFilter::class,
+        'login'      => \Myth\Auth\Filters\LoginFilter::class,
+        'role'       => \Myth\Auth\Filters\RoleFilter::class,
+        'permission' => \Myth\Auth\Filters\PermissionFilter::class,
     ];
 
     /**
@@ -31,13 +32,8 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
-            'csrf',
-            'usersAuth' => [
-                'except' => [
-                    'radio/*',
-                    'logout/*'
-                ]
-            ]
+            'honeypot',
+            'login'
         ],
         'after' => [
             'toolbar',
@@ -65,5 +61,7 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        // 'login' => ['before' => ['acara']],
+    ];
 }
