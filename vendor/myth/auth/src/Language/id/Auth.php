@@ -1,6 +1,15 @@
 <?php
 
 return [
+
+    // AppIdentitiy
+    'appName'                   => 'UMSU FM',
+    'registPage'                => 'Registrasi UMSU FM',
+    'LoginPage'                 => 'Masuk UMSU FM',
+    'about'                     => 'Tentang',
+    'privacy'                   => 'Privasi',
+    'contactUs'                 => 'Hubungi Kami',
+
     // Exceptions
     'invalidModel'              => 'Model {0} harus dimuat sebelum digunakan.',
     'userNotFound'              => 'Tidak dapat menemukan pengguna dengan ID = {0, number}.',

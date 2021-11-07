@@ -1,6 +1,17 @@
 <?php
 
+use PharIo\Manifest\ApplicationName;
+
 return [
+
+    // AppIdentitiy
+    'appName'                   => 'UMSU FM',
+    'registPage'                => 'Register UMSU FM',
+    'LoginPage'                 => 'Login UMSU FM',
+    'about'                     => 'About',
+    'privacy'                   => 'Privacy',
+    'contactUs'                 => 'Contact Us',
+
     // Exceptions
     'invalidModel'              => 'The {0} model must be loaded prior to use.',
     'userNotFound'              => 'Unable to locate a user with ID = {0, number}.',
