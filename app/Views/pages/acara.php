@@ -23,8 +23,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
-<<<<<<< HEAD
-=======
                     <?php if ($validation->hasError('flayer')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -37,7 +35,6 @@
                             <strong>Failed ! </strong><?= $validation->getError('acaraNama'); ?>
                         </div>
                     <?php endif; ?>
->>>>>>> 90bd261ebe3cb646ff98c8012ef35e00baca6a49
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
