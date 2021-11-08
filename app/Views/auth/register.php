@@ -5,7 +5,7 @@
     <div class="login-box animated fadeInDown">
         <div class="login-logo"></div>
         <div class="login-body">
-            <div class="login-title"><strong>Register Account</strong></div>
+            <div class="login-title"><strong>Register</strong> Account</div>
             <?= view('Myth\Auth\Views\_message_block') ?>
             <form action="<?= route_to('register') ?>" method="post">
                 <?= csrf_field() ?>
