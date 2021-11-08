@@ -21,7 +21,9 @@ class Penyiar extends BaseController
             'appName' => "UMSU FM",
             'breadcrumb' => ['Home', 'Penyiar'],
             'penyiar' => $this->penyiarModel->findAll(),
+            'validation' => \Config\Services::validation(),
         ];
+
         return view('pages/penyiar', $data);
     }
 
@@ -33,27 +35,52 @@ class Penyiar extends BaseController
 
     public function add()
     {
+        if (!$this->validate([
+            'penyiarNama' => [
+                'rules' => 'required|is_unique[penyiar.penyiarNama]',
+                'error' => [
+                    'required' => 'Nama Penyiar Harus Diisi',
+                    'is_unique' => 'Nama Penyiar Sudah terdaftar',
+                ]
+            ],
+            'isHuman' => [
+                'rules' => 'required',
+                'error' => [
+                    'required' => 'Tipe Penyiar Harus Dipilih',
+                ]
+            ],
+        ])) {
+            return redirect()->to('penyiar')->withInput();
+        }
+
+
         $data = array(
-            'penyiarNama' => $this->request->getPost('penyairNama'),
+            'penyiarNama' => $this->request->getPost('penyiarNama'),
             'penyiarStatus' => $this->request->getPost('isHuman')
         );
-        if ($this->penyiarModel->insert($data)) {
-            return redirect()->to('penyiar');
-        }
+        $this->penyiarModel->insert($data);
+        return redirect()->to('penyiar');
     }
 
     public function edit($id)
     {
 
+        //validation
+        if (!$this->validate([
+            'penyiar' => ['required|is_unique[penyiar.penyiarNama]'],
+        ])) {
+            return redirect()->to('/penyiar');
+        }
+
         $data = array(
-            "penyiarNama" => $this->request->getPost('penyiar'),
+            "penyiarNama" => $this->request->getPost('penyiarNama'),
             "penyiarStatus" => $this->request->getPost('isHuman')
         );
 
         $penyiar = $this->penyiarModel->where('penyiarId', $id);
         $validation =  \Config\Services::validation();
         $validation->setRules([
-            'penyiar' => 'required',
+            'penyiarNama' => 'required',
             'isHuman' => 'required'
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
