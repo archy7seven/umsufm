@@ -71,43 +71,50 @@
                                                 <td style="text-align:center">
                                                     <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editEndorsement"><span class="fa fa-edit"></span></button>
                                                     <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusEndorsement"><span class="fa fa-trash-o"></span></button>
-                                                    <button Type="button" class="btn btn-default"><span class="fa fa-eye"></span></button>
+                                                    <button Type="button" class="btn btn-default" data-toggle="modal" data-target="#flayerEndorsement<?= $row->endorsementId ?>"><span class="fa fa-eye"></span></button>
                                                 </td>
                                             </tr>
-                                        <?php endforeach; ?>
-                                        <!-- START MODAL DELETE ENDORSEMENT -->
-                                        <div class="modal fade" id="hapusEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close">
-                                                            <div aria-hidden="true">&times;</div>
-                                                        </button>
-                                                        <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Endorsement</h3>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Apakah kamu yakin ingin menghapus data Endorsement?</p>
-                                                        <p class="text-warning"><small>This action cannot be undone</small></p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                                            <!-- START MODAL DELETE ENDORSEMENT -->
+                                            <div class="modal fade" id="hapusEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type=button class="close" data-dismiss="modal" aria-label="Close">
+                                                                <div aria-hidden="true">&times;</div>
+                                                            </button>
+                                                            <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Endorsement</h3>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Apakah kamu yakin ingin menghapus data Endorsement <?= $row->endorsementNama ?>?</p>
+                                                            <p class="text-warning"><small>This action cannot be undone</small></p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- END MODAL DELETE ENDORSEMENT -->
+                                            <!-- END MODAL DELETE ENDORSEMENT -->
+                                            <!-- START MODAL FLAYER -->
+                                            <div class="modal fade" id="flayerEndorsement<?= $row->endorsementId ?>" arialabelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="banner">
+                                                    <div class="modal-content" style="width:85%; margin:auto">
+                                                        <img src="<?= $row->endorsementFlayer ?>" alt="flayer" class="img-responsive" style="width:100%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END MODAL FLAYER -->
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
                     </div>
                     <!-- END PROJECTS BLOCK -->
-
                 </div>
             </div>
-
         </div>
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
@@ -151,7 +158,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                            <input type="file" accept="image/png" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
@@ -208,7 +215,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Flayer endorsement</label>
                         <div class="col-md-9">
-                            <input type="file" accept="image/*" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
+                            <input type="file" accept="image/png" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
                         </div>
                     </div>
                     <div class="form-group">
@@ -251,6 +258,5 @@
     </div>
 </div>
 <!-- END MODAL EDIT DATA ENDORSEMENT -->
-
 
 <?= $this->endSection(); ?>

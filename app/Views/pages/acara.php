@@ -205,25 +205,29 @@
                                                         </div>
                                                     </div>
                                                     <!-- END MODAL DELETE ACARA -->
+                                                    <!-- START MODAL FLAYER -->
+                                                    <div class="modal fade" id="flayerAcara<?= $row->acaraId ?>" arialabelledby="staticBackdropLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="banner">
+                                                            <div class="modal-content" style="width:85%; margin:auto">
+                                                                <img src="<?= $row->acaraFlayer ?>" alt="flayer" class="img-responsive" style="width:100%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- END MODAL FLAYER -->
                                                 </td>
                                                 <td style="text-align:center">
                                                     <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAcara<?= $row->acaraId; ?>"><span class="fa fa-edit"></span></button>
                                                     <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusAcara<?= $row->acaraId; ?>"><span class="fa fa-trash-o"></span></button>
-                                                    <button Type="button" class="btn btn-default"><span class="fa fa-eye"></span></button>
-
+                                                    <button Type="button" class="btn btn-default" data-toggle="modal" data-target="#flayerAcara<?= $row->acaraId ?>"><span class=" fa fa-eye"></span></button>
                                                 </td>
                                             </tr>
-
                                         <?php endforeach; ?>
-
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
                     </div>
                     <!-- END PROJECTS BLOCK -->
-
                 </div>
             </div>
         </div>
@@ -233,11 +237,9 @@
 </div>
 <!-- END PAGE CONTAINER -->
 
-
-
 <!-- START MODAL TAMBAH ACARA -->
-<div class="modal fade" id="tambahAcara" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="tambahAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form role="form" action="/acara/add" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 <div class="modal-header">
@@ -345,7 +347,6 @@
 </div>
 <!-- END MODAL TAMBAH ACARA -->
 
-
 <!-- START MODAL DELETE SELECTED ACARA -->
 <div class="modal fade" id="deleteSelectedAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -368,6 +369,5 @@
     </div>
 </div>
 <!-- END MODAL DELETE SELECTED ACARA -->
-
 
 <?= $this->endSection(); ?>
