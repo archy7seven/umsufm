@@ -93,13 +93,13 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input type="text" class="form-control" value="<?= $row->acaraNama; ?>" required />
+                                                                                <input type="text" class="form-control" value="<?= $row->acaraNama; ?>" name="acaraNama" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Penyiar</label>
                                                                             <div class="col-md-8">
-                                                                                <select class="form-control select">
+                                                                                <select class="form-control select" name="acaraPenyiar">
                                                                                     <option value="88">Please Select One</option>
                                                                                     <?php foreach ($penyiar->findAll() as $mc) : ?>
                                                                                         <option value="<?= $mc->penyiarId; ?>" <?= $mc->penyiarId == $row->acaraPenyiar ? "selected" : ""; ?>><?= $mc->penyiarNama; ?></option>
@@ -112,25 +112,25 @@
                                                                             <div class="col-sm-9">
                                                                                 <div class="btn-group" data-toggle="buttons">
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Senin" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Senin" <?= $row->acaraHari == "Senin" ? "checked" : ""; ?> /> Sen
+                                                                                        <input type="radio" name="acaraHari" value="Senin" <?= $row->acaraHari == "Senin" ? "checked" : ""; ?> /> Sen
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Selasa" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Selasa" <?= $row->acaraHari == "Selasa" ? "checked" : ""; ?> /> Sel
+                                                                                        <input type="radio" name="acaraHari" value="Selasa" <?= $row->acaraHari == "Selasa" ? "checked" : ""; ?> /> Sel
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Rabu" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Rabu" <?= $row->acaraHari == "Rabu" ? "checked" : ""; ?> /> Rab
+                                                                                        <input type="radio" name="acaraHari" value="Rabu" <?= $row->acaraHari == "Rabu" ? "checked" : ""; ?> /> Rab
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Kamis" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Kamis" <?= $row->acaraHari == "Kamis" ? "checked" : ""; ?> /> Kam
+                                                                                        <input type="radio" name="acaraHari" value="Kamis" <?= $row->acaraHari == "Kamis" ? "checked" : ""; ?> /> Kam
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Jumat" ? "active" : ""; ?> ">
-                                                                                        <input type="radio" name="hari" value="Jumat" <?= $row->acaraHari == "Jumat" ? "checked" : ""; ?> /> Jum
+                                                                                        <input type="radio" name="acaraHari" value="Jumat" <?= $row->acaraHari == "Jumat" ? "checked" : ""; ?> /> Jum
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Sabtu" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Sabtu" <?= $row->acaraHari == "Sabtu" ? "checked" : ""; ?> /> Sab
+                                                                                        <input type="radio" name="acaraHari" value="Sabtu" <?= $row->acaraHari == "Sabtu" ? "checked" : ""; ?> /> Sab
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraHari == "Minggu" ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="hari" value="Minggu" <?= $row->acaraHari == "Minggu" ? "checked" : ""; ?> /> Min
+                                                                                        <input type="radio" name="acaraHari" value="Minggu" <?= $row->acaraHari == "Minggu" ? "checked" : ""; ?> /> Min
                                                                                     </label>
                                                                                 </div>
                                                                             </div>
@@ -139,7 +139,7 @@
                                                                             <label class="col-md-3 control-label">Jam Mulai</label>
                                                                             <div class="col-md-9">
                                                                                 <div class="input-group bootstrap-timepicker">
-                                                                                    <input type="time" class="form-control" value=<?= $row->acaraJamMulai; ?> />
+                                                                                    <input type="time" class="form-control" value=<?= $row->acaraJamMulai; ?> name="acaraJamMulai" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -147,7 +147,7 @@
                                                                             <label class="col-md-3 control-label">Jam Akhir</label>
                                                                             <div class="col-md-9">
                                                                                 <div class="input-group bootstrap-timepicker">
-                                                                                    <input type="time" class="form-control" value=<?= $row->acaraJamAkhir; ?> />
+                                                                                    <input type="time" class="form-control" value=<?= $row->acaraJamAkhir; ?> name="acaraJamAkhir" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -156,10 +156,10 @@
                                                                             <div class="col-sm-9">
                                                                                 <div class="btn-group" data-toggle="buttons">
                                                                                     <label class="btn btn-default <?= $row->acaraStatus == 1 ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="status" value="1" <?= $row->acaraStatus == 1 ? "checked" : ""; ?> /> Tayang
+                                                                                        <input type="radio" name="acaraStatus" value="1" <?= $row->acaraStatus == 1 ? "checked" : ""; ?> /> Tayang
                                                                                     </label>
                                                                                     <label class="btn btn-default <?= $row->acaraStatus == 0 ? "active" : ""; ?>">
-                                                                                        <input type="radio" name="status" value="0" <?= $row->acaraStatus == 0 ? "checked" : ""; ?> /> Segera
+                                                                                        <input type="radio" name="acaraStatus" value="0" <?= $row->acaraStatus == 0 ? "checked" : ""; ?> /> Segera
                                                                                     </label>
                                                                                 </div>
                                                                             </div>
@@ -168,7 +168,7 @@
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
                                                                             <div class="col-md-9">
                                                                                 <label class="switch">
-                                                                                    <input type="checkbox" checked value="0" />
+                                                                                    <input type="checkbox" checked value="0" name="acaraArsip" />
                                                                                     <span></span>
                                                                                 </label>
                                                                             </div>
