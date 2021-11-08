@@ -1,4 +1,6 @@
-<?php namespace Myth\Auth\Config;
+<?php
+
+namespace Myth\Auth\Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -35,12 +37,12 @@ class Auth extends BaseConfig
 	 * @var array
 	 */
 	public $views = [
-		'login'		   => 'Myth\Auth\Views\login',
-		'register'		=> 'Myth\Auth\Views\register',
-		'forgot'		  => 'Myth\Auth\Views\forgot',
-		'reset'		   => 'Myth\Auth\Views\reset',
-		'emailForgot'	 => 'Myth\Auth\Views\emails\forgot',
-		'emailActivation' => 'Myth\Auth\Views\emails\activation',
+		'login'		   => '\App\Views\auth\login',
+		'register'		=> '\App\Views\auth\register',
+		'forgot'		  => '\App\Views\auth\forgot',
+		'reset'		   => '\App\Views\auth\reset',
+		'emailForgot'	 => '\App\Views\auth\emails\forgot',
+		'emailActivation' => '\App\Views\auth\emails\activation',
 	];
 
 	/**
@@ -50,7 +52,7 @@ class Auth extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $viewLayout = 'Myth\Auth\Views\layout';
+	public $viewLayout = '\App\Views\auth\layout';
 
 	/**
 	 * --------------------------------------------------------------------
