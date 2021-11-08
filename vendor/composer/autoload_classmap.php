@@ -6,6 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
+=======
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+>>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
     'PHPUnit\\Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert.php',

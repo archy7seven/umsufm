@@ -6,7 +6,7 @@
 		<div class="login-logo"></div>
 		<div class="login-body">
 			<div class="login-title"><strong>Welcome</strong>, Please login</div>
-			<?= view('Myth\Auth\Views\_message_block') ?>
+			<?= view('\App\Views\auth\_message_block') ?>
 			<form action="<?= route_to('login') ?>" class="form-horizontal" method="post">
 				<?= csrf_field() ?>
 

@@ -41,8 +41,8 @@ class Auth extends BaseConfig
 		'register'		=> '\App\Views\auth\register',
 		'forgot'		  => '\App\Views\auth\forgot',
 		'reset'		   => '\App\Views\auth\reset',
-		'emailForgot'	 => '\App\Views\auth\emails\forgot',
-		'emailActivation' => '\App\Views\auth\emails\activation',
+		'emailForgot'	 => '\App\Views\emails\auth\forgot',
+		'emailActivation' => '\App\Views\emails\auth\activation',
 	];
 
 	/**
@@ -65,7 +65,11 @@ class Auth extends BaseConfig
 	 */
 	public $validFields = [
 		'email',
+<<<<<<< HEAD
 		'username',
+=======
+		'username'
+>>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
 	];
 
 	/**
@@ -149,7 +153,12 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ActivatorInterface class
 	 */
+<<<<<<< HEAD
 	public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+=======
+	// public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+	public $requireActivation = null;
+>>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
 
 	/**
 	 * --------------------------------------------------------------------
@@ -161,7 +170,12 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ResetterInterface class
 	 */
+<<<<<<< HEAD
 	public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
+=======
+	// public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
+	public $activeResetter = null;
+>>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
 
 	/**
 	 * --------------------------------------------------------------------
