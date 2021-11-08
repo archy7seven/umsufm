@@ -29,6 +29,12 @@
                             <strong>Failed ! </strong><?= $validation->getError('flayer'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if ($validation->hasError('acaraNama')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('acaraNama'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
