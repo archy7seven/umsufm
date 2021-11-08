@@ -65,11 +65,7 @@ class Auth extends BaseConfig
 	 */
 	public $validFields = [
 		'email',
-<<<<<<< HEAD
-		'username',
-=======
 		'username'
->>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
 	];
 
 	/**
@@ -153,12 +149,8 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ActivatorInterface class
 	 */
-<<<<<<< HEAD
-	public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
-=======
 	// public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
 	public $requireActivation = null;
->>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
 
 	/**
 	 * --------------------------------------------------------------------
@@ -170,12 +162,8 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ResetterInterface class
 	 */
-<<<<<<< HEAD
-	public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
-=======
 	// public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
 	public $activeResetter = null;
->>>>>>> 334e0facf3989a30caa72fc0e7b491634e70e6c3
 
 	/**
 	 * --------------------------------------------------------------------
