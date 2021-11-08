@@ -42,8 +42,8 @@
                                 <span>Berikut data acara UMSU FM</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAcara">Tambah Data</button>
-                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedAcara">Hapus Data</button>
+                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAcara"><span class="fa fa-plus"></span> Tambah Data</button>
+
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -51,12 +51,6 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center">
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="selectAll">
-                                                    <label for="selectAll"></label>
-                                                </span>
-                                            </th>
                                             <th style="text-align:center">No</th>
                                             <th>Nama Acara</th>
                                             <th>Nama Penyiar</th>
@@ -72,12 +66,6 @@
                                         <?php $no = 1;
                                         foreach ($acara->findAll() as $row) : ?>
                                             <tr>
-                                                <td style="text-align:center">
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                        <label for="checkbox1"></label>
-                                                    </span>
-                                                </td>
                                                 <td style="text-align:center"><?= $no++; ?></td>
                                                 <td><?= $row->acaraNama; ?></td>
                                                 <td><?= $row->penyiarNama; ?></td>
