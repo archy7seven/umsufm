@@ -5,7 +5,7 @@
     <div class="login-box animated fadeInDown">
         <div class="login-logo"></div>
         <div class="login-body">
-            <div class="login-title"><strong><?= lang('Auth.registPage') ?></strong></div>
+            <div class="login-title"><strong>Register Account</strong></div>
             <?= view('Myth\Auth\Views\_message_block') ?>
             <form action="<?= route_to('register') ?>" method="post">
                 <?= csrf_field() ?>
@@ -54,9 +54,9 @@
                 &copy; 2021 <?= lang('Auth.appName') ?>
             </div>
             <div class="pull-right">
-                <a href="#!"><?= lang('Auth.about') ?></a> |
-                <a href="#!"><?= lang('Auth.privacy') ?></a> |
-                <a href="#!"><?= lang('Auth.contactUs') ?></a>
+                <a href="#!">About</a> |
+                <a href="#!">Privacy</a> |
+                <a href="#!">Contact Us</a>
             </div>
         </div>
     </div>
