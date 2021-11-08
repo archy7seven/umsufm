@@ -23,6 +23,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
+                    <?php if ($validation->hasError('penyiarNama')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('penyiarNama'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('isHuman')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('isHuman'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
@@ -30,21 +42,15 @@
                                 <span>Berikut Data Penyiar UMSU FM</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPenyiar">Tambah Data</button>
-                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedPenyiar">Delete Data</button>
+                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPenyiar"><span class="fa fa-plus"></span> Tambah Data</button>
                             </ul>
                         </div>
+
                         <div class="panel-body panel-body-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th width=5% style="text-align:center">
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="selectAll">
-                                                    <label for="selectAll"></label>
-                                                </span>
-                                            </th>
                                             <th width="5%" style="text-align:center">No</th>
                                             <th width="75%">Nama Penyiar</th>
                                             <th width="15%" style="text-align:center">Action</th>
@@ -55,12 +61,6 @@
                                         $no = 1;
                                         foreach ($penyiar as $row) : ?>
                                             <tr>
-                                                <td style="text-align:center">
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox1" name="penyiar[]" value="1">
-                                                        <label for="checkbox1"></label>
-                                                    </span>
-                                                </td>
                                                 <td style="text-align:center"><?= $no++; ?></td>
                                                 <td><?= $row->penyiarNama; ?></td>
                                                 <td style="text-align:center">
@@ -149,15 +149,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form action="/penyiar/add" method="POST">
+                <?= csrf_field() ?>
                 <div class="modal-header">
                     <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Penyiar</h3>
                 </div>
                 <div class="modal-body">
-
                     <div class="form-group">
                         <label>Nama Penyiar</label>
-                        <input type="text" name="penyairNama" class="form-control" required>
+                        <input type="text" name="penyiarNama" class="form-control">
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="isHuman" value="1" id="flexRadioDefault1">
@@ -183,28 +183,5 @@
 </div>
 <!-- END MODAL TAMBAH PENYIAR -->
 
-
-<!-- START MODAL DELETE SELECTED PENYIAR -->
-<div class="modal fade" id="deleteSelectedPenyiar" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close">
-                    <div aria-hidden="true">&times;</div>
-                </button>
-                <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Penyiar</h3>
-            </div>
-            <div class="modal-body">
-                <p>Apakah kamu yakin ingin menghapus data penyiar?</p>
-                <p class="text-warning"><small>This action cannot be undone</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="#!" type="submit" class="btn btn-danger">Delete</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL DELETE SELECTED PENYIAR -->
 
 <?= $this->endSection(); ?>
