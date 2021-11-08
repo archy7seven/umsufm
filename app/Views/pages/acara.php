@@ -194,7 +194,7 @@
                                                                     <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Acara</h3>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <p>Apakah kamu yakin ingin menghapus data acara <?= $row->acaraNama; ?>?</p>
+                                                                    <p>Apakah kamu yakin ingin menghapus data acara <strong><?= $row->acaraNama; ?></strong> ?</p>
                                                                     <p class="text-warning"><small>This action cannot be undone</small></p>
                                                                 </div>
                                                                 <div class="modal-footer">
