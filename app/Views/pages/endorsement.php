@@ -30,8 +30,7 @@
                                 <span>Berikut data Endorsement UMSU FM</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahEndorsement">Tambah Data</button>
-                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedEndorsement">Hapus Data</button>
+                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahEndorsement"><span class="fa fa-plus"></span> Tambah Data</button>
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -39,12 +38,6 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center">
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="selectAll">
-                                                    <label for="selectAll"></label>
-                                                </span>
-                                            </th>
                                             <th style="text-align:center">No</th>
                                             <th>Nama Endorsement</th>
                                             <th>Tanggal Awal</th>
@@ -57,12 +50,6 @@
                                         <?php $no = 1;
                                         foreach ($endorse->findAll() as $row) : ?>
                                             <tr>
-                                                <td style="text-align:center">
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                        <label for="checkbox1"></label>
-                                                    </span>
-                                                </td>
                                                 <td style="text-align:center"><?= $no++; ?></td>
                                                 <td><?= $row->endorsementNama; ?></td>
                                                 <td><?= gmdate("d-m-Y h:i:s", $row->endorsementTanggalAwal); ?></td>
@@ -134,7 +121,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Deskripsi</label>
                                                                             <div class="col-md-9">
-                                                                                <textarea class="form-control" name="endorsementDeskripsi" required><?= $row->endorsementDeskripsi; ?></textarea>
+                                                                                <textarea class="form-control" name="endorsementDeskripsi" rows="20" style="resize: vertical" required><?= $row->endorsementDeskripsi; ?></textarea>
                                                                             </div>
                                                                         </div>
                                                                     </form>
