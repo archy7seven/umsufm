@@ -23,6 +23,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
+                    <?php if ($validation->hasError('flayer')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('flayer'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
@@ -30,8 +36,7 @@
                                 <span>Berikut data acara UMSU FM</span>
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
-                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAcara">Tambah Data</button>
-                                <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedAcara">Hapus Data</button>
+                                <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAcara"><span class="fa fa-plus"> </span> Tambah Data</button>
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -39,12 +44,6 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center">
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="selectAll">
-                                                    <label for="selectAll"></label>
-                                                </span>
-                                            </th>
                                             <th style="text-align:center">No</th>
                                             <th>Nama Acara</th>
                                             <th>Nama Penyiar</th>
@@ -60,12 +59,6 @@
                                         <?php $no = 1;
                                         foreach ($acara->findAll() as $row) : ?>
                                             <tr>
-                                                <td style="text-align:center">
-                                                    <span class="custom-checkbox">
-                                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                        <label for="checkbox1"></label>
-                                                    </span>
-                                                </td>
                                                 <td style="text-align:center"><?= $no++; ?></td>
                                                 <td><?= $row->acaraNama; ?></td>
                                                 <td><?= $row->penyiarNama; ?></td>
@@ -254,7 +247,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Acara</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="acaraNama" required />
+                            <input type="text" class="form-control" name="acaraNama" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -344,30 +337,6 @@
     </div>
 </div>
 <!-- END MODAL TAMBAH ACARA -->
-
-
-<!-- START MODAL DELETE SELECTED ACARA -->
-<div class="modal fade" id="deleteSelectedAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close">
-                    <div aria-hidden="true">&times;</div>
-                </button>
-                <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Acara</h3>
-            </div>
-            <div class="modal-body">
-                <p>Apakah kamu yakin ingin menghapus data acara?</p>
-                <p class="text-warning"><small>This action cannot be undone</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL DELETE SELECTED ACARA -->
 
 
 <?= $this->endSection(); ?>

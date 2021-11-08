@@ -15,8 +15,8 @@
                     <img src="<?= base_url('theme/assets/images/users/no-image.jpg'); ?>" alt="John Doe" />
                 </div>
                 <div class="profile-data">
-                    <div class="profile-data-name"><?= session()->get('name'); ?></div>
-                    <div class="profile-data-title"><?= session()->get('username'); ?></div>
+                    <div class="profile-data-name"><?= user()->username; ?></div>
+                    <div class="profile-data-title"><?= user()->email; ?></div>
                 </div>
             </div>
         </li>
