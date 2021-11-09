@@ -33,16 +33,19 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 // $routes->get('/login', 'Login::index');
-$routes->post('/operator/auth', 'Operator::auth');
-$routes->post('/operator/register', 'Operator::register');
+// $routes->post('/operator/auth', 'Operator::auth');
+// $routes->post('/operator/register', 'Operator::register');
 $routes->get('/home', 'Home::index');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/penyiar', 'Penyiar::index');
+$routes->get('/acara', 'Acara::index');
+$routes->get('/endorsement', 'Endorsement::index');
+$routes->post('/acara', 'Acara::add');
+$routes->post('/endorsement', 'Endorsement::add');
 $routes->delete('/penyiar/(:num)', 'Penyiar::delete/$1');
 $routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');
 $routes->add('/acara/(:num)/edit', 'Acara::edit/$1');
-$routes->get('/acara', 'Acara::index');
-$routes->get('/endorsement', 'Endorsement::index');
+
 
 
 

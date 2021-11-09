@@ -43,7 +43,7 @@ class Acara extends BaseController
             'flayer' => [
                 'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',
                 'error' => [
-                    'max_size' => 'Ukuran gambar terlalu bersar',
+                    'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar'
                 ]
@@ -118,7 +118,7 @@ class Acara extends BaseController
             'flayer' => [
                 'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',
                 'error' => [
-                    'max_size' => 'Ukuran gambar terlalu bersar',
+                    'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar'
                 ]

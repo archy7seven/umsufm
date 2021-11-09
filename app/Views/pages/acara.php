@@ -278,7 +278,7 @@
 <div class="modal fade" id="tambahAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form role="form" action="/acara/add" method="POST" class="form-horizontal" enctype="multipart/form-data">
+            <form role="form" action="/acara" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="modal-header">
                     <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
