@@ -6,12 +6,12 @@ use App\Models\EndorsementModel;
 
 class Endorsement extends BaseController
 {
-
     protected $endorsementModel;
     public function __construct()
     {
         $this->endorsementModel = new EndorsementModel();
     }
+
     public function index()
     {
         $data = [
@@ -30,7 +30,7 @@ class Endorsement extends BaseController
         if (basename($endorsement->endorsementFlayer) != "endorsement.png") {
             unlink('endorsements/' . basename($endorsement->endorsementFlayer));
         }
-        $this->acaraModel->delete($id);
+        $this->endorsementModel->delete($id);
         return redirect()->to('endorsement');
     }
 

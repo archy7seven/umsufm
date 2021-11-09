@@ -75,7 +75,7 @@
                                                 <td><?= gmdate("d-m-Y h:i:s", $row->endorsementTanggalAkhir); ?></td>
                                                 <td><?= $row->endorsementDeskripsi; ?>
                                                     <!-- START MODAL DELETE ENDORSEMENT -->
-                                                    <div class="modal fade" id="hapusEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+                                                    <div class="modal fade" id="hapusEndorsement<?= $row->endorsementId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -90,7 +90,7 @@
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                                    <a href="endorsement/delete/<?= $row->endorsementId; ?>" class="btn btn-danger">Delete</a>
                                                                 </div>
                                                             </div>
                                                         </div>
