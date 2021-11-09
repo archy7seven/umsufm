@@ -167,29 +167,6 @@
 </div>
 <!-- END PAGE CONTAINER -->
 
-<!-- START MODAL DELETE SELECTED ENDORSEMENT -->
-<div class="modal fade" id="deleteSelectedEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close">
-                    <div aria-hidden="true">&times;</div>
-                </button>
-                <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Endorsement</h3>
-            </div>
-            <div class="modal-body">
-                <p>Apakah kamu yakin ingin menghapus data endorsement?</p>
-                <p class="text-warning"><small>This action cannot be undone</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL DELETE SELECTED ENDORSEMENT -->
-
 <!-- START MODAL TAMBAH ENDORSEMENT -->
 <div class="modal fade" id="tambahEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">

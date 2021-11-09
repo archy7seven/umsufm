@@ -77,7 +77,7 @@
                             <span class="fa fa-inbox"></span>
                         </div>
                         <div class="widget-data">
-                            <div class="widget-int num-count"><?= $jumlah_endors->where(['endorsmentNama', null])->countAllResults(); ?></div>
+                            <div class="widget-int num-count"><?= $jumlah_endors->where(['endorsementNama', 1])->countAllResults(); ?></div>
                             <div class="widget-title">Endorsement</div>
                             <div class="widget-subtitle">di UMSU FM</div>
                         </div>

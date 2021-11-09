@@ -65,12 +65,6 @@
                             <strong>Failed ! </strong><?= $validation->getError('acaraStatus'); ?>
                         </div>
                     <?php endif; ?>
-                    <?php if ($validation->hasError('acaraArsip')) : ?>
-                        <div class="alert alert-danger" role="alert">
-                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <strong>Failed ! </strong><?= $validation->getError('acaraArsip'); ?>
-                        </div>
-                    <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
@@ -366,7 +360,7 @@
                         <label class="col-md-3 control-label">Arsip Acara</label>
                         <div class="col-md-9">
                             <label class="switch">
-                                <input type="checkbox" checked name="acaraArsip" />
+                                <input type="checkbox" name="acaraArsip" />
                                 <span></span>
                             </label>
                         </div>
@@ -381,28 +375,5 @@
     </div>
 </div>
 <!-- END MODAL TAMBAH ACARA -->
-
-<!-- START MODAL DELETE SELECTED ACARA -->
-<div class="modal fade" id="deleteSelectedAcara" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close">
-                    <div aria-hidden="true">&times;</div>
-                </button>
-                <h3 class="modal-title" id="modalLabel"><strong>Hapus</strong> Data Acara</h3>
-            </div>
-            <div class="modal-body">
-                <p>Apakah kamu yakin ingin menghapus data acara?</p>
-                <p class="text-warning"><small>This action cannot be undone</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL DELETE SELECTED ACARA -->
 
 <?= $this->endSection(); ?>
