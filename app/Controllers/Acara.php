@@ -42,7 +42,7 @@ class Acara extends BaseController
         if (!$this->validate([
             'flayer' => [
                 'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',
-                'error' => [
+                'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar'
@@ -50,37 +50,37 @@ class Acara extends BaseController
             ],
             'acaraNama' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Nama Acara Harus Diisi',
                 ]
             ],
             'acaraPenyiar' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Penyiar Harus Dipilih',
                 ]
             ],
             'acaraHari' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Hari Acara Harus Diisi',
                 ]
             ],
             'acaraJamMulai' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Acara jam mulai harus diisi',
                 ]
             ],
             'acaraJamAkhir' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Acara jam akhir harus diisi',
                 ]
             ],
             'acaraStatus' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Acara Status harus dipilih',
                 ]
             ],
@@ -117,7 +117,7 @@ class Acara extends BaseController
         if (!$this->validate([
             'flayer' => [
                 'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',
-                'error' => [
+                'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar'
@@ -125,37 +125,37 @@ class Acara extends BaseController
             ],
             'acaraNama' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Nama Acara Harus Diisi',
                 ]
             ],
             'acaraPenyiar' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Penyiar Harus Dipilih',
                 ]
             ],
             'acaraHari' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Hari Acara Harus Diisi',
                 ]
             ],
             'acaraJamMulai' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Acara jam mulai harus diisi',
                 ]
             ],
             'acaraJamAkhir' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Acara jam akhir harus diisi',
                 ]
             ],
             'acaraStatus' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Acara Status harus dipilih',
                 ]
             ],

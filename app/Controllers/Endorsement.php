@@ -24,7 +24,7 @@ class Endorsement extends BaseController
         if (!$this->validate([
             'endorsementFlayer' => [
                 'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer],max_dims[endorsementFlayer,960,1280]',
-                'error' => [
+                'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar'
@@ -32,13 +32,13 @@ class Endorsement extends BaseController
             ],
             'endorsementNama' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Nama Endorsement Harus Diisi',
                 ]
             ],
             'endorsementDeskripsi' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Deskripsi Endorsement Harus Diisi',
                 ]
             ],
@@ -61,6 +61,9 @@ class Endorsement extends BaseController
             'endorsementTanggalAkhir' => $this->request->getPost('endorsementTanggalAkhir'),
             'endorsementDeskripsi' => $this->request->getPost('endorsementDeskripsi'),
         );
-        dd($data);
+
+        if ($this->endorsementModel->insert($data)) {
+            return redirect()->to('endorsement');
+        }
     }
 }
