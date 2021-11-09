@@ -86,20 +86,11 @@
 
     <!-- END THIS PAGE PLUGINS-->
 
-    START TEMPLATE -->
-    <<script type="text/javascript" src="<?= base_url('theme/js/settings.js'); ?>">
-        </script>
-
-        <script type="text/javascript" src="<?= base_url('theme/js/plugins.js'); ?>"></script>
-        <script type="text/javascript" src="<?= base_url('theme/js/actions.js'); ?>"></script>
-
-<<<<<<< HEAD
-        <script type="text/javascript" src="<?= base_url('theme/js/demo_dashboard.js'); ?>"></script>
-        <!-- END TEMPLATE -->
-        <!-- END TIME -->
-        <!-- END SCRIPTS -->
-=======
-    <!-- <script type="text/javascript" src="<?= base_url('theme/js/demo_dashboard.js'); ?>"></script> -->
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="<?= base_url('theme/js/settings.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('theme/js/plugins.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('theme/js/actions.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('theme/js/demo_dashboard.js'); ?>"></script>
     <!-- END TEMPLATE -->
     <!-- END TIME -->
     <!-- END SCRIPTS -->
@@ -130,7 +121,6 @@
             }
         }
     </script>
->>>>>>> e3735fbc914ca094e4ff3b0c09e857e258dfa560
 
 
 </body>
