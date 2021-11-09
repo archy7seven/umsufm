@@ -23,6 +23,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
+                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Maaf!</strong> <?php echo session()->getFlashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($validation->hasError('endorsementFlayer')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

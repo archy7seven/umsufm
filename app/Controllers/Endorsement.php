@@ -63,6 +63,14 @@ class Endorsement extends BaseController
         }
 
         $fileFlayer = $this->request->getFile('endorsementFlayer');
+        $width = getimagesize($fileFlayer)[0];
+        $height = getimagesize($fileFlayer)[1];
+
+        if ($width != 960 && $height != 1280) {
+            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 960px X 1280px');
+            return redirect()->back();
+        }
+
         if ($fileFlayer->getError() == 4) {
             $namaFile = 'endorsement.png';
         } else {
@@ -111,6 +119,14 @@ class Endorsement extends BaseController
         }
 
         $fileFlayer = $this->request->getFile('endorsementFlayer');
+        $width = getimagesize($fileFlayer)[0];
+        $height = getimagesize($fileFlayer)[1];
+
+        if ($width != 960 && $height != 1280) {
+            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 960px X 1280px');
+            return redirect()->back();
+        }
+
         if ($fileFlayer->getError() == 4) {
             $namaFile = $this->request->getPost('flayerLama');
         } else {
