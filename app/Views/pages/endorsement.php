@@ -101,18 +101,15 @@
                                                     <div class="modal fade" id="editEndorsement<?= $row->endorsementId ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                                    <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Endorsement</h3>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form role="form" class="form-horizontal">
-                                                                        <div class="form-group">
-                                                                            <label class="col-md-3 control-label">Flayer endorsement</label>
-                                                                            <div class="col-md-9">
-                                                                                <input type="file" accept="image/png" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
-                                                                            </div>
-                                                                        </div>
+                                                                <form role="form" class="form-horizontal" action="/endorsement/<?= $row->endorsementId; ?>/edit" method="POST" enctype="multipart/form-data">
+                                                                    <?= csrf_field(); ?>
+                                                                    <input type="hidden" name="flayerLama" value="<?= basename($row->endorsementFlayer); ?>" />
+                                                                    <div class="modal-header">
+                                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                        <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Endorsement</h3>
+                                                                    </div>
+                                                                    <div class="modal-body">
+
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Endorsement</label>
                                                                             <div class="col-md-9">
@@ -122,8 +119,8 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Tanggal Awal</label>
                                                                             <div class="col-md-9">
-                                                                                <div class="input-group date " id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                                                                    <input type="text" class="form-control datepicker" name="endorsementTanggalAkhir" value="<?= $row->endorsementTanggalAwal; ?>" />
+                                                                                <div class="input-group date " id="dp-2" data-date="<?= gmdate('d-m-Y', $row->endorsementTanggalAwal); ?>" data-date-format="dd-mm-yyyy">
+                                                                                    <input type="text" class="form-control datepicker" name="endorsementTanggalAkhir" value="<?= gmdate('d-m-Y', $row->endorsementTanggalAwal); ?>" />
                                                                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                                                                 </div>
                                                                             </div>
@@ -131,8 +128,8 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Tanggal Akhir</label>
                                                                             <div class="col-md-9">
-                                                                                <div class="input-group date" id="dp-2" data-date="17-08-2021" data-date-format="dd-mm-yyyy">
-                                                                                    <input type="text" class="form-control datepicker" name="endorsementTanggalAkhir" value="<?= $row->endorsementTanggalAkhir; ?>" />
+                                                                                <div class="input-group date" id="dp-2" data-date="<?= gmdate('d-m-Y', $row->endorsementTanggalAkhir); ?>" data-date-format="dd-mm-yyyy">
+                                                                                    <input type="text" class="form-control datepicker" name="endorsementTanggalAkhir" value="<?= gmdate('d-m-Y', $row->endorsementTanggalAkhir); ?>" />
                                                                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                                                                 </div>
                                                                             </div>
@@ -143,12 +140,24 @@
                                                                                 <textarea class="form-control" name="endorsementDeskripsi" rows="20" style="resize: vertical" required><?= $row->endorsementDeskripsi; ?></textarea>
                                                                             </div>
                                                                         </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class=" modal-footer">
-                                                                    <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <button type="submit" class="btn btn-success">Save</button>
-                                                                </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-md-3 control-label">Flayer Endorsement</label>
+                                                                            <div class="col-md-9">
+                                                                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger" name="endorsementFlayer" id="flayeredit" data-filename-placement="inside" data-id="<?= $row->endorsementId; ?>" title="<?= basename($row->endorsementFlayer); ?>" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-md-3 control-label"></label>
+                                                                            <div class="col-md-3">
+                                                                                <img src="<?= $row->endorsementFlayer; ?>" alt="" class="img-thumbnail img-preview<?= $row->endorsementId; ?>">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class=" modal-footer">
+                                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
