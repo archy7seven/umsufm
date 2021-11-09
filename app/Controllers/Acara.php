@@ -14,6 +14,7 @@ class Acara extends BaseController
         $this->acaraModel = new AcaraModel();
         $this->penyiarModel = new PenyiarModel();
     }
+
     public function index()
     {
         $data = [

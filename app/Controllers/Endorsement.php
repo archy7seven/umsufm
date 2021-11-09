@@ -6,28 +6,44 @@ use App\Models\EndorsementModel;
 
 class Endorsement extends BaseController
 {
+
+    protected $endorsementModel;
+    public function __construct()
+    {
+        $this->endorsementModel = new EndorsementModel();
+    }
     public function index()
     {
-        $endorsementModel = new EndorsementModel();
         $data = [
             'title' => "Endorsement",
             'appName' => "UMSU FM",
             'breadcrumb' => ['Home', 'Endorsement'],
-            'endorse' => $endorsementModel,
+            'endorse' => $this->endorsementModel,
             'validation' => \Config\Services::validation()
         ];
         return view('pages/endorsement', $data);
+    }
+
+    public function delete($id)
+    {
+        $endorsement = $this->endorsementModel->find($id);
+        if (basename($endorsement->endorsementFlayer) != "endorsement.png") {
+            unlink('endorsements/' . basename($endorsement->endorsementFlayer));
+        }
+        $this->acaraModel->delete($id);
+        return redirect()->to('endorsement');
     }
 
     public function add()
     {
         if (!$this->validate([
             'endorsementFlayer' => [
-                'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer],max_dims[endorsementFlayer,960,1280]',
+                'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer]|max_dims[endorsementFlayer,960,1280]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
-                    'is_image' => 'Yang anda Pilih bukan gambar'
+                    'is_image' => 'Yang anda Pilih bukan gambar',
+                    'max_dims' => 'Dimensi gambar salah, gunakan 960px X 1280px'
                 ]
             ],
             'endorsementNama' => [
