@@ -205,7 +205,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label class="col-md-3 control-label">Flayer Acara</label>
+                                                                            <label class="col-md-3 control-label"></label>
                                                                             <div class="col-md-3">
                                                                                 <img src="<?= $row->acaraFlayer; ?>" alt="" class="img-thumbnail img-preview<?= $row->acaraId; ?>">
                                                                             </div>
@@ -375,7 +375,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Flayer Acara</label>
+                        <label class="col-md-3 control-label"></label>
                         <div class="col-md-3">
                             <img src="uploads/default.png" alt="" class="img-thumbnail img-preview">
                         </div>
@@ -391,8 +391,4 @@
 </div>
 <!-- END MODAL TAMBAH ACARA -->
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e3735fbc914ca094e4ff3b0c09e857e258dfa560
 <?= $this->endSection(); ?>
