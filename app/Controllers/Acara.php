@@ -102,8 +102,6 @@ class Acara extends BaseController
             $fileFlayer->move('uploads', $namaFile);
         }
 
-
-
         $data = array(
             'acaraFlayer' => base_url('uploads/' . $namaFile),
             'acaraNama' => $this->request->getPost('acaraNama'),
@@ -120,7 +118,7 @@ class Acara extends BaseController
         }
     }
 
-    public function edit()
+    public function edit($id)
     {
         if (!$this->validate([
             'flayer' => [
@@ -167,12 +165,6 @@ class Acara extends BaseController
                     'required' => 'Acara Status harus dipilih',
                 ]
             ],
-            'acaraArsip' => [
-                'rules' => 'required',
-                'error' => [
-                    'required' => 'Acara arsip harus dipilih',
-                ]
-            ],
         ])) {
             return redirect()->to('acara')->withInput();
         }
@@ -195,6 +187,8 @@ class Acara extends BaseController
             'acaraStatus' => $this->request->getPost('acaraStatus'),
             'acaraArsip' => $this->request->getPost('acaraArsip') == null ? 1 : 0
         );
-        dd($data);
+        if ($this->acaraModel->update($id, $data)) {
+            return redirect()->to('acara');
+        }
     }
 }
