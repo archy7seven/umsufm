@@ -107,18 +107,14 @@
                                                     <div class="modal fade" id="editAcara<?= $row->acaraId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                                    <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Acara</h3>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form role="form" class="form-horizontal">
-                                                                        <div class="form-group">
-                                                                            <label class="col-md-3 control-label">Flayer Acara</label>
-                                                                            <div class="col-md-9">
-                                                                                <input type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
-                                                                            </div>
-                                                                        </div>
+                                                                <form role="form" class="form-horizontal" action="/acara/edit" method="POST" enctype="multipart/form-data">
+                                                                    <?= csrf_field(); ?>
+                                                                    <input type="hidden" name="flayerLama" value="<?= basename($row->acaraFlayer); ?>" />
+                                                                    <div class="modal-header">
+                                                                        <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                        <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Acara</h3>
+                                                                    </div>
+                                                                    <div class="modal-body">
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Acara</label>
                                                                             <div class="col-md-9">
@@ -197,17 +193,29 @@
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
                                                                             <div class="col-md-9">
                                                                                 <label class="switch">
-                                                                                    <input type="checkbox" checked value="0" name="acaraArsip" />
+                                                                                    <input type="checkbox" <?= ($row->acaraArsip == 0) ? "" : "checked"; ?>value="0" name="acaraArsip" />
                                                                                     <span></span>
                                                                                 </label>
                                                                             </div>
                                                                         </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <button type="submit" class="btn btn-success">Save</button>
-                                                                </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-md-3 control-label">Flayer Acara</label>
+                                                                            <div class="col-md-9">
+                                                                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="flayeredit" data-filename-placement="inside" data-id="<?= $row->acaraId; ?>" title="<?= basename($row->acaraFlayer); ?>" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label class="col-md-3 control-label">Flayer Acara</label>
+                                                                            <div class="col-md-3">
+                                                                                <img src="<?= $row->acaraFlayer; ?>" alt="" class="img-thumbnail img-preview<?= $row->acaraId; ?>">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -271,17 +279,12 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form role="form" action="/acara/add" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                <?= csrf_field(); ?>
                 <div class="modal-header">
                     <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Acara</h3>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Flayer Acara</label>
-                        <div class="col-md-9">
-                            <input type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="filename3" data-filename-placement="inside" title="Browse..." />
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Acara</label>
                         <div class="col-md-9">
@@ -365,6 +368,18 @@
                             </label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Flayer Acara</label>
+                        <div class="col-md-9">
+                            <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="flayer" data-filename-placement="inside" title="Browse..." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Flayer Acara</label>
+                        <div class="col-md-3">
+                            <img src="uploads/default.png" alt="" class="img-thumbnail img-preview">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -376,4 +391,8 @@
 </div>
 <!-- END MODAL TAMBAH ACARA -->
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3735fbc914ca094e4ff3b0c09e857e258dfa560
 <?= $this->endSection(); ?>

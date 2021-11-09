@@ -33,6 +33,7 @@
                                 <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahEndorsement"><span class="fa fa-plus"></span> Tambah Data</button>
                             </ul>
                         </div>
+
                         <div class="panel-body panel-body-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">

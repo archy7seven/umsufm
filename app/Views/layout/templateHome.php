@@ -93,10 +93,44 @@
         <script type="text/javascript" src="<?= base_url('theme/js/plugins.js'); ?>"></script>
         <script type="text/javascript" src="<?= base_url('theme/js/actions.js'); ?>"></script>
 
+<<<<<<< HEAD
         <script type="text/javascript" src="<?= base_url('theme/js/demo_dashboard.js'); ?>"></script>
         <!-- END TEMPLATE -->
         <!-- END TIME -->
         <!-- END SCRIPTS -->
+=======
+    <!-- <script type="text/javascript" src="<?= base_url('theme/js/demo_dashboard.js'); ?>"></script> -->
+    <!-- END TEMPLATE -->
+    <!-- END TIME -->
+    <!-- END SCRIPTS -->
+    <script>
+        function previewImg() {
+            const flayer = document.querySelector('#flayer');
+            const flayerPrev = document.querySelector('.img-preview');
+
+            const fileFlayer = new FileReader();
+            fileFlayer.readAsDataURL(flayer.files[0]);
+
+            fileFlayer.onload = function(e) {
+                flayerPrev.src = e.target.result;
+            }
+        }
+
+        function previewImgEdit() {
+            const flayer = document.querySelector('#flayeredit');
+            const id = document.getElementById("flayeredit").getAttribute("data-id");
+
+            const flayerPrev = document.querySelector('.img-preview' + id);
+
+            const fileFlayer = new FileReader();
+            fileFlayer.readAsDataURL(flayer.files[0]);
+
+            fileFlayer.onload = function(e) {
+                flayerPrev.src = e.target.result;
+            }
+        }
+    </script>
+>>>>>>> e3735fbc914ca094e4ff3b0c09e857e258dfa560
 
 
 </body>
