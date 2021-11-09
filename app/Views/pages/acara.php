@@ -107,7 +107,7 @@
                                                     <div class="modal fade" id="editAcara<?= $row->acaraId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
-                                                                <form role="form" class="form-horizontal" action="/acara/edit" method="POST" enctype="multipart/form-data">
+                                                                <form role="form" class="form-horizontal" action="/acara/<?= $row->acaraId; ?>/edit" method="POST" enctype="multipart/form-data">
                                                                     <?= csrf_field(); ?>
                                                                     <input type="hidden" name="flayerLama" value="<?= basename($row->acaraFlayer); ?>" />
                                                                     <div class="modal-header">
@@ -193,7 +193,7 @@
                                                                             <label class="col-md-3 control-label">Arsip Acara</label>
                                                                             <div class="col-md-9">
                                                                                 <label class="switch">
-                                                                                    <input type="checkbox" <?= ($row->acaraArsip == 0) ? "" : "checked"; ?>value="0" name="acaraArsip" />
+                                                                                    <input type="checkbox" <?= ($row->acaraArsip == 0) ? "checked" : ""; ?> value="<?= $row->acaraArsip; ?>" name="acaraArsip" />
                                                                                     <span></span>
                                                                                 </label>
                                                                             </div>
