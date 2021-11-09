@@ -35,6 +35,36 @@
                             <strong>Failed ! </strong><?= $validation->getError('acaraNama'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if ($validation->hasError('acaraPenyiar')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('acaraPenyiar'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('acaraHari')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('acaraHari'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('acaraJamMulai')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('acaraJamMulai'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('acaraJamAkhir')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('acaraJamAkhir'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('acaraStatus')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('acaraStatus'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
@@ -43,7 +73,6 @@
                             </div>
                             <ul class="panel-controls" style="margin-top: 2px;">
                                 <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahAcara"><span class="fa fa-plus"></span> Tambah Data</button>
-
                             </ul>
                         </div>
                         <div class="panel-body panel-body-table">
@@ -176,7 +205,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label class="col-md-3 control-label">Flayer Acara</label>
+                                                                            <label class="col-md-3 control-label"></label>
                                                                             <div class="col-md-3">
                                                                                 <img src="<?= $row->acaraFlayer; ?>" alt="" class="img-thumbnail img-preview<?= $row->acaraId; ?>">
                                                                             </div>
@@ -346,7 +375,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Flayer Acara</label>
+                        <label class="col-md-3 control-label"></label>
                         <div class="col-md-3">
                             <img src="uploads/default.png" alt="" class="img-thumbnail img-preview">
                         </div>
@@ -361,6 +390,5 @@
     </div>
 </div>
 <!-- END MODAL TAMBAH ACARA -->
-
 
 <?= $this->endSection(); ?>

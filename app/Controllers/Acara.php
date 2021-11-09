@@ -84,12 +84,6 @@ class Acara extends BaseController
                     'required' => 'Acara Status harus dipilih',
                 ]
             ],
-            'acaraArsip' => [
-                'rules' => 'required',
-                'error' => [
-                    'required' => 'Acara arsip harus dipilih',
-                ]
-            ],
         ])) {
             return redirect()->to('acara')->withInput();
         }

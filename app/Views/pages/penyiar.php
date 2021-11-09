@@ -45,7 +45,6 @@
                                 <button Type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPenyiar"><span class="fa fa-plus"></span> Tambah Data</button>
                             </ul>
                         </div>
-
                         <div class="panel-body panel-body-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
@@ -133,10 +132,8 @@
                         </div>
                     </div>
                     <!-- END PROJECTS BLOCK -->
-
                 </div>
             </div>
-
         </div>
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
@@ -171,7 +168,6 @@
                             Lebih dari satu orang
                         </label>
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
