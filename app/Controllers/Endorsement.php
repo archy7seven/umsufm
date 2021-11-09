@@ -73,11 +73,10 @@ class Endorsement extends BaseController
         $data = array(
             'endorsementFlayer' => base_url('endorsements/' . $namaFile),
             'endorsementNama' => $this->request->getPost('endorsementNama'),
-            'endorsementTanggalAwal' => $this->request->getPost('endorsementTanggalAwal'),
-            'endorsementTanggalAkhir' => $this->request->getPost('endorsementTanggalAkhir'),
+            'endorsementTanggalAwal' => strtotime($this->request->getPost('endorsementTanggalAwal')),
+            'endorsementTanggalAkhir' => strtotime($this->request->getPost('endorsementTanggalAkhir')),
             'endorsementDeskripsi' => $this->request->getPost('endorsementDeskripsi'),
         );
-
         if ($this->endorsementModel->insert($data)) {
             return redirect()->to('endorsement');
         }
