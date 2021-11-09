@@ -172,11 +172,9 @@
                             <h3 class="panel-title">Logo Aplikasi</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Click or drag some file below</p>
-                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
-                                <div class="dz-default dz-message">
-                                </div>
-                            </form>
+                            <div class="col-md-12">
+                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                            </div>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary pull-right">Save</button>
