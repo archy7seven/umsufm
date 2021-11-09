@@ -172,22 +172,17 @@
 <div class="modal fade" id="tambahEndorsement" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Endorsement</h3>
-            </div>
-            <div class="modal-body">
-                <form role="form" class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Flayer endorsement</label>
-                        <div class="col-md-9">
-                            <input type="file" accept="image/png" class="fileinput btn-danger" name="endorsementFlayer" id="filename3" data-filename-placement="inside" title="Browse..." />
-                        </div>
-                    </div>
+            <form role="form" class="form-horizontal" method="POST" action="/endorsement" enctype="multipart/form-data">
+                <?= csrf_field(); ?>
+                <div class="modal-header">
+                    <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="modalLabel"><strong>Tambah</strong> Data Endorsement</h3>
+                </div>
+                <div class="modal-body">
                     <div class="form-group">
                         <label class="col-md-3 control-label">Nama Endorsement</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="endorsementNama" required />
+                            <input type="text" class="form-control" name="endorsementNama" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -211,15 +206,27 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Deskripsi</label>
                         <div class="col-md-9">
-                            <textarea class="form-control" name="endorsementDeskripsi" required></textarea>
+                            <textarea class="form-control" name="endorsementDeskripsi" rows="20" style="resize: vertical"></textarea>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Save</button>
-            </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Flayer endorsement</label>
+                        <div class="col-md-9">
+                            <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger" name="endorsementFlayer" id="flayer" data-filename-placement="inside" title="Browse..." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-3">
+                            <img src="uploads/default.png" alt="" class="img-thumbnail img-preview">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
