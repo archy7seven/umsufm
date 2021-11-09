@@ -13,7 +13,8 @@ class Endorsement extends BaseController
             'title' => "Endorsement",
             'appName' => "UMSU FM",
             'breadcrumb' => ['Home', 'Endorsement'],
-            'endorse' => $endorsementModel
+            'endorse' => $endorsementModel,
+            'validation' => \Config\Services::validation()
         ];
         return view('pages/endorsement', $data);
     }
@@ -42,7 +43,7 @@ class Endorsement extends BaseController
                 ]
             ],
         ])) {
-            return redirect()->to('endosement')->withInput();
+            return redirect()->to('endorsement')->withInput();
         }
 
         $fileFlayer = $this->request->getFile('endorsementFlayer');

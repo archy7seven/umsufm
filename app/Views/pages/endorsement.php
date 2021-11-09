@@ -23,6 +23,24 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
+                    <?php if ($validation->hasError('endorsementFlayer')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('endorsementFlayer'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('endorsementNama')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('endorsementNama'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('endorsementDeskripsi')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('endorsementDeskripsi'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title-box">
