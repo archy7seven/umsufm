@@ -236,7 +236,7 @@
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <a href="acara/delete/<?= $row->acaraId; ?>" type="submit" class="btn btn-danger">Delete</a>
+                                                                    <a href="acara/delete/<?= $row->acaraId; ?>" class="btn btn-danger">Delete</a>
                                                                 </div>
                                                             </div>
                                                         </div>
