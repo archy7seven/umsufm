@@ -96,6 +96,33 @@
     <!-- END TEMPLATE -->
     <!-- END TIME -->
     <!-- END SCRIPTS -->
+    <script>
+        function previewImg() {
+            const flayer = document.querySelector('#flayer');
+            const flayerPrev = document.querySelector('.img-preview');
+
+            const fileFlayer = new FileReader();
+            fileFlayer.readAsDataURL(flayer.files[0]);
+
+            fileFlayer.onload = function(e) {
+                flayerPrev.src = e.target.result;
+            }
+        }
+
+        function previewImgEdit() {
+            const flayer = document.querySelector('#flayeredit');
+            const id = document.getElementById("flayeredit").getAttribute("data-id");
+
+            const flayerPrev = document.querySelector('.img-preview' + id);
+
+            const fileFlayer = new FileReader();
+            fileFlayer.readAsDataURL(flayer.files[0]);
+
+            fileFlayer.onload = function(e) {
+                flayerPrev.src = e.target.result;
+            }
+        }
+    </script>
 
 
 </body>

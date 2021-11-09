@@ -34,6 +34,7 @@
                                 <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSelectedEndorsement">Hapus Data</button>
                             </ul>
                         </div>
+
                         <div class="panel-body panel-body-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped">
