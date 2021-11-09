@@ -3,27 +3,21 @@
 <?= $this->section('content'); ?>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
-
     <?= $this->include('layout/templateSidebar'); ?>
-
     <!-- PAGE CONTENT -->
     <div class="page-content">
-
         <?= $this->include('layout/templateHead'); ?>
-
         <!-- START BREADCRUMB -->
         <ul class="breadcrumb">
             <li><a href="/home"><?= $breadcrumb[0]; ?></a></li>
             <li class="active"><?= $breadcrumb[1]; ?></li>
         </ul>
         <!-- END BREADCRUMB -->
-
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
             <!-- START WIDGETS -->
             <div class="row">
                 <div class="col-md-3">
-
                     <!-- START WIDGET SLIDER -->
                     <div class="widget widget-default widget-carousel">
                         <div class="owl-carousel" id="owl-example">
@@ -48,10 +42,8 @@
                         </div>
                     </div>
                     <!-- END WIDGET SLIDER -->
-
                 </div>
                 <div class="col-md-3">
-
                     <!-- START WIDGET MESSAGES -->
                     <div class="widget widget-default widget-item-icon" onclick="location.href='#!';">
                         <div class="widget-item-left">
@@ -67,10 +59,8 @@
                         </div>
                     </div>
                     <!-- END WIDGET MESSAGES -->
-
                 </div>
                 <div class="col-md-3">
-
                     <!-- START WIDGET REGISTRED -->
                     <div class="widget widget-default widget-item-icon" onclick="location.href='#!';">
                         <div class="widget-item-left">
@@ -86,10 +76,8 @@
                         </div>
                     </div>
                     <!-- END WIDGET REGISTRED -->
-
                 </div>
                 <div class="col-md-3">
-
                     <!-- START WIDGET CLOCK -->
                     <div class="widget widget-danger widget-padding-sm">
                         <div class="widget-big-int plugin-clock">00:00</div>
@@ -110,11 +98,11 @@
                         </div>
                     </div>
                     <!-- END WIDGET CLOCK -->
-
                 </div>
             </div>
             <!-- END WIDGETS -->
 
+            <!-- START LINK AND IMAGE APLIKASI -->
             <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
@@ -131,7 +119,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
                         <div class="panel-heading">
@@ -147,7 +134,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
                         <div class="panel-heading">
@@ -164,7 +150,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
@@ -172,7 +157,7 @@
                             <h3 class="panel-title">Logo Aplikasi</h3>
                         </div>
                         <div class="panel-body">
-                            <div class="col-md-12">
+                            <div>
                                 <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
                             </div>
                         </div>
@@ -181,54 +166,45 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
                         <div class="panel-heading">
                             <h3 class="panel-title">Logo Ruang Dengar</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Click or drag some file below</p>
-                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
-                                <div class="dz-default dz-message">
-                                </div>
-                            </form>
+                            <div>
+                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                            </div>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
                         <div class="panel-heading">
                             <h3 class="panel-title">Logo Homescreen</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Click or drag some file below</p>
-                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
-                                <div class="dz-default dz-message">
-                                </div>
-                            </form>
+                            <div>
+                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                            </div>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary pull-right">Save</button>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
                         <div class="panel-heading">
                             <h3 class="panel-title">Flayer Default Siaran</h3>
                         </div>
                         <div class="panel-body">
-                            <p>Click or drag some file below</p>
-                            <form action="form-file-handling-html#" class="dropzone dropzone-mini dz-clickable">
-                                <div class="dz-default dz-message">
-                                </div>
-                            </form>
+                            <div>
+                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                            </div>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary pull-right">Save</button>
@@ -236,8 +212,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
+        <!-- END LINK AND IMAGE APLIKASI -->
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTENT -->
