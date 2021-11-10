@@ -37,10 +37,34 @@
                             <strong>Failed ! </strong><?= $validation->getError('streamAdd'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if ($validation->hasError('livechatAdd')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('livechatAdd'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('whatsappAdd')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('whatsappAdd'); ?>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($validation->hasError('settingLogoApp')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                             <strong>Failed ! </strong><?= $validation->getError('settingLogoApp'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('settingLogoRuangdengar')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('settingLogoRuangdengar'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('settingLogoHomescreen')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('settingLogoHomescreen'); ?>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -212,47 +236,71 @@
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Logo Ruang Dengar</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div>
-                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                        <form role="form" action="/logoRuangdengarEdit/<?= $setting->findAll()[4]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                            <? csrf_field(); ?>
+                            <input type="hidden" name="logoRuangdengarLama" value="<?= basename($setting->findAll()[4]->configValue); ?>">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Logo Ruang Dengar</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoRuangdengar" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[4]->configId; ?>" title="Browse..." />
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label"></label>
+                                    <div class="col-md-12">
+                                        <img src="<?= $setting->findAll()[4]->configValue; ?>" alt="" class="img-thumbnail img-preview<?= $setting->findAll()[4]->configId; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" value="editLogoRuangdengar" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Logo Homescreen</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div>
-                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                        <form role="form" class="form-horizontal" action="/logoHomescreenEdit/<?= $setting->findAll()[5]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                            <? csrf_field(); ?>
+                            <input type="hidden" name="logoHomescreenLama" value="<?= basename($setting->findAll()[5]->configValue); ?>">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Logo Homescreen</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoHomescreen" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[5]->configId; ?>" title="Browse..." />
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label"></label>
+                                    <div class="col-md-12">
+                                        <img src="<?= $setting->findAll()[5]->configValue; ?>" alt="" class="img-thumbnail img-preview<?= $setting->findAll()[5]->configId; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" value="editLogoHomescreen" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Flayer Default Siaran</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div>
-                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                        <form role="form" class="form-horizontal" action="/flayerDefaultsiaranEdit/<?= $setting->findAll()[6]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                            <? csrf_field(); ?>
+                            <input type="hidden" name="flayerDefaultsiaranLama" value="<?= basename($setting->findAll()[6]->configValue); ?>">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Flayer Default Siaran</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="flayerDefaultsiaran" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label"></label>
+                                    <div class="col-md-12">
+                                        <img src="<?= $setting->findAll()[6]->configValue; ?>" alt="" class="img-thumbnail img-preview<?= $setting->findAll()[6]->configId; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" value="editFlayerDefaultsiaran" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -48,6 +48,9 @@ $routes->add('/acara/(:num)/edit', 'Acara::edit/$1');
 $routes->add('/endorsement/(:num)/edit', 'Endorsement::edit/$1');
 
 $routes->add('/logoAppEdit/(:num)/edit', 'Home::logoAppEdit/$1');
+$routes->add('/logoRuangdengarEdit/(:num)/edit', 'Home::logoRuangdengarEdit/$1');
+$routes->add('/logoHomescreenEdit/(:num)/edit', 'Home::logoHomescreenEdit/$1');
+$routes->add('/flayerDefaultsiaranEdit/(:num)/edit', 'Home::flayerDefaultsiaranEdit/$1');
 $routes->add('/streamEdit/(:num)/edit', 'Home::streamEdit/$1');
 $routes->add('/livechatEdit/(:num)/edit', 'Home::livechatEdit/$1');
 $routes->add('/whatsappEdit/(:num)/edit', 'Home::whatsappEdit/$1');

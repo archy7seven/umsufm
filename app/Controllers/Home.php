@@ -149,4 +149,123 @@ class Home extends BaseController
             return redirect()->to('home');
         }
     }
+
+    public function logoRuangdengarEdit($id)
+    {
+        if (!$this->validate([
+            'settingLogoRuangdengar' => [
+                'rules' => 'max_size[settingLogoRuangdengar,5120]|mime_in[settingLogoRuangdengar,image/png]|is_image[settingLogoRuangdengar]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'mime_in' => 'Yang anda Pilih bukan gambar',
+                    'is_image' => 'Yang anda Pilih bukan gambar'
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $fileFlayer = $this->request->getFile('settingLogoRuangdengar');
+        $width = getimagesize($fileFlayer)[0];
+        $height = getimagesize($fileFlayer)[1];
+
+        if ($width != 512 && $height != 512) {
+            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 512px X 512px');
+            return redirect()->back();
+        }
+
+        if ($fileFlayer->getError() == 4) {
+            $namaFile = $this->request->getPost('logoRuangdengarLama');
+        } else {
+            $namaFile = $fileFlayer->getRandomName();
+            $fileFlayer->move('settings', $namaFile);
+            unlink('settings/' . $this->request->getPost('logoRuangdengarLama'));
+        }
+
+        $data = array(
+            'configValue' => base_url('settings/' . $namaFile),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
+    }
+
+    public function logoHomescreenEdit($id)
+    {
+        if (!$this->validate([
+            'settingLogoHomescreen' => [
+                'rules' => 'max_size[settingLogoHomescreen,5120]|mime_in[settingLogoHomescreen,image/png]|is_image[settingLogoHomescreen]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'mime_in' => 'Yang anda Pilih bukan gambar',
+                    'is_image' => 'Yang anda Pilih bukan gambar'
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $fileFlayer = $this->request->getFile('settingLogoHomescreen');
+        $width = getimagesize($fileFlayer)[0];
+        $height = getimagesize($fileFlayer)[1];
+
+        if ($width != 512 && $height != 512) {
+            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 512px X 512px');
+            return redirect()->back();
+        }
+
+        if ($fileFlayer->getError() == 4) {
+            $namaFile = $this->request->getPost('logoHomescreenLama');
+        } else {
+            $namaFile = $fileFlayer->getRandomName();
+            $fileFlayer->move('settings', $namaFile);
+            unlink('settings/' . $this->request->getPost('logoHomescreenLama'));
+        }
+
+        $data = array(
+            'configValue' => base_url('settings/' . $namaFile),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
+    }
+
+    public function flayerDefaultsiaranEdit($id)
+    {
+        if (!$this->validate([
+            'settingFlayerDefaultsiaran' => [
+                'rules' => 'max_size[settingFlayerDefaultsiaran,5120]|mime_in[settingFlayerDefaultsiaran,image/png]|is_image[settingFlayerDefaultsiaran]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'mime_in' => 'Yang anda Pilih bukan gambar',
+                    'is_image' => 'Yang anda Pilih bukan gambar'
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $fileFlayer = $this->request->getFile('settingFlayerDefaultsiaran');
+
+        if ($fileFlayer->getError() == 4) {
+            $namaFile = $this->request->getPost('FlayerDefaultsiaranLama');
+        } else {
+            $namaFile = $fileFlayer->getRandomName();
+            $fileFlayer->move('settings', $namaFile);
+            unlink('settings/' . $this->request->getPost('FlayerDefaultsiaranLama'));
+        }
+
+        $data = array(
+            'configValue' => base_url('settings/' . $namaFile),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
+    }
 }
