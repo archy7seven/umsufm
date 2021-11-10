@@ -41,7 +41,6 @@ class Home extends BaseController
 
     public function streamEdit($id)
     {
-        dd($_POST);
         if (!$this->validate([
             'streamAdd' => [
                 'rules' => 'required',
@@ -65,10 +64,9 @@ class Home extends BaseController
 
     public function logoAppEdit($id)
     {
-        dd($_POST);
         if (!$this->validate([
             'settingLogoApp' => [
-                'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',
+                'rules' => 'max_size[settingLogoApp,5120]|mime_in[settingLogoApp,image/png]|is_image[settingLogoApp]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
@@ -88,8 +86,16 @@ class Home extends BaseController
             return redirect()->back();
         }
 
+        if ($fileFlayer->getError() == 4) {
+            $namaFile = $this->request->getPost('logoAppLama');
+        } else {
+            $namaFile = $fileFlayer->getRandomName();
+            $fileFlayer->move('settings', $namaFile);
+            unlink('settings/' . $this->request->getPost('logoAppLama'));
+        }
+
         $data = array(
-            'configValue' => $this->request->getPost('settingLogoApp'),
+            'configValue' => base_url('settings/' . $namaFile),
         );
 
         if ($this->settingModel->update($id, $data)) {
