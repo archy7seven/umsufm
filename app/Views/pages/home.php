@@ -220,7 +220,7 @@
                                 <h3 class="panel-title">Logo Aplikasi</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoApp" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[1]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEditSet(<?= $setting->findAll()[1]->configId; ?>)" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoApp" id="flayeredit<?= $setting->findAll()[1]->configId; ?>" data-filename-placement="inside" data-id="<?= $setting->findAll()[1]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
@@ -243,7 +243,7 @@
                                 <h3 class="panel-title">Logo Ruang Dengar</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoRuangdengar" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[4]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEditSet(<?= $setting->findAll()[4]->configId; ?>)" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoRuangdengar" id="flayeredit<?= $setting->findAll()[4]->configId; ?>" data-filename-placement="inside" data-id="<?= $setting->findAll()[4]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
@@ -266,7 +266,7 @@
                                 <h3 class="panel-title">Logo Homescreen</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoHomescreen" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[5]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEditSet(<?= $setting->findAll()[5]->configId; ?>)" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoHomescreen" id="flayeredit<?= $setting->findAll()[5]->configId; ?>" data-filename-placement="inside" data-id="<?= $setting->findAll()[5]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
@@ -289,7 +289,7 @@
                                 <h3 class="panel-title">Flayer Default Siaran</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="flayerDefaultsiaran" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEditSet(<?= $setting->findAll()[6]->configId; ?>)" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="flayerDefaultsiaran" id="flayeredit<?= $setting->findAll()[6]->configId; ?>" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
