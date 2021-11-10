@@ -213,7 +213,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <form role="form" class="form-horizontal" action="/logoAppEdit/<?= $setting->findAll()[1]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                        <form role="form" action="/logoAppEdit/<?= $setting->findAll()[1]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
                             <? csrf_field(); ?>
                             <input type="hidden" name="logoAppLama" value="<?= basename($setting->findAll()[1]->configValue); ?>" />
                             <div class="panel-heading">
@@ -259,7 +259,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <form role="form" class="form-horizontal" action="/logoHomescreenEdit/<?= $setting->findAll()[5]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                        <form role="form" action="/logoHomescreenEdit/<?= $setting->findAll()[5]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
                             <? csrf_field(); ?>
                             <input type="hidden" name="logoHomescreenLama" value="<?= basename($setting->findAll()[5]->configValue); ?>">
                             <div class="panel-heading">
@@ -282,7 +282,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <form role="form" class="form-horizontal" action="/flayerDefaultsiaranEdit/<?= $setting->findAll()[6]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                        <form role="form" action="/flayerDefaultsiaranEdit/<?= $setting->findAll()[6]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
                             <? csrf_field(); ?>
                             <input type="hidden" name="flayerDefaultsiaranLama" value="<?= basename($setting->findAll()[6]->configValue); ?>">
                             <div class="panel-heading">
