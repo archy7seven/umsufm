@@ -49,6 +49,9 @@ $routes->add('/endorsement/(:num)/edit', 'Endorsement::edit/$1');
 
 $routes->add('/logoAppEdit/(:num)/edit', 'Home::logoAppEdit/$1');
 $routes->add('/streamEdit/(:num)/edit', 'Home::streamEdit/$1');
+$routes->add('/livechatEdit/(:num)/edit', 'Home::livechatEdit/$1');
+$routes->add('/whatsappEdit/(:num)/edit', 'Home::whatsappEdit/$1');
+
 
 
 

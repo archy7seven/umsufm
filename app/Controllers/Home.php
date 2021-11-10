@@ -41,7 +41,6 @@ class Home extends BaseController
 
     public function streamEdit($id)
     {
-        dd($_POST);
         if (!$this->validate([
             'streamAdd' => [
                 'rules' => 'required',
@@ -63,9 +62,54 @@ class Home extends BaseController
         }
     }
 
+    public function livechatEdit($id)
+    {
+        if (!$this->validate([
+            'livechatAdd' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Live chat Add Harus Diisi',
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $data = array(
+            'configValue' => $this->request->getPost('livechatAdd'),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
+    }
+
+    public function whatsappEdit($id)
+    {
+        if (!$this->validate([
+            'whatsappAdd' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Live chat Add Harus Diisi',
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $data = array(
+            'configValue' => $this->request->getPost('whatsappAdd'),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
+    }
+
     public function logoAppEdit($id)
     {
-        dd($_POST);
         if (!$this->validate([
             'settingLogoApp' => [
                 'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',

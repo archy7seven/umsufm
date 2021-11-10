@@ -151,32 +151,38 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Live Chat Address</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" value="<?= $setting->findAll()[2]->configValue; ?>" />
+                        <form id="livechatEdit" action="/livechatEdit/<?= $setting->findAll()[2]->configId; ?>/edit" method="post">
+                            <?= csrf_field(); ?>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Live Chat Address</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <input type="text" name="livechatAdd" class="form-control" value="<?= $setting->findAll()[2]->configValue; ?>" />
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" name="btnLivechatEdit" value="saveLivechatAdd" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Whatsapp Address</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" value="<?= $setting->findAll()[3]->configValue; ?>" />
+                        <form id="whatsappEdit" action="/whatsappEdit/<?= $setting->findAll()[3]->configId; ?>/edit" method="post">
+                            <?= csrf_field(); ?>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Whatsapp Address</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <input type="text" name="whatsappAdd" class="form-control" value="<?= $setting->findAll()[3]->configValue; ?>" />
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" name="btnWhatsappEdit" value="saveWhatsappAdd" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
