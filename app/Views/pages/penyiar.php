@@ -83,6 +83,7 @@
                                             <div class="modal fade" id="hapusPenyiar<?= $row->penyiarId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
+
                                                         <div class="modal-header">
                                                             <button type=button class="close" data-dismiss="modal" aria-label="Close">
                                                                 <div aria-hidden="true">&times;</div>
@@ -93,10 +94,14 @@
                                                             <p>Apakah kamu yakin ingin menghapus data penyiar <strong><?= $row->penyiarNama; ?></strong>?</p>
                                                             <p class="text-warning"><small>This action cannot be undone</small></p>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            <a href="penyiar/delete/<?= $row->penyiarId; ?>" type="simpan" class="btn btn-danger">Delete</a>
-                                                        </div>
+                                                        <form action="/penyiar/<?= $row->penyiarId; ?>" method="post">
+                                                            <?= csrf_field(); ?>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <div class="modal-footer">
+                                                                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -157,7 +162,7 @@
 <div class="modal fade" id="tambahPenyiar" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="/penyiar/add" method="POST">
+            <form action="/penyiar" method="POST">
                 <?= csrf_field() ?>
                 <div class="modal-header">
                     <button type=button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
