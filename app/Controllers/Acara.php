@@ -34,6 +34,7 @@ class Acara extends BaseController
         if (basename($acara->acaraFlayer) != "default.png") {
             unlink('uploads/' . basename($acara->acaraFlayer));
         }
+        session()->setFlashdata('delete', 'Data Acara Berhasil Dihapus !');
         $this->acaraModel->delete($id);
         return redirect()->to('acara');
     }
@@ -109,6 +110,7 @@ class Acara extends BaseController
         );
 
         if ($this->acaraModel->insert($data)) {
+            session()->setFlashdata('success', 'Data Acara Berhasil Ditambah !');
             return redirect()->to('acara');
         }
     }
@@ -183,6 +185,7 @@ class Acara extends BaseController
             'acaraArsip' => $this->request->getPost('acaraArsip') == null ? 1 : 0
         );
         if ($this->acaraModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Data Acara Berhasil Diupdate !');
             return redirect()->to('acara');
         }
     }

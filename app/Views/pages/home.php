@@ -67,6 +67,12 @@
                             <strong>Failed ! </strong><?= $validation->getError('settingLogoHomescreen'); ?>
                         </div>
                     <?php endif; ?>
+                    <?php if ($validation->hasError('settingFlayerDefaultsiaran')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('settingFlayerDefaultsiaran'); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="col-md-3">
                     <!-- START WIDGET SLIDER -->
@@ -289,7 +295,7 @@
                                 <h3 class="panel-title">Flayer Default Siaran</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImgEditSet(<?= $setting->findAll()[6]->configId; ?>)" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="flayerDefaultsiaran" id="flayeredit<?= $setting->findAll()[6]->configId; ?>" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEditSet(<?= $setting->findAll()[6]->configId; ?>)" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingFlayerDefaultsiaran" id="flayeredit<?= $setting->findAll()[6]->configId; ?>" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">

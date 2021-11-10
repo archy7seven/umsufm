@@ -35,18 +35,10 @@ $routes->setAutoRoute(true);
 // $routes->get('/login', 'Login::index');
 // $routes->post('/operator/auth', 'Operator::auth');
 // $routes->post('/operator/register', 'Operator::register');
-$routes->get('/home', 'Home::index');
-$routes->get('/logout', 'Login::logout');
-$routes->get('/penyiar', 'Penyiar::index');
-$routes->get('/acara', 'Acara::index');
-$routes->get('/endorsement', 'Endorsement::index');
-$routes->post('/acara', 'Acara::add');
-$routes->post('/endorsement', 'Endorsement::add');
-$routes->delete('/penyiar/(:num)', 'Penyiar::delete/$1');
-$routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');
-$routes->add('/acara/(:num)/edit', 'Acara::edit/$1');
-$routes->add('/endorsement/(:num)/edit', 'Endorsement::edit/$1');
+// $routes->get('/logout', 'Login::logout');
 
+// Route Home
+$routes->get('/home', 'Home::index');
 $routes->add('/logoAppEdit/(:num)/edit', 'Home::logoAppEdit/$1');
 $routes->add('/logoRuangdengarEdit/(:num)/edit', 'Home::logoRuangdengarEdit/$1');
 $routes->add('/logoHomescreenEdit/(:num)/edit', 'Home::logoHomescreenEdit/$1');
@@ -54,6 +46,22 @@ $routes->add('/flayerDefaultsiaranEdit/(:num)/edit', 'Home::flayerDefaultsiaranE
 $routes->add('/streamEdit/(:num)/edit', 'Home::streamEdit/$1');
 $routes->add('/livechatEdit/(:num)/edit', 'Home::livechatEdit/$1');
 $routes->add('/whatsappEdit/(:num)/edit', 'Home::whatsappEdit/$1');
+
+// Route Penyiar
+$routes->get('/penyiar', 'Penyiar::index');
+$routes->delete('/penyiar/(:num)', 'Penyiar::delete/$1');
+$routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');
+
+// Route Acara
+$routes->get('/acara', 'Acara::index');
+$routes->post('/acara', 'Acara::add');
+$routes->add('/acara/(:num)/edit', 'Acara::edit/$1');
+
+// Rpute Endorsement
+$routes->get('/endorsement', 'Endorsement::index');
+$routes->post('/endorsement', 'Endorsement::add');
+$routes->add('/endorsement/(:num)/edit', 'Endorsement::edit/$1');
+
 
 
 

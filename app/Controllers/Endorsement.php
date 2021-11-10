@@ -31,6 +31,7 @@ class Endorsement extends BaseController
             unlink('endorsements/' . basename($endorsement->endorsementFlayer));
         }
         $this->endorsementModel->delete($id);
+        session()->setFlashdata('delete', 'Data Endorsement Berhasil Dihapus !');
         return redirect()->to('endorsement');
     }
 
@@ -63,17 +64,18 @@ class Endorsement extends BaseController
         }
 
         $fileFlayer = $this->request->getFile('endorsementFlayer');
-        $width = getimagesize($fileFlayer)[0];
-        $height = getimagesize($fileFlayer)[1];
 
-        if ($width != 960 && $height != 1280) {
-            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 960px X 1280px');
-            return redirect()->back();
-        }
 
         if ($fileFlayer->getError() == 4) {
             $namaFile = 'endorsement.png';
         } else {
+            $width = getimagesize($fileFlayer)[0];
+            $height = getimagesize($fileFlayer)[1];
+
+            if ($width != 960 && $height != 1280) {
+                session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 960px X 1280px');
+                return redirect()->back();
+            }
             $namaFile = $fileFlayer->getRandomName();
             $fileFlayer->move('endorsements', $namaFile);
         }
@@ -86,6 +88,7 @@ class Endorsement extends BaseController
             'endorsementDeskripsi' => $this->request->getPost('endorsementDeskripsi'),
         );
         if ($this->endorsementModel->insert($data)) {
+            session()->setFlashdata('success', 'Data Acara Berhasil Ditambah !');
             return redirect()->to('endorsement');
         }
     }
@@ -119,17 +122,18 @@ class Endorsement extends BaseController
         }
 
         $fileFlayer = $this->request->getFile('endorsementFlayer');
-        $width = getimagesize($fileFlayer)[0];
-        $height = getimagesize($fileFlayer)[1];
-
-        if ($width != 960 && $height != 1280) {
-            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 960px X 1280px');
-            return redirect()->back();
-        }
 
         if ($fileFlayer->getError() == 4) {
             $namaFile = $this->request->getPost('flayerLama');
         } else {
+
+            $width = getimagesize($fileFlayer)[0];
+            $height = getimagesize($fileFlayer)[1];
+
+            if ($width != 960 && $height != 1280) {
+                session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 960px X 1280px');
+                return redirect()->back();
+            }
             $namaFile = $fileFlayer->getRandomName();
             $fileFlayer->move('endorsements', $namaFile);
             unlink('endorsements/' . $this->request->getPost('flayerLama'));
@@ -144,6 +148,7 @@ class Endorsement extends BaseController
         );
 
         if ($this->endorsementModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Data Acara Berhasil Diupdate !');
             return redirect()->to('endorsement');
         }
     }

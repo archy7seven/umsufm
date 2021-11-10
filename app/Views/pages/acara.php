@@ -23,6 +23,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <?php echo session()->getFlashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty(session()->getFlashdata('delete'))) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <?php echo session()->getFlashdata('delete'); ?>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($validation->hasError('flayer')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

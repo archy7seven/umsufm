@@ -23,6 +23,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- START PROJECTS BLOCK -->
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <?php echo session()->getFlashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty(session()->getFlashdata('delete'))) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <?php echo session()->getFlashdata('delete'); ?>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($validation->hasError('penyiarNama')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -101,7 +113,7 @@
                                                             <div class="modal-body">
                                                                 <div class="form-group">
                                                                     <label>Nama Penyiar</label>
-                                                                    <input type="text" name="penyiar" class="form-control" value="<?= $row->penyiarNama; ?>" required>
+                                                                    <input type="text" name="penyiarNama" class="form-control" value="<?= $row->penyiarNama; ?>" required>
                                                                 </div>
                                                                 <div class="form-check">
                                                                     <input value="1" class="form-check-input" type="radio" name="isHuman" id="flexRadioDefault1" <?php if ($row->penyiarStatus == 1) echo "checked"; ?> />

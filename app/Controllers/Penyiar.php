@@ -29,6 +29,7 @@ class Penyiar extends BaseController
 
     public function delete($id)
     {
+        session()->setFlashdata('delete', 'Data Penyiar Berhasil Dihapus !');
         $this->penyiarModel->delete($id);
         return redirect()->to('penyiar');
     }
@@ -38,14 +39,14 @@ class Penyiar extends BaseController
         if (!$this->validate([
             'penyiarNama' => [
                 'rules' => 'required|is_unique[penyiar.penyiarNama]',
-                'error' => [
+                'errors' => [
                     'required' => 'Nama Penyiar Harus Diisi',
                     'is_unique' => 'Nama Penyiar Sudah terdaftar',
                 ]
             ],
             'isHuman' => [
                 'rules' => 'required',
-                'error' => [
+                'errors' => [
                     'required' => 'Tipe Penyiar Harus Dipilih',
                 ]
             ],
@@ -58,36 +59,34 @@ class Penyiar extends BaseController
             'penyiarNama' => $this->request->getPost('penyiarNama'),
             'penyiarStatus' => $this->request->getPost('isHuman')
         );
-        $this->penyiarModel->insert($data);
-        return redirect()->to('penyiar');
+
+        if ($this->penyiarModel->insert($data)) {
+            session()->setFlashdata('success', 'Data Penyiar Berhasil Ditambah !');
+            return redirect()->to('penyiar');
+        }
     }
 
     public function edit($id)
     {
-
         //validation
         if (!$this->validate([
-            'penyiar' => ['required|is_unique[penyiar.penyiarNama]'],
+            'penyiarNama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama Penyiar Harus Diisi',
+                ]
+            ],
         ])) {
-            return redirect()->to('/penyiar');
+            return redirect()->to('penyiar')->withInput();
         }
-
         $data = array(
             "penyiarNama" => $this->request->getPost('penyiarNama'),
             "penyiarStatus" => $this->request->getPost('isHuman')
         );
 
-        $penyiar = $this->penyiarModel->where('penyiarId', $id);
-        $validation =  \Config\Services::validation();
-        $validation->setRules([
-            'penyiarNama' => 'required',
-            'isHuman' => 'required'
-        ]);
-        $isDataValid = $validation->withRequest($this->request)->run();
-
-        if ($isDataValid && $penyiar->countAllResults() > 0) {
-            $this->penyiarModel->update($id, $data);
+        if ($this->penyiarModel->update($id, $data)) {;
+            session()->setFlashdata('success', 'Data Penyiar Berhasil Diupdate !');
+            return redirect()->to('penyiar');
         }
-        return redirect()->to('penyiar');
     }
 }
