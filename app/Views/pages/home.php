@@ -266,7 +266,7 @@
                                 <h3 class="panel-title">Logo Homescreen</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoHomescreen" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[5]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoHomescreen" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[5]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
@@ -289,7 +289,7 @@
                                 <h3 class="panel-title">Flayer Default Siaran</h3>
                             </div>
                             <div class="panel-body">
-                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="flayerDefaultsiaran" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
+                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="flayerDefaultsiaran" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[6]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
