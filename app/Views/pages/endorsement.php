@@ -251,7 +251,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-3">
-                            <img src="uploads/default.png" alt="" class="img-thumbnail img-preview">
+                            <img src="uploads/endorsmentUmsufm.png" alt="" class="img-thumbnail img-preview">
                         </div>
                     </div>
                 </div>

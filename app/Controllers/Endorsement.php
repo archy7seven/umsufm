@@ -85,7 +85,6 @@ class Endorsement extends BaseController
             'endorsementTanggalAkhir' => strtotime($this->request->getPost('endorsementTanggalAkhir')),
             'endorsementDeskripsi' => $this->request->getPost('endorsementDeskripsi'),
         );
-
         if ($this->endorsementModel->insert($data)) {
             return redirect()->to('endorsement');
         }
