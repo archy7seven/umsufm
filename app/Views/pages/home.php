@@ -37,10 +37,10 @@
                             <strong>Failed ! </strong><?= $validation->getError('streamAdd'); ?>
                         </div>
                     <?php endif; ?>
-                    <?php if ($validation->hasError('settingLogoAplikasi')) : ?>
+                    <?php if ($validation->hasError('settingLogoApp')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <strong>Failed ! </strong><?= $validation->getError('settingLogoAplikasi'); ?>
+                            <strong>Failed ! </strong><?= $validation->getError('settingLogoApp'); ?>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -133,7 +133,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
-                        <form id="streamEdit" action="/streamEdit/<?= $setting->findAll()[0]->configId; ?>/edit" method="post">
+                        <form action="/streamEdit/<?= $setting->findAll()[0]->configId; ?>/edit" method="post">
                             <?= csrf_field(); ?>
                             <div class="panel-heading">
                                 <h3 class="panel-title">Stream Address</h3>
@@ -189,16 +189,14 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <form id="form_2" role="form" class="form-horizontal" action="/logoAppEdit/<?= $setting->findAll()[1]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                        <form role="form" class="form-horizontal" action="/logoAppEdit/<?= $setting->findAll()[1]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
                             <? csrf_field(); ?>
-                            <input type="hidden" name="flayerLama" value="<?= basename($setting->findAll()[1]->configValue); ?>" />
+                            <input type="hidden" name="logoAppLama" value="<?= basename($setting->findAll()[1]->configValue); ?>" />
                             <div class="panel-heading">
                                 <h3 class="panel-title">Logo Aplikasi</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="col-md-12">
-                                    <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger" name="settingLogoApp" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[1]->configId; ?>" title="Browse..." />
-                                </div>
+                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoApp" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[1]->configId; ?>" title="Browse..." />
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
