@@ -46,6 +46,7 @@ $routes->delete('/penyiar/(:num)', 'Penyiar::delete/$1');
 $routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');
 $routes->add('/acara/(:num)/edit', 'Acara::edit/$1');
 $routes->add('/endorsement/(:num)/edit', 'Endorsement::edit/$1');
+$routes->add('/streamEdit/(:num)/edit', 'Home::streamEdit/$1');
 
 
 

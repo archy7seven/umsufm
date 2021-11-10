@@ -35,8 +35,32 @@ class Home extends BaseController
             'jumlah_penyiar' => $this->penyiarModel,
             'acara' => $this->acaraModel,
             'jumlah_endors' => $this->endorsementModel,
-            'setting' => $this->settingModel
+            'setting' => $this->settingModel,
+            'validation' => \Config\Services::validation(),
         ];
         return view('pages/home', $data);
+    }
+
+    public function streamEdit($id)
+    {
+        if (!$this->validate([
+            'configValue' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Stream Add Harus Diisi',
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $data = array(
+            'configValue' => $this->request->getPost('configValue'),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
     }
 }

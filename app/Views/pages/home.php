@@ -16,7 +16,22 @@
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
             <!-- START WIDGETS -->
+
             <div class="row">
+                <div class="col-md-12">
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <?php echo session()->getFlashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('configValue')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('configValue'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
                 <div class="col-md-3">
                     <!-- START WIDGET SLIDER -->
                     <div class="widget widget-default widget-carousel">
@@ -106,17 +121,20 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Stream Address</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" value="<?= $setting->findAll()[0]->configValue; ?>" />
+                        <form action="/streamEdit/<?= $setting->findAll()[0]->configId; ?>/edit" method="post">
+                            <?= csrf_field(); ?>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Stream Address</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <input type="text" name="configValue" class="form-control" value="<?= $setting->findAll()[0]->configValue; ?>" />
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-4">
