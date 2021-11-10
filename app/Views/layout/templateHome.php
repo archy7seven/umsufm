@@ -108,9 +108,22 @@
         function previewImgEdit() {
             const flayer = document.querySelector('#flayeredit');
             const id = document.getElementById("flayeredit").getAttribute("data-id");
-
+            console.log(id);
             const flayerPrev = document.querySelector('.img-preview' + id);
 
+            const fileFlayer = new FileReader();
+            fileFlayer.readAsDataURL(flayer.files[0]);
+
+            fileFlayer.onload = function(e) {
+                flayerPrev.src = e.target.result;
+            }
+        }
+
+        function previewImgEditSet(id) {
+            const flayer = document.querySelector('#flayeredit' + id);
+            const flayerPrev = document.querySelector('.img-preview' + id);
+
+            console.log(flayer.files[0]);
             const fileFlayer = new FileReader();
             fileFlayer.readAsDataURL(flayer.files[0]);
 
