@@ -115,7 +115,6 @@
                                                                         <h3 class="modal-title" id="modalLabel"><strong>Edit</strong> Data Endorsement</h3>
                                                                     </div>
                                                                     <div class="modal-body">
-
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Nama Endorsement</label>
                                                                             <div class="col-md-9">

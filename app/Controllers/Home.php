@@ -22,12 +22,10 @@ class Home extends BaseController
         $this->penyiarModel = new PenyiarModel();
         $this->acaraModel = new AcaraModel();
         $this->endorsementModel = new EndorsementModel();
-        // $this->users = new UserModel();
     }
 
     public function index()
     {
-        // dd(user());
         $data = [
             'title' => "Home",
             'appName' => "UMSU FM",
@@ -43,8 +41,9 @@ class Home extends BaseController
 
     public function streamEdit($id)
     {
+        dd($_POST);
         if (!$this->validate([
-            'configValue' => [
+            'streamAdd' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Stream Add Harus Diisi',
@@ -55,7 +54,42 @@ class Home extends BaseController
         }
 
         $data = array(
-            'configValue' => $this->request->getPost('configValue'),
+            'configValue' => $this->request->getPost('streamAdd'),
+        );
+
+        if ($this->settingModel->update($id, $data)) {
+            session()->setFlashdata('success', 'Berhasil Diubah !');
+            return redirect()->to('home');
+        }
+    }
+
+    public function logoAppEdit($id)
+    {
+        dd($_POST);
+        if (!$this->validate([
+            'settingLogoApp' => [
+                'rules' => 'max_size[flayer,5120]|mime_in[flayer,image/png]|is_image[flayer]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'mime_in' => 'Yang anda Pilih bukan gambar',
+                    'is_image' => 'Yang anda Pilih bukan gambar'
+                ]
+            ],
+        ])) {
+            return redirect()->to('home')->withInput();
+        }
+
+        $fileFlayer = $this->request->getFile('settingLogoApp');
+        $width = getimagesize($fileFlayer)[0];
+        $height = getimagesize($fileFlayer)[1];
+
+        if ($width != 512 && $height != 512) {
+            session()->setFlashdata('error', 'Dimensi gambar salah, gunakan 512px X 512px');
+            return redirect()->back();
+        }
+
+        $data = array(
+            'configValue' => $this->request->getPost('settingLogoApp'),
         );
 
         if ($this->settingModel->update($id, $data)) {

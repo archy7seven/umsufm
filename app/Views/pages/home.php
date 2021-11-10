@@ -25,10 +25,22 @@
                             <?php echo session()->getFlashdata('success'); ?>
                         </div>
                     <?php endif; ?>
-                    <?php if ($validation->hasError('configValue')) : ?>
+                    <?php if (!empty(session()->getFlashdata('error'))) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <strong>Failed ! </strong><?= $validation->getError('configValue'); ?>
+                            <?php echo session()->getFlashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('streamAdd')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('streamAdd'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($validation->hasError('settingLogoAplikasi')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Failed ! </strong><?= $validation->getError('settingLogoAplikasi'); ?>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -121,18 +133,18 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-colorful">
-                        <form action="/streamEdit/<?= $setting->findAll()[0]->configId; ?>/edit" method="post">
+                        <form id="streamEdit" action="/streamEdit/<?= $setting->findAll()[0]->configId; ?>/edit" method="post">
                             <?= csrf_field(); ?>
                             <div class="panel-heading">
                                 <h3 class="panel-title">Stream Address</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-12">
-                                    <input type="text" name="configValue" class="form-control" value="<?= $setting->findAll()[0]->configValue; ?>" />
+                                    <input type="text" name="streamAdd" class="form-control" value="<?= $setting->findAll()[0]->configValue; ?>" />
                                 </div>
                             </div>
                             <div class="panel-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Save</button>
+                                <button type="submit" name="btnStreamEdit" value="saveStreamAdd" class="btn btn-primary pull-right">Save</button>
                             </div>
                         </form>
                     </div>
@@ -171,17 +183,27 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="panel panel-colorful">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Logo Aplikasi</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div>
-                                <input onchange="previewImg()" type="file" accept="image/png" class="fileinput btn-danger col-md-12" name="settingLogoAplikasi" id="flayer" data-filename-placement="inside" title="Browse..." />
+                        <form id="form_2" role="form" class="form-horizontal" action="/logoAppEdit/<?= $setting->findAll()[1]->configId; ?>/edit" method="POST" enctype="multipart/form-data">
+                            <? csrf_field(); ?>
+                            <input type="hidden" name="flayerLama" value="<?= basename($setting->findAll()[1]->configValue); ?>" />
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Logo Aplikasi</h3>
                             </div>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary pull-right">Save</button>
-                        </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger" name="settingLogoApp" id="flayeredit" data-filename-placement="inside" data-id="<?= $setting->findAll()[1]->configId; ?>" title="Browse..." />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label"></label>
+                                    <div class="col-md-12">
+                                        <img src="<?= $setting->findAll()[1]->configValue; ?>" alt="" class="img-thumbnail img-preview<?= $setting->findAll()[1]->configId; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" value="editLogoApp" class="btn btn-primary pull-right">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-3">
