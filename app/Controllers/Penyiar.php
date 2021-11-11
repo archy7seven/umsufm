@@ -30,7 +30,7 @@ class Penyiar extends BaseController
     public function delete($id)
     {
         if ($this->penyiarModel->delete($id)) {
-            session()->setFlashdata('delete', 'Data Penyiar Berhasil Dihapus !');
+            session()->setFlashdata('success', 'Data Penyiar Berhasil Dihapus !');
         };
         return redirect()->to('penyiar');
     }
