@@ -29,12 +29,6 @@
                             <?php echo session()->getFlashdata('success'); ?>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty(session()->getFlashdata('delete'))) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <?php echo session()->getFlashdata('delete'); ?>
-                        </div>
-                    <?php endif; ?>
                     <?php if ($validation->hasError('penyiarNama')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -99,7 +93,7 @@
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <div class="modal-footer">
                                                                 <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-danger">Delete</button>
+
                                                             </div>
                                                         </form>
                                                     </div>

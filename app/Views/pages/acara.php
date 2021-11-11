@@ -29,12 +29,6 @@
                             <?php echo session()->getFlashdata('success'); ?>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty(session()->getFlashdata('delete'))) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <?php echo session()->getFlashdata('delete'); ?>
-                        </div>
-                    <?php endif; ?>
                     <?php if ($validation->hasError('flayer')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -213,7 +207,7 @@
                                                                         <div class="form-group">
                                                                             <label class="col-md-3 control-label">Flayer Acara</label>
                                                                             <div class="col-md-9">
-                                                                                <input onchange="previewImgEdit()" type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="flayeredit" data-filename-placement="inside" data-id="<?= $row->acaraId; ?>" title="<?= basename($row->acaraFlayer); ?>" />
+                                                                                <input onchange="previewImgEditSet(<?= $row->acaraId; ?>)" type="file" accept="image/png" class="fileinput btn-danger" name="flayer" id="flayeredit<?= $row->acaraId; ?>" data-filename-placement="inside" data-id="<?= $row->acaraId; ?>" title="<?= basename($row->acaraFlayer); ?>" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
@@ -246,10 +240,14 @@
                                                                     <p>Apakah kamu yakin ingin menghapus data acara <strong><?= $row->acaraNama; ?></strong>?</p>
                                                                     <p class="text-warning"><small>This action cannot be undone</small></p>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                    <a href="acara/delete/<?= $row->acaraId; ?>" class="btn btn-danger">Delete</a>
-                                                                </div>
+                                                                <form action="/acara/<?= $row->acaraId; ?>" method="post">
+                                                                    <?= csrf_field(); ?>
+                                                                    <input type="hidden" name="_method" value="DELETE">
+                                                                    <div class="modal-footer">
+                                                                        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
