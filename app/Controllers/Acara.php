@@ -34,8 +34,9 @@ class Acara extends BaseController
         if (basename($acara->acaraFlayer) != "default.png") {
             unlink('uploads/' . basename($acara->acaraFlayer));
         }
-        session()->setFlashdata('delete', 'Data Acara Berhasil Dihapus !');
-        $this->acaraModel->delete($id);
+        if ($this->acaraModel->delete($id)) {
+            session()->setFlashdata('success', 'Data Acara Berhasil Dihapus !');
+        };
         return redirect()->to('acara');
     }
 

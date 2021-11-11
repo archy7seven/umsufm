@@ -30,8 +30,9 @@ class Endorsement extends BaseController
         if (basename($endorsement->endorsementFlayer) != "endorsement.png") {
             unlink('endorsements/' . basename($endorsement->endorsementFlayer));
         }
-        $this->endorsementModel->delete($id);
-        session()->setFlashdata('delete', 'Data Endorsement Berhasil Dihapus !');
+        if ($this->endorsementModel->delete($id)) {
+            session()->setFlashdata('success', 'Data Endorsement Berhasil Dihapus !');
+        };
         return redirect()->to('endorsement');
     }
 
@@ -97,12 +98,11 @@ class Endorsement extends BaseController
     {
         if (!$this->validate([
             'endorsementFlayer' => [
-                'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer]|max_dims[endorsementFlayer,960,1280]',
+                'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar',
-                    'max_dims' => 'Dimensi gambar salah, gunakan 960px X 1280px'
                 ]
             ],
             'endorsementNama' => [

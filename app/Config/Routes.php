@@ -54,11 +54,13 @@ $routes->post('/penyiar', 'Penyiar::add');
 $routes->add('/penyiar/(:num)/edit', 'Penyiar::edit/$1');
 
 // Route Acara
+$routes->delete('/acara/(:num)', 'Acara::delete/$1');
 $routes->post('/acara', 'Acara::add');
 $routes->get('/acara/(:any)', 'Acara::index');
 $routes->add('/acara/(:num)/edit', 'Acara::edit/$1');
 
-// Rpute Endorsement
+// Route Endorsement
+$routes->delete('/endorsement/(:num)', 'Endorsement::delete/$1');
 $routes->post('/endorsement', 'Endorsement::add');
 $routes->get('/endorsement/(:any)', 'Endorsement::index');
 $routes->add('/endorsement/(:num)/edit', 'Endorsement::edit/$1');
