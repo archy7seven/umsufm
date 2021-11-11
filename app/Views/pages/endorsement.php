@@ -135,7 +135,7 @@
                                                                             <label class="col-md-3 control-label">Tanggal Awal</label>
                                                                             <div class="col-md-9">
                                                                                 <div class="input-group date " id="dp-2" data-date="<?= gmdate('d-m-Y', $row->endorsementTanggalAwal); ?>" data-date-format="dd-mm-yyyy">
-                                                                                    <input type="text" class="form-control datepicker" name="endorsementTanggalAkhir" value="<?= gmdate('d-m-Y', $row->endorsementTanggalAwal); ?>" />
+                                                                                    <input type="text" class="form-control datepicker" name="endorsementTanggalAwal" value="<?= gmdate('d-m-Y', $row->endorsementTanggalAwal); ?>" />
                                                                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                                                                 </div>
                                                                             </div>
@@ -260,7 +260,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-3">
-                            <img src="uploads/endorsement.png" alt="" class="img-thumbnail img-preview">
+                            <img src="endorsements/endorsement.png" alt="" class="img-thumbnail img-preview">
                         </div>
                     </div>
                 </div>
