@@ -57,7 +57,8 @@
                                     <thead>
                                         <tr>
                                             <th width="5%" style="text-align:center">No</th>
-                                            <th width="75%">Nama Penyiar</th>
+                                            <th width="55%">Nama Penyiar</th>
+                                            <th width="20%" style="text-align:center">Tipe Penyiar</th>
                                             <th width="15%" style="text-align:center">Action</th>
                                         </tr>
                                     </thead>
@@ -68,6 +69,7 @@
                                             <tr>
                                                 <td style="text-align:center"><?= $no++; ?></td>
                                                 <td><?= $row->penyiarNama; ?></td>
+                                                <td style="text-align:center"><span class="label <?= ($row->penyiarStatus == 1) ? "label-info" : "label-default"; ?>"><?= ($row->penyiarStatus == 1) ? "Solo" : "Rekaman / Kolaborasi"; ?></span></td>
                                                 <td style="text-align:center">
                                                     <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPenyiar<?= $row->penyiarId; ?>"><span class="fa fa-edit"></span></button>
                                                     <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusPenyiar<?= $row->penyiarId; ?>"><span class="fa fa-trash-o"></span></button>
@@ -77,7 +79,6 @@
                                             <div class="modal fade" id="hapusPenyiar<?= $row->penyiarId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
-
                                                         <div class="modal-header">
                                                             <button type=button class="close" data-dismiss="modal" aria-label="Close">
                                                                 <div aria-hidden="true">&times;</div>
@@ -117,13 +118,13 @@
                                                                 <div class="form-check">
                                                                     <input value="1" class="form-check-input" type="radio" name="isHuman" id="flexRadioDefault1" <?php if ($row->penyiarStatus == 1) echo "checked"; ?> />
                                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                                        Satu orang
+                                                                        Solo
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
                                                                     <input value="0" class="form-check-input" type="radio" name="isHuman" id="flexRadioDefault2" <?php if ($row->penyiarStatus == 0) echo "checked"; ?> />
                                                                     <label class="form-check-label" for="flexRadioDefault2">
-                                                                        Lebih dari satu orang
+                                                                        Rekaman / Kolaborasi
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -170,13 +171,13 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="isHuman" value="1" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Satu orang
+                            Solo
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="isHuman" value="0" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Lebih dari satu orang
+                            Rekaman / Kolaborasi
                         </label>
                     </div>
                 </div>
