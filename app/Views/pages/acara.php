@@ -107,8 +107,8 @@
                                                 <td><?= $row->acaraHari; ?></td>
                                                 <td><?= $row->acaraJamMulai; ?></td>
                                                 <td><?= $row->acaraJamAkhir; ?></td>
-                                                <td><?= $row->acaraStatus == 1 ? "Tayang" : "Segera Tayang"; ?></td>
-                                                <td><?= $row->acaraArsip == 1 ? "Tidak Diarsip" : "Diarsip"; ?>
+                                                <td style="text-align:center"><span class="label <?= $row->acaraStatus == 1 ? "label-success" : "label-warning"; ?>"><?= $row->acaraStatus == 1 ? "Tayang" : "Segera Tayang"; ?></span></td>
+                                                <td style="text-align:center"><span class="label <?= $row->acaraArsip == 1 ? "label-info" : "label-default"; ?>"><?= $row->acaraArsip == 1 ? "Tidak Diarsip" : "Diarsip"; ?></span>
                                                     <!-- START MODAL EDIT ACARA -->
                                                     <div class="modal fade" id="editAcara<?= $row->acaraId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
