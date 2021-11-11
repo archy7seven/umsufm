@@ -19,7 +19,18 @@
 <body>
 
     <?= $this->renderSection('main'); ?>
-
+    <!-- <div class="login-body">
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; 2021 <?= lang('Auth.appName') ?>
+            </div>
+            <div class="pull-right">
+                <a href="#!">About</a> |
+                <a href="#!">Privacy</a> |
+                <a href="#!">Contact Us</a>
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>

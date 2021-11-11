@@ -106,9 +106,8 @@
                                                 <td><?= $row->penyiarNama; ?></td>
                                                 <td><?= $row->acaraHari; ?></td>
                                                 <td><?= $row->acaraJamMulai; ?></td>
-                                                <td><?= $row->acaraJamAkhir; ?></td>
-                                                <td style="text-align:center"><span class="label <?= $row->acaraStatus == 1 ? "label-success" : "label-warning"; ?>"><?= $row->acaraStatus == 1 ? "Tayang" : "Segera Tayang"; ?></span></td>
-                                                <td style="text-align:center"><span class="label <?= $row->acaraArsip == 1 ? "label-info" : "label-default"; ?>"><?= $row->acaraArsip == 1 ? "Tidak Diarsip" : "Diarsip"; ?></span>
+                                                <td><?= $row->acaraJamAkhir; ?>
+
                                                     <!-- START MODAL EDIT ACARA -->
                                                     <div class="modal fade" id="editAcara<?= $row->acaraId; ?>" arialabelledby="staticBackdropLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
@@ -262,6 +261,8 @@
                                                     </div>
                                                     <!-- END MODAL FLAYER -->
                                                 </td>
+                                                <td style="text-align:center"><span class="label label-form <?= $row->acaraStatus == 1 ? "label-success" : "label-warning"; ?>"><?= $row->acaraStatus == 1 ? "Tayang" : "Segera Tayang"; ?></span></td>
+                                                <td style="text-align:center"><span class="label label-form <?= $row->acaraArsip == 1 ? "label-info" : "label-default"; ?>"><?= $row->acaraArsip == 1 ? "Tidak Diarsip" : "Diarsip"; ?></span></td>
                                                 <td style="text-align:center">
                                                     <button Type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAcara<?= $row->acaraId; ?>"><span class="fa fa-edit"></span></button>
                                                     <button Type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusAcara<?= $row->acaraId; ?>"><span class="fa fa-trash-o"></span></button>

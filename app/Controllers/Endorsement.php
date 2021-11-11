@@ -27,8 +27,8 @@ class Endorsement extends BaseController
     public function delete($id)
     {
         $endorsement = $this->endorsementModel->find($id);
-        if (basename($endorsement->endorsementFlayer) != "endorsement.png") {
-            unlink('endorsements/' . basename($endorsement->endorsementFlayer));
+        if (basename($endorsement->endorsmentFlayer) != "endorsement.png") {
+            unlink('endorsements/' . basename($endorsement->endorsmentFlayer));
         }
         if ($this->endorsementModel->delete($id)) {
             session()->setFlashdata('success', 'Data Endorsement Berhasil Dihapus !');
@@ -39,8 +39,8 @@ class Endorsement extends BaseController
     public function add()
     {
         if (!$this->validate([
-            'endorsementFlayer' => [
-                'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer]|max_dims[endorsementFlayer,960,1280]',
+            'endorsmentFlayer' => [
+                'rules' => 'max_size[endorsmentFlayer,5120]|mime_in[endorsmentFlayer,image/png]|is_image[endorsmentFlayer]|max_dims[endorsmentFlayer,960,1280]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
@@ -48,13 +48,13 @@ class Endorsement extends BaseController
                     'max_dims' => 'Dimensi gambar salah, gunakan 960px X 1280px'
                 ]
             ],
-            'endorsementNama' => [
+            'endorsmentNama' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Nama Endorsement Harus Diisi',
                 ]
             ],
-            'endorsementDeskripsi' => [
+            'endorsmentDeskripsi' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Deskripsi Endorsement Harus Diisi',
@@ -64,7 +64,7 @@ class Endorsement extends BaseController
             return redirect()->to('endorsement')->withInput();
         }
 
-        $fileFlayer = $this->request->getFile('endorsementFlayer');
+        $fileFlayer = $this->request->getFile('endorsmentFlayer');
 
 
         if ($fileFlayer->getError() == 4) {
@@ -82,11 +82,11 @@ class Endorsement extends BaseController
         }
 
         $data = array(
-            'endorsementFlayer' => base_url('endorsements/' . $namaFile),
-            'endorsementNama' => $this->request->getPost('endorsementNama'),
-            'endorsementTanggalAwal' => strtotime($this->request->getPost('endorsementTanggalAwal')),
-            'endorsementTanggalAkhir' => strtotime($this->request->getPost('endorsementTanggalAkhir')),
-            'endorsementDeskripsi' => $this->request->getPost('endorsementDeskripsi'),
+            'endorsmentFlayer' => base_url('endorsements/' . $namaFile),
+            'endorsmentNama' => $this->request->getPost('endorsmentNama'),
+            'endorsmentTanggaAwal' => strtotime($this->request->getPost('endorsmentTanggaAwal')),
+            'endorsmentTanggaAkhir' => strtotime($this->request->getPost('endorsmentTanggaAkhir')),
+            'endorsmentDeskripsi' => $this->request->getPost('endorsmentDeskripsi'),
         );
         if ($this->endorsementModel->insert($data)) {
             session()->setFlashdata('success', 'Data Acara Berhasil Ditambah !');
@@ -97,21 +97,21 @@ class Endorsement extends BaseController
     public function edit($id)
     {
         if (!$this->validate([
-            'endorsementFlayer' => [
-                'rules' => 'max_size[endorsementFlayer,5120]|mime_in[endorsementFlayer,image/png]|is_image[endorsementFlayer]',
+            'endorsmentFlayer' => [
+                'rules' => 'max_size[endorsmentFlayer,5120]|mime_in[endorsmentFlayer,image/png]|is_image[endorsmentFlayer]',
                 'errors' => [
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'mime_in' => 'Yang anda Pilih bukan gambar',
                     'is_image' => 'Yang anda Pilih bukan gambar',
                 ]
             ],
-            'endorsementNama' => [
+            'endorsmentNama' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Nama Endorsement Harus Diisi',
                 ]
             ],
-            'endorsementDeskripsi' => [
+            'endorsmentDeskripsi' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Deskripsi Endorsement Harus Diisi',
@@ -121,7 +121,7 @@ class Endorsement extends BaseController
             return redirect()->to('endorsement')->withInput();
         }
 
-        $fileFlayer = $this->request->getFile('endorsementFlayer');
+        $fileFlayer = $this->request->getFile('endorsmentFlayer');
 
         if ($fileFlayer->getError() == 4) {
             $namaFile = $this->request->getPost('flayerLama');
@@ -140,11 +140,11 @@ class Endorsement extends BaseController
         }
 
         $data = array(
-            'endorsementFlayer' => base_url('endorsements/' . $namaFile),
-            'endorsementNama' => $this->request->getPost('endorsementNama'),
-            'endorsementTanggalAwal' => strtotime($this->request->getPost('endorsementTanggalAwal')),
-            'endorsementTanggalAkhir' => strtotime($this->request->getPost('endorsementTanggalAkhir')),
-            'endorsementDeskripsi' => $this->request->getPost('endorsementDeskripsi'),
+            'endorsmentFlayer' => base_url('endorsements/' . $namaFile),
+            'endorsmentNama' => $this->request->getPost('endorsmentNama'),
+            'endorsmentTanggaAwal' => strtotime($this->request->getPost('endorsmentTanggaAwal')),
+            'endorsmentTanggaAkhir' => strtotime($this->request->getPost('endorsmentTanggaAkhir')),
+            'endorsmentDeskripsi' => $this->request->getPost('endorsmentDeskripsi'),
         );
 
         if ($this->endorsementModel->update($id, $data)) {

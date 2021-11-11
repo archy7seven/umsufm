@@ -17,6 +17,14 @@
                         <div class="invalid-feedback">
                             <?= session('errors.email') ?>
                         </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <br>
+                        <p><?= lang('Auth.changeMind') ?> <a href="<?= route_to('login') ?>"><?= lang('Auth.signIn') ?></a></p>
+                    </div>
+                    <div class="col-md-6">
                         <br>
                         <button type="submit" class="btn btn-info btn-block"><?= lang('Auth.sendInstructions') ?></button>
                     </div>

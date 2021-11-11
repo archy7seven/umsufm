@@ -48,6 +48,7 @@
 				<?php endif; ?>
 				<div class="form-group">
 					<div class="col-md-6">
+						<br>
 						<?php if ($config->allowRegistration) : ?>
 							<a href="<?= route_to('register') ?>" class="btn btn-link btn-block"><?= lang('Auth.needAnAccount') ?></a>
 						<?php endif; ?>
@@ -56,6 +57,7 @@
 						<?php endif; ?>
 					</div>
 					<div class="col-md-6">
+						<br>
 						<button type="submit" class="btn btn-info btn-block"><?= lang('Auth.loginAction') ?></button>
 					</div>
 				</div>

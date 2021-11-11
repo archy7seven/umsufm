@@ -1,69 +1,75 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3">
-
-            <div class="card">
-                <h2 class="card-header"><?=lang('Auth.resetYourPassword')?></h2>
-                <div class="card-body">
-
-                    <?= view('Myth\Auth\Views\_message_block') ?>
-
-                    <p><?=lang('Auth.enterCodeEmailPassword')?></p>
-
-                    <form action="<?= route_to('reset-password') ?>" method="post">
-                        <?= csrf_field() ?>
-
-                        <div class="form-group">
-                            <label for="token"><?=lang('Auth.token')?></label>
-                            <input type="text" class="form-control <?php if(session('errors.token')) : ?>is-invalid<?php endif ?>"
-                                   name="token" placeholder="<?=lang('Auth.token')?>" value="<?= old('token', $token ?? '') ?>">
-                            <div class="invalid-feedback">
-                                <?= session('errors.token') ?>
-                            </div>
+<div class="login-container">
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body">
+            <div class="login-title"><strong>Reset</strong> Your Password</div>
+            <?= view('Myth\Auth\Views\_message_block') ?>
+            <p class="form-text text-muted"><?= lang('Auth.enterCodeEmailPassword') ?></p>
+            <form action="<?= route_to('reset-password') ?>" class="form-horizontal" method="post">
+                <?= csrf_field() ?>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="token"><?= lang('Auth.token') ?></label>
+                        <input type="text" class="form-control <?php if (session('errors.token')) : ?>is-invalid<?php endif ?>" name="token" placeholder="<?= lang('Auth.token') ?>" value="<?= old('token', $token ?? '') ?>">
+                        <div class="invalid-feedback">
+                            <?= session('errors.token') ?>
                         </div>
-
-                        <div class="form-group">
-                            <label for="email"><?=lang('Auth.email')?></label>
-                            <input type="email" class="form-control <?php if(session('errors.email')) : ?>is-invalid<?php endif ?>"
-                                   name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
-                            <div class="invalid-feedback">
-                                <?= session('errors.email') ?>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <div class="form-group">
-                            <label for="password"><?=lang('Auth.newPassword')?></label>
-                            <input type="password" class="form-control <?php if(session('errors.password')) : ?>is-invalid<?php endif ?>"
-                                   name="password">
-                            <div class="invalid-feedback">
-                                <?= session('errors.password') ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pass_confirm"><?=lang('Auth.newPasswordRepeat')?></label>
-                            <input type="password" class="form-control <?php if(session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>"
-                                   name="pass_confirm">
-                            <div class="invalid-feedback">
-                                <?= session('errors.pass_confirm') ?>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.resetPassword')?></button>
-                    </form>
-
+                    </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="email"><?= lang('Auth.email') ?></label>
+                        <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" aria-describedby="emailHelp" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
+                        <div class="invalid-feedback">
+                            <?= session('errors.email') ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="password"><?= lang('Auth.newPassword') ?></label>
+                        <input type="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" name="password">
+                        <div class="invalid-feedback">
+                            <?= session('errors.password') ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="pass_confirm"><?= lang('Auth.newPasswordRepeat') ?></label>
+                        <input type="password" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" name="pass_confirm">
+                        <div class="invalid-feedback">
+                            <?= session('errors.pass_confirm') ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <br>
+                        <p><?= lang('Auth.changeMind') ?> <a href="<?= route_to('login') ?>"><?= lang('Auth.signIn') ?></a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <button type="submit" class="btn btn-info btn-block"><?= lang('Auth.resetPassword') ?></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; 2021 <?= lang('Auth.appName') ?>
             </div>
-
+            <div class="pull-right">
+                <a href="#!">About</a> |
+                <a href="#!">Privacy</a> |
+                <a href="#!">Contact Us</a>
+            </div>
         </div>
     </div>
+
 </div>
 
 <?= $this->endSection() ?>
