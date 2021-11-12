@@ -18,19 +18,26 @@
 
 <body>
 
-    <?= $this->renderSection('main'); ?>
-    <!-- <div class="login-body">
-        <div class="login-footer">
-            <div class="pull-left">
-                &copy; 2021 <?= lang('Auth.appName') ?>
-            </div>
-            <div class="pull-right">
-                <a href="#!">About</a> |
-                <a href="#!">Privacy</a> |
-                <a href="#!">Contact Us</a>
+    <div class="login-container">
+        <div class="login-box animated fadeInDown">
+            <?= $this->renderSection('main'); ?>
+
+            <!-- START FOOTER -->
+
+            <div class="login-footer">
+                <div class="pull-left">
+                    &copy; 2021 <?= lang('Auth.appName') ?>
+                </div>
+                <div class="pull-right">
+                    <a href="https://umsufm.com">About</a> |
+                    <a href="https://api.umsu.ac.id/PrivacyPolicy/umsufm">Privacy</a> |
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRwQnhCWLcfWdnpqwGmLSTbwpZtZSGQsZKLGlPGbgVzBBScDpsfLcwGnDnNNLddVQWNCrwhR">Contact Us</a>
+                </div>
             </div>
         </div>
-    </div> -->
+    </div>
+
+    <!-- END FOOTER -->
 </body>
 
 </html>
